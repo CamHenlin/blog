@@ -100,7 +100,34 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-freemind.bithack
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
+disqus_shortname: henlin-net
+
+page:
+  comment: true
+
+# deploy:
+#   type: git
+#   repo:
+#     github:
+#       url: https://github.com/<myusername>/<myrepo>.git
+#       branch: gh-pages
+#       token: $GITHUB_TOKEN
+#   name: <my "visible" name>
+#   email: <my email>
+
 deploy:
-  type: ''
+  type: git
+  repo:
+    github:
+      url: https://github.com/CamHenlin/blog.git
+      branch: master
+      token: 3ad95d4c90b7704ef6d984372d88eca88877c9fe
+  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+  name: cam
+  email: cam.henlin@gmail.com
+
+
+disqus:
+  enable: true
+  shortname: henlin-net
+  count: true

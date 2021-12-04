@@ -38,7 +38,7 @@ We're going to follow roughly these steps:
 Remove the dashboard. This can be a big job depending on your car. I recommend being as careful as possible here. Bag up and label screws, make sure you know which connectors go where, try not to break things. You don't want to be ordering up new trim because you decided to muscle the dashboard out of the car.
 
 You should now have a dash sitting on the ground that looks like this:
-![damaged dashboard]("/images/IMG_6253.jpg.c00d1f28a6935d227ed6b83a31c5ab36.jpg")
+![damaged dashboard](/images/IMG_6253.jpg.c00d1f28a6935d227ed6b83a31c5ab36.jpg)
 (note: This picture wasn't the dash that appears in the rest of the pics. This is one that I found on google images. The dashboard in the rest of the pictures had similar damage in the same spots.)
 
 ### Step 2 - cutting ###
@@ -48,7 +48,7 @@ When dashboards crack, they curl. Cut the dashboard all the way back to where it
 Clean your dashboard really well with soapy water and clean it well between layers of work as you continue through the steps. I just use dish soap. Dust and dirt are going to be your enemy - they could cause imperfections or cause bad adhesion between any of the bondo, paint, or spray adhesive products that we're going to use.
 
 ### Step 4 - bondo + high build primer + sanding ###
-![bondo complete pic 1]("/images/1%20-%204IsjNm4.jpg")
+![bondo complete pic 1](/images/1%20-%204IsjNm4.jpg)
 This is the most time consuming step. Tons of and tons of bondo and lots and lots of sanding. We are taking an old dashboard skeleton and re-shaping it out of bondo. You might end up with a full day into this.
 
 Before I begin, I spray [high build primer](https://amzn.to/2JfQbyO) over the whole dashboard. This helps me spot low or high spots and also helps me from damaging healthy plastic parts of the dash that I do not want to sand on. Any time we blast through the primer, it's time to lay down a bit more primer.
@@ -61,35 +61,35 @@ When sanding, I do the first several layers with [220 grit sandpaper](https://am
 
 When you're done bonding and sanding, shoot one last coat of [high build primer](https://amzn.to/2JfQbyO) then sand it gently and evenly with 400 grit. There should be no visible scratches, low points, etc, before moving on. You should be looking at a perfect smooth, gray dashboard when you are finished here. No bondo should be exposed
 
-![bondo complete pic 2]("/images/2%20-%20zjoCURE.jpg")
+![bondo complete pic 2](/images/2%20-%20zjoCURE.jpg)
 
-![bondo complete pic 3]("/images/3%20-%20q7HpZrH.jpg")
-Here you can see the many layers over the gauge clusters to get them close to "right" - it's a lot!
+![bondo complete pic 3](/images/3%20-%20q7HpZrH.jpg)
+Here you can see the many layers over the gauge clusters to get them close to right - it's a lot!
 
-![bondo complete pic 4]("/images/4%20-%20Szh65Nh.jpg")
+![bondo complete pic 4](/images/4%20-%20Szh65Nh.jpg)
 
 ### Step 5 - painting ###
-![1st coat of paint pic 1]("/images/5%20-%20tbAW3wT.jpg")
+![1st coat of paint pic 1](/images/5%20-%20tbAW3wT.jpg)
 Now that we're done with the hard work, it's time for things to start looking better. Coat the entire dashboard in [black spray paint](https://amzn.to/3ms5SRQ). Our goal here is to get a uniform, smooth, black dashboard, for us to adhere flocking material to.
 
-![1st coat of paint pic 2]("/images/6%20-%20MWpqru4.jpg")
+![1st coat of paint pic 2](/images/6%20-%20MWpqru4.jpg)
 
 ### Step 6 - a little more sanding ###
-![1st coat of paint sanded pic 1]("/images/7%20-%20d0OM4co.jpg")
+![1st coat of paint sanded pic 1](/images/7%20-%20d0OM4co.jpg)
 After drying sand the 1st coat of paint to remove any imperfections. I will generally wet sand during this step, with a [water spray bottle](https://amzn.to/37jVWDv) and the [400 grit sandpaper](https://amzn.to/2VxatGB)
 
-![1st coat of paint sanded pic 2]("/images/8%20-%20HTJpiu1.jpg")
+![1st coat of paint sanded pic 2](/images/8%20-%20HTJpiu1.jpg)
 Here you can see some spots where we completely sanded the paint away due to imperfections
 
 ### Step 7 - more painting ###
-![2nd coat of paint pic 1]("/images/9%20-%20LQhmmH2.jpg")
+![2nd coat of paint pic 1](/images/9%20-%20LQhmmH2.jpg)
 Add one more thick coat of paint, ensuring that you don't get any runs. Let this paint dray and do not sand it. You should have a great looking, smooth, black dashboard now. It should look pretty good! If not, back up and get to sanding. The end is in sight.
 
-![2nd coat of paint pic 2]("/images/10%20-%205ZHp5eo.jpg")
+![2nd coat of paint pic 2](/images/10%20-%205ZHp5eo.jpg)
 
 ### Step 8 - flocking ###
-![flocked pic 1]("/images/11%20-%20CAosZ5c.jpg")
-People do flocking in different ways. I recommend re-reading this section a few times before trying my way as it as this is somewhat unique from what I have seen. This is a method that I have found works really well for me which does not involve using a normal flocking adhesive that must be painted on, or a "flocking gun".
+![flocked pic 1](/images/11%20-%20CAosZ5c.jpg)
+People do flocking in different ways. I recommend re-reading this section a few times before trying my way as it as this is somewhat unique from what I have seen. This is a method that I have found works really well for me which does not involve using a normal flocking adhesive that must be painted on, or a flocking gun.
 
 I prefer to use [3m super77 spray adhesive](https://amzn.to/31ck8pz) and find that it works very, very well for holding flocking. You do need to work sort of fast here as the spray adhesive does not have a long cure time. You might test out your methods on a sheet of cardboard first to get the hang of it.
 
@@ -101,23 +101,23 @@ After everything is covered in flocking, begin patting the flocking on with your
 
 Let the dashboard sit overnight in a warm place with the patted flocking sitting on it. Don't touch it! Don't think about touching it! We want the adhesive to cure. 3m says this takes 24 hours.
 
-After the dashboard as sat for a while, gently dust off the flocking. I collect the "used" flocking in a bag and re-use it as bits of dirt or debris don't tend to cause any problems with using flocking.
+After the dashboard as sat for a while, gently dust off the flocking. I collect the used flocking in a bag and re-use it as bits of dirt or debris don't tend to cause any problems with using flocking.
 
 You are done. Now we get to put things back together.
 
 Note! If you are not interested in the flocking, one can skip this and instead shoot the dash in a [textured paint](https://amzn.to/3o7jPF2). With this, you can get a similar to factory appearance.
 
-![flocked pic 2]("/images/12%20-%20UOa06Gp.jpg")
+![flocked pic 2](/images/12%20-%20UOa06Gp.jpg)
 
 ### Step 9 - gauge and accessory reinstall ###
-![gauges reinstalled pic 1]("/images/13%20-%20NGMaqsw.jpg")
+![gauges reinstalled pic 1](/images/13%20-%20NGMaqsw.jpg)
 Here, the gauges are reinstalled, air ducts reinstalled, glove box lid reinstalled. Notice that the glovebox lid is flocked too!
 
 ### Step 10 - dashboard is back in the car ###
-![dash going back in car pic 1]("/images/14%20-%20gxpUUa2.jpg")
+![dash going back in car pic 1](/images/14%20-%20gxpUUa2.jpg)
 Here we see the dash going back in. We can see a gentle fight with some wiring and air ducts happening
 
-![back in car pic 1]("/images/15%20-%20zZTGxTy.jpg")
+![back in car pic 1](/images/15%20-%20zZTGxTy.jpg)
 The dash is fully back in the car -- and the car needs cleaned. We're all done :)
 
 ### reinstall complete, final thoughts ###

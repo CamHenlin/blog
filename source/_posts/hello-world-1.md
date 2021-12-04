@@ -19,6 +19,7 @@ Things that I'll be posting about on this blog include:
   - engineering management?
 - app or program ideas and half-baked implementations of them
 - automotive modifications, restoration posts, aftermarket parts installs, guides, etc
+- dumb automotive ideas
 - children's toy fixes (especially ones with small parts that are easy to break)
 - 3d printing stuff and other "maker" type projects
   - lots of small projects involving raspberry pis
