@@ -103,7 +103,7 @@ When moving Nuklear to Macintosh, it became apparent that there would be a lot o
 	  <p><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">https://github.com/CamHenlin/serialperformanceanalyzer</a></p>
 <p>When moving <a href="">Nuklear</a> to Macintosh, it became apparent that there would be a lot of performance optimization work necessary to provide a usable GUI experience on an 8MHz Macintosh. To make the situation worse, there is no profiling tooling available for Retro68, and no way as far as I could tell to run some kind of code profiler against the pce-macplus emulator, so I came up with a simple library for profiling code over a serial port via simple function calls.</p>
 <p>So let’s say you’re wanting to profile a Retro68 application that you’re working on. Here’s how you might go about that.</p>
-<p>As I outlined in the README for <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">https://github.com/CamHenlin/serialperformanceanalyzer</a>, it is a nodejs script that runs on a host machine (at the end of a serial port) and accepts 3 types of messages:</p>
+<p>As I outlined in the README for <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">serialperformanceanalyzer</a>, it is a nodejs script that runs on a host machine (at the end of a serial port) and accepts 3 types of messages:</p>
 <ul>
 <li>PROFILE_START x - starts tracking x</li>
 <li>PROFILE_END x - stops tracking x. Measures and stores how long x took to run</li>
@@ -115,14 +115,14 @@ When moving Nuklear to Macintosh, it became apparent that there would be a lot o
 <p>What do we have now?</p>
 <ul>
 <li>A <code>PROFILING</code> flag to turn on and off for profiling our app. We should put every piece of profiling we want to add in tags like this (the profile messages are really going to slow things down)</li>
-<li><code>PROFILE_START</code>, <code>PROFILE_END</code>, <code>PROFILE_COMPLETE</code> functions to call in our C code to correspond with the messages that <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">https://github.com/CamHenlin/serialperformanceanalyzer</a> is watching for</li>
+<li><code>PROFILE_START</code>, <code>PROFILE_END</code>, <code>PROFILE_COMPLETE</code> functions to call in our C code to correspond with the messages that <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">serialperformanceanalyzer</a> is watching for</li>
 </ul>
 <p>So what do we do next? Start honing in on slow code! </p>
 <p>We can do things like this throughout our code:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#ifdef PROFILING</span><br><span class="line">    PROFILE_START(&quot;suspected slow code 1&quot;);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">#ifdef PROFILING</span><br><span class="line">    PROFILE_END(&quot;suspected slow code 1&quot;);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
-<p>And as long as we have matching PROFILE_START and PROFILE_END statements, <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">https://github.com/CamHenlin/serialperformanceanalyzer</a> will provide us with a measurement.</p>
-<p>Last, to have <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">https://github.com/CamHenlin/serialperformanceanalyzer</a> produce results, we must call <code>PROFILE_COMPLETE</code>. I recommend adding:</p>
+<p>And as long as we have matching PROFILE_START and PROFILE_END statements, <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">serialperformanceanalyzer</a> will provide us with a measurement.</p>
+<p>Last, to have <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">serialperformanceanalyzer</a> produce results, we must call <code>PROFILE_COMPLETE</code>. I recommend adding:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#ifdef PROFILING</span><br><span class="line">    PROFILE_COMPLETE();</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
 <p>to the <code>Terminate</code> function, which be called by the <code>File &gt; Quit</code> menu option.</p>

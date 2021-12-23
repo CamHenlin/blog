@@ -144,9 +144,44 @@ For some background, I am relatively new to Mac programming but experienced with
 <li>Some UTF8 support has been removed (Macintosh doesn’t support it anyways!)</li>
 <li>The QuickDraw graphics layer has been optimized to draw as little as necessary. We’re doing two things here: Between nuklear draw runs, we only draw commands that are changed from one run to the next. This results in us avoiding full window redraws when we are typing for example. The other thing we’re doing is only copying over the bits of the screen that are changed during our double buffering operations.</li>
 </ul>
-<p>After much optimization, the UI performance is close to excellent. I think I was able to come to approximately 10x performance improvement from base Nuklear with these changes which was necessary to work well on an 8MHz Macintosh. Performance gains were quantified and verified using (this strategy for profiling Retro68 applications)[]. Using the default system font and standard drawing routines I think also gives things a very “Mac-like” feel.</p>
+<p>After optimization, the UI performance is close to excellent. I was able to come to approximately 10x performance improvement from base Nuklear with these changes which was necessary to work well on an 8MHz Macintosh. Performance gains were quantified and verified using <a href="/2021/12/21/Profiling-your-Retro68-application/index.html">this strategy for profiling Retro68 applications</a>. Using the default system font and standard drawing routines I think also gives things a very “Mac-like” feel.</p>
 <p>I have the <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> up with a small example application ready to build against – the repo README file outlines the necessary steps to get started on your own changes and my other post (here)[] should help get you up and running with a development workflow. You can start developing your own Nuklear-based Macintosh application using this repo as a base today.</p>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>put demo gif here</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><div class="pcejs pcejs-container">
+  <div class="pcejs pcejs-loading-status">Downloading...</div>
+  <div class="pcejs-border">
+    <canvas class="pcejs pcejs-canvas" oncontextmenu="event.preventDefault()"></canvas>
+  </div>
+</div>
+
+<p class="pcejs">press esc + &uarr; to zoom in, esc + &darr; to zoom out</p>
+<script type="text/javascript" src="https://unpkg.com/pcejs-macplus@0.2.2/pcejs-macplus.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/pcejs-util@0.2.2/pcejs-util.umd.js"></script>
+<script>
+  // add a load progress bar. not required, but good ux
+  var loadingStatus = PCEJSUtil.loadingStatus(
+    document.querySelector('.pcejs-loading-status')
+  );
+  PCEJSMacplus({
+    arguments: ['-c', 'pce-config.cfg', '-r'],
+    autoloadFiles: [
+      'https://jamesfriend.com.au/pce-js/codepen/mac-plus.rom', // a macintosh rom file (you can use this one or any rom from an early macintosh eg. classic or earlier)
+      'https://jamesfriend.com.au/pce-js/codepen/hd1.qed', // a macintosh disk image (replace this file with your own)
+      'https://jamesfriend.com.au/pce-js/codepen/pce-config.cfg', // the PCE config file (edit and replace this file with your own)
+      'https://unpkg.com/pcejs-macplus@latest/macplus-pcex.rom', // the PCE extension rom, from the pcejs-macplus package
+    ],
+    locateFile(filename) {
+      // allows you to specify the absolute path to where the .wasm file is located (from the pcejs-macplus package)
+      return 'https://unpkg.com/pcejs-macplus@latest/' + filename;
+    },
+    print: console.log.bind(console),
+    printErr: console.warn.bind(console),
+    canvas: document.querySelector('.pcejs-canvas'),
+    monitorRunDependencies: function(remainingDependencies) {
+      loadingStatus.update(remainingDependencies);
+    },
+  });
+</script>
+
 <h2 id="That’s-great-but-what-can-we-do-with-Nuklear"><a href="#That’s-great-but-what-can-we-do-with-Nuklear" class="headerlink" title="That’s great, but what can we do with Nuklear?"></a>That’s great, but what can we do with Nuklear?</h2><p>Using the project skeleton at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> and <a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/index.html">my Retro68 getting started guide</a>, you can use Nuklear to develop GUI-based Macintosh apps with relative ease.</p>
 <p>Everything that applies to some of the Nuklear documentation that you find online should work here:</p>
 <ul>
@@ -155,6 +190,10 @@ For some background, I am relatively new to Mac programming but experienced with
 <li><a target="_blank" rel="noopener" href="https://dexp.in/articles/nuklear-intro/">https://dexp.in/articles/nuklear-intro/</a></li>
 <li><a target="_blank" rel="noopener" href="https://wiki.orx-project.org/en/tutorials/ui/nuklear">https://wiki.orx-project.org/en/tutorials/ui/nuklear</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PL3-G4vZDng04veWuMASV708VAnSKgV8PK">https://www.youtube.com/playlist?list=PL3-G4vZDng04veWuMASV708VAnSKgV8PK</a></li>
+</ul>
+<h2 id="Classic-Macintosh-Nuklear-projects"><a href="#Classic-Macintosh-Nuklear-projects" class="headerlink" title="Classic Macintosh Nuklear projects"></a>Classic Macintosh Nuklear projects</h2><p>Are you building a project using Nuklear on classic Macintosh? Let me know! I’ll include it here.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/MessagesForMacintosh">https://github.com/CamHenlin/MessagesForMacintosh</a></li>
 </ul>
 
 	  <div class="article-footer-copyright" style="display: none;">
