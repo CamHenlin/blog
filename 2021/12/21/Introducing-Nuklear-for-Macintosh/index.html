@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Introducing Nuklear for Macintosh | cam henlin&#39;s blog</title>
+  <meta name="author" content="cameron henlin">
+  
+  <meta name="description" content="I was curious what people’s opinions were on the state of GUI programming on old Macs. Here goes my rambling post on the subject, hopefully this is en">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Introducing Nuklear for Macintosh"/>
+  <meta property="og:site_name" content="cam henlin&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">cam henlin&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Introducing Nuklear for Macintosh</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <p>I was curious what people’s opinions were on the state of GUI programming on old Macs. Here goes my rambling post on the subject, hopefully this is enough to get a discussion going. :D</p>
+<p>For some background, I am new to Mac programming but experienced with programming in general. I have been doing a fair amount of programming using the Retro68 console recently, but now I’m looking to create some more GUI-based applications, so they can feel more “Mac-like”.</p>
+<p>I’ve been pouring through the books “Inside Macintosh: Macintosh Toolbox Essentials” and “Inside Macintosh: More Macintosh Toolbox” along with some other resources online, and have been playing around a bit manipulating the “MenuSample” test app from this blog post: <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/">http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/</a>.</p>
+<p>I’m forming some opinions that I’m wondering if I should be swayed on:<br>programming against the Macintosh Toolbox is cumbersome, difficult to use<br>for example, even creating a textbox to handle input on the screen requires multiple steps across multiple files (res file definition + handling in code and the code is non-trivial compared to how one might do it today)<br>it is difficult to define layouts and respond to size changes. adding lots of elements to a window and dealing with them is pretty hard<br>this is probably hindering the creation of at least a subset of new Mac apps that could be getting developed… Personally I think there is a lot of interest but the barrier to entry is high<br>GUI programming has advanced a lot in the last 30 years and even basic GUI libraries do a lot more for the programmer these days<br>Programmers writing software for Macs in the 80s and 90s were heroes. It’s amazing what they accomplished with the tooling and resources that they had</p>
+<p>Am I wrong about any of that? What do you think?</p>
+<p>So, I’m wondering: back in the day, were there libraries or other resources used to aide the creation of complicated Mac GUIs? Obviously you could slap together whatever you want in HyperCard or something, but I mean libraries that would have been used with MPW, THINK C, etc</p>
+<p>Additionally, along those lines, but more modern: Has anyone considered writing a QuickDraw implementation for <a target="_blank" rel="noopener" href="https://github.com/Immediate-Mode-UI/Nuklear">https://github.com/Immediate-Mode-UI/Nuklear</a> or <a target="_blank" rel="noopener" href="https://github.com/ocornut/imgui">https://github.com/ocornut/imgui</a>? I think that either would be relatively straightforward. For example the Allegro5 and SDL2 back ends for both libraries have a lot of the same functionality that QuickDraw exposes and these libraries both support the creation of some pretty complicated apps without a lot of the difficult code involved. As an aside, I think there used to be an old SDL1 version that supported PPC Classic MacOS that could likely be backported further as well (see: <a target="_blank" rel="noopener" href="https://nondisplayable.ca/2017/12/20/sdl-on-classic-mac.html">https://nondisplayable.ca/2017/12/20/sdl-on-classic-mac.html</a>), but I think that just rolling with QuickDraw here would be the way to go and likely more performant.</p>
+<p>I’m interested in hearing your thoughts on GUI programming for old Macs, things that you’ve dealt with in your own code, your opinion on why I am wrong about Macintosh Toolbox, opinions on single file C libraries, etc</p>
+<p>I’m still interested in others’ input, but I think I am pretty set on trying to create a QuickDraw back end for nuklear using the allegro5 back end as a guide. I am going to start looking at this tonight or tomorrow evening. I have some older experience with Alllegro so this seems like a good fit for me. </p>
+<p>My intents up front will be:</p>
+<ul>
+<li>Get a POC working as quickly as possible to prove the idea is solid, get the source code online for others to look at.</li>
+<li>only support 1 font up front - loading in other fonts from nuklear would require more complex image rendering that QuickDraw can’t provide</li>
+<li>no image support of any kind - again, QuickDraw has limited facilities for handling images, I think PICTv1 only. this could happen in the future maybe, but someone would need to create a function to render at least BMPs using quickdraw (probably pretty easy tbh)</li>
+<li>b&amp;w support only - again, might be easy to use color QuickDraw here, but I am personally more interested in coding for b&amp;w Macs</li>
+</ul>
+<p>I made some progress on building a QuickDraw backend for Nuklear (<a target="_blank" rel="noopener" href="https://github.com/Immediate-Mode-UI/Nuklear">https://github.com/Immediate-Mode-UI/Nuklear</a>) last night and finally got it drawing a UI! Not usable yet but I’m liking where it’s going. I’ve found the “Inside Macintosh: Imaging with QuickDraw” most helpful here so far: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw/tree/messy-but-kinda-working">https://github.com/CamHenlin/nuklear-quickdraw/tree/messy-but-kinda-working</a></p>
+<p>I’ve got it trying to display (and run) a calculator and took a short video. I believe I’ll have it fully functioning soon. Even if it ends up not being entirely useful I’m learning a lot building it out </p>
+<p>I’ve now got nuklear fully working outside of a few small things and code cleanup  (for test apps anyways, going to start using it to build something more useful soon…) using B&amp;W QuickDraw at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a>. I think having a simple immediate mode GUI library is really nice and is going to be an excellent choice for building out small apps for Classic Macs rather than needing to dive in on the toolbox. The UI performance is excellent, with no flicker of any kind and instant response to user input, on the Mac Classic emulator running at standard speed. Using the default system font and standard drawing routines I think also gives things a very “Mac-like” feel.</p>
+<p>Yes, I was able to do the same thing. The entire UI is drawn using QuickDraw commands to an offscreen bitmap, then then drawn to the window as a single CopyBits command, much like double buffering in a video game engine. This works really really well and made the UI perform perfectly, eliminated flicker, etc. Like I said the performance here is really, really good. </p>
+<p>It looks and runs pretty good, maybe needs a little tweaking here and there but seems totally acceptable to build an app with, keeping the limitations in mind. The code behind the app demo is really small in terms of what you would expect for such a complicated Mac gui (see: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw/blob/main/overview.c">https://github.com/CamHenlin/nuklear-quickdraw/blob/main/overview.c</a>) - some of the features don’t quite work correctly or could just be ignored on Mac. Text input isn’t perfect, graphs aren’t perfect (looking at you axis labels), I don’t have images implemented, (but now have myself eyeing adding a B&amp;W PNG decoder to the repo!) etc…</p>
+
+	  <div class="article-footer-copyright" style="display: none;">
+© 2020 cameron henlin's Blog
+</div>
+
+	</div>
+
+	
+	<span id="/2021/12/21/Introducing-Nuklear-for-Macintosh/" class="leancloud-visitors view" data-flag-title="Introducing Nuklear for Macintosh">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2021/12/21/Building-a-useful-Macintosh-application-with-Nuklear-and-CoprocessorJS-Messages-for-Macintosh/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//henlin-net.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-12-21 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+<script type="text/javascript">
+var disqus_shortname = 'henlin-net';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2021 cameron henlin's Blog
+  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎top</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+</body>
+   </html>

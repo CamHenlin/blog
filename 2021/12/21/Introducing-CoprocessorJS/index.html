@@ -6,19 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>3D printing a car | cam henlin&#39;s blog</title>
+  <title>Introducing CoprocessorJS | cam henlin&#39;s blog</title>
   <meta name="author" content="cameron henlin">
   
-  <meta name="description" content="Okay, well, maybe just a car body.
-Some background links:
-
-https://www.cadagency.co.uk/ivan-sentch-the-man-who-printed-an-aston-martin/
-https://www.mo">
+  <meta name="description" content="The motivation – what is CoprocessorJS and what am I hoping to accomplish?One of my dreams is to create a modern piece of software that allows program">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="3D printing a car"/>
+  <meta property="og:title" content="Introducing CoprocessorJS"/>
   <meta property="og:site_name" content="cam henlin&#39;s blog"/>
 
   
@@ -86,7 +82,7 @@ https://www.mo">
 
 	
 		<div class="page-header">
-			<h1> 3D printing a car</h1>
+			<h1> Introducing CoprocessorJS</h1>
 		</div>
 	
 
@@ -103,38 +99,20 @@ https://www.mo">
 	<div class="mypage">
 	  
 
-	  <p>Okay, well, maybe just a car body.</p>
-<p>Some background links:</p>
+	  <h2 id="The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish"><a href="#The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish" class="headerlink" title="The motivation – what is CoprocessorJS and what am I hoping to accomplish?"></a>The motivation – what is CoprocessorJS and what am I hoping to accomplish?</h2><p>One of my dreams is to create a modern piece of software that allows programmers on any old machine to hand off work loads off to a modern machine over the serial port and get a response back that they can then interact with. This software will provide a standard interface for serial-connected devices to provide code to execute.</p>
+<p>For my first approach, I am going to have workloads all be in modern nodejs. I like nodejs because it has a vast ecosystem of easy to use packages via npm, and if you are using an old computer, should be “fast enough” to do whatever it is you are trying to do. I have built a C-based package aimed at classic (System 6-based) Macintoshes as a first use case.</p>
+<p>Ultimately I think that using libraries like CoprocessorJS, we can enable a new class of useful, modern, Internet-connected applications for classic machines without hacking around old TCP/IP libraries or fighting encryption.</p>
+<h2 id="What-can-it-do"><a href="#What-can-it-do" class="headerlink" title="What can it do?"></a>What can it do?</h2><p>The basic functions that will go into a library include: </p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.cadagency.co.uk/ivan-sentch-the-man-who-printed-an-aston-martin/">https://www.cadagency.co.uk/ivan-sentch-the-man-who-printed-an-aston-martin/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.motor1.com/news/375313/dad-3d-prints-lambo-aventador/">https://www.motor1.com/news/375313/dad-3d-prints-lambo-aventador/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.meshmixer.com/download.html">https://www.meshmixer.com/download.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://amzn.to/2NtcDq9">https://amzn.to/2NtcDq9</a> - 3d pen</li>
-<li><a target="_blank" rel="noopener" href="https://amzn.to/3dDlHDE">https://amzn.to/3dDlHDE</a> - filament</li>
-<li><a target="_blank" rel="noopener" href="https://amzn.to/3bqxHpa">ender 5 plus</a></li>
+<li>one for loading nodejs programs over the serial port</li>
+<li>one function for calling functions in the nodejs program over the serial port back and getting a response</li>
+<li>one for evaluating raw string code within the nodejs app on the serial port and getting a response.</li>
 </ul>
-<p>The idea is to:</p>
-<ul>
-<li>take a model of the shell of a car,</li>
-<li>thicken it to say 2mm,</li>
-<li>slice it in to a bunch of panels,</li>
-<li>print it.</li>
-</ul>
-<p>I’ve been interested in 3D printing a car body for a while. I’ve read about some other stories of people doing 3D printed bodies for replica Lamborghinis or Aston Martins - basically unattainable stuff for regular people. It’s a pretty great idea. From what I can tell, those vehicles used custom tube chassis. But what about re-bodying an existing car?</p>
-<p>I want to explore doing it on my own.</p>
-<p>Here’s what I’m thinking:</p>
-<ul>
-<li>grab a model offline (or draw your own - of your favorite car)</li>
-<li>add some thickness to its shell in Meshmixer (using the “offset” tool in the edit menu. I’m thinking 2mm)</li>
-<li>then use Fusion 360 (or Meshmixer, I think - I’m not really as familiar,) and cut the model up in to pieces small enough to fit on to your 3D printer. I use an <a target="_blank" rel="noopener" href="https://amzn.to/3bqxHpa">ender 5 plus</a> so I can do pretty big pieces. The Ender 5 plus is barely big enough. I wouldn’t even attempt this with anything smaller - the bigger, the better</li>
-</ul>
-<p>You should make sure your printer is dialed in enough to do some extreme overhangs so you can print without any supports. Supports are going to be a big waste of filament and you’ll have a lot of printing to do. I print one piece at a time so a failure doesn’t waste a lot of filament. I also swapped to a 0.8mm nozzle so prints go pretty quickly.</p>
-<p>I estimate the 3D printing costs at approximately $400 worth of ABS at $20/spool for a complete body. There will be approximately 20 spools used over 80 panels. Each approximately 300mm x 300mm x 2mm “panel” is about 250g of filament so I can get about 4 “panels” from one spool. A little leftover from the spools is ok, because I will use a 3D pen to “weld” then apenls together.</p>
-<p>The body will obviously be a collection of “panels”. I will weld them together using a 3D printing pen and ABS. My plan is to set two edges together, and scribble across the edge while extruding from the pen. After I spot things together in one or two spots I can</p>
-<p>After the body is together, I am going to wrap it in fiberglass. Since I used ABS to print, I believe I can dissolve ABS, Acetone and bits of fiberglass such as <a target="_blank" rel="noopener" href="https://amzn.to/3kbgiF7">https://amzn.to/3kbgiF7</a> then paint that mixture on to the body. This will give a “hair” fiber-laced body for the fiberglass sheets and resin to really stick to.</p>
-<p>It would be interesting to start a business producing 3D printed and fiberglass or carbon fiber-wrapped bodies for people to assemble on their own chassis.</p>
-<p>Some chassis that I think would be really great platforms:</p>
-<p>C4 or C5 Corvettes for front engined stuff - decent handling platforms, decent brakes, etc<br>Porsche Boxster S for mid engined - again decent handling platform, good brakes, good transmission if you want to do 400+hp, etc</p>
+<p>The current iteration of the code allows chunks of data in a function or eval response to reach up to 100kb, beyond that a programmer will have to manually chunk data. That’s really a lot of data and should allow for some interesting stuff.</p>
+<h2 id="Testing-it-out"><a href="#Testing-it-out" class="headerlink" title="Testing it out"></a>Testing it out</h2><p>In addition to that, I’ve worked out a simple shell script for packaging complete nodejs applications in to a C application to send over the wire, and used this strategy to create a slightly more interesting Retro68 C test application. The test application includes a nodejs application that sets up puppeteer (headless chrome) on the remote system, and uses puppeteer to grab the text contents of a web page, then dumps that text back across the serial port. I think this is pretty neat. </p>
+<p>This code is up at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/retro68-coprocessorjs-test">https://github.com/CamHenlin/retro68-coprocessorjs-test</a></p>
+<p>At this point, I think someone could use the Retro68 test application to create just about any terminal-based application they want, with all of the heavy lifting done in modern JS on the other side of a serial port, as long as the Retro68 console suits their needs. Writing Internet-conected applications is now easy, without mucking around with old TCP libraries or expensive hardware. If you need instructions on how to build a physical USB cable to plug in to your Mac’s serial port, see my other post <a href="">here</a></p>
+<h2 id="Getting-the-library"><a href="#Getting-the-library" class="headerlink" title="Getting the library"></a>Getting the library</h2><p>In addition to that, the C library file itself is also up in a discrete repository with a lengthy README explaining how to use the library to build a coprocessorjs application. That new repo is at: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/coprocessorjslib">https://github.com/CamHenlin/coprocessorjslib</a>. I tried to make the README as clear as possible, let me know if you have any questions about it. I intend to consume this library in a more interesting application (with a corresponding post!) soon.</p>
 
 	  <div class="article-footer-copyright" style="display: none;">
 © 2020 cameron henlin's Blog
@@ -143,7 +121,7 @@ https://www.mo">
 	</div>
 
 	
-	<span id="/2021/02/03/3D-printing-a-car/" class="leancloud-visitors view" data-flag-title="3D printing a car">
+	<span id="/2021/12/21/Introducing-CoprocessorJS/" class="leancloud-visitors view" data-flag-title="Introducing CoprocessorJS">
 		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
 	</span>
 	
@@ -154,13 +132,13 @@ https://www.mo">
 
     
     
-    <a href="/2021/02/03/sucker-car-notes/" type="button" class="btn btn-default"><i
+    <a href="/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/" type="button" class="btn btn-default"><i
                 class="fa fa-arrow-circle-o-left"></i> Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2020/11/30/Destroyed-Datsun-240Z-dashboard-brought-back-to-life/" type="button" class="btn btn-default ">Next<i
+    <a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -212,7 +190,7 @@ https://www.mo">
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2021-02-03 
+	2021-12-21 
 	</div>
 	
 

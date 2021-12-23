@@ -6,19 +6,16 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>3D printing a car | cam henlin&#39;s blog</title>
+  <title>Building a useful Macintosh application with Nuklear and CoprocessorJS (Messages for Macintosh) | cam henlin&#39;s blog</title>
   <meta name="author" content="cameron henlin">
   
-  <meta name="description" content="Okay, well, maybe just a car body.
-Some background links:
-
-https://www.cadagency.co.uk/ivan-sentch-the-man-who-printed-an-aston-martin/
-https://www.mo">
+  <meta name="description" content="https://github.com/CamHenlin/MessagesForMacintosh
+Finally after building up lots of tooling for classic Macintosh, we can develop a full application. ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="3D printing a car"/>
+  <meta property="og:title" content="Building a useful Macintosh application with Nuklear and CoprocessorJS (Messages for Macintosh)"/>
   <meta property="og:site_name" content="cam henlin&#39;s blog"/>
 
   
@@ -86,7 +83,7 @@ https://www.mo">
 
 	
 		<div class="page-header">
-			<h1> 3D printing a car</h1>
+			<h1> Building a useful Macintosh application with Nuklear and CoprocessorJS (Messages for Macintosh)</h1>
 		</div>
 	
 
@@ -103,39 +100,16 @@ https://www.mo">
 	<div class="mypage">
 	  
 
-	  <p>Okay, well, maybe just a car body.</p>
-<p>Some background links:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.cadagency.co.uk/ivan-sentch-the-man-who-printed-an-aston-martin/">https://www.cadagency.co.uk/ivan-sentch-the-man-who-printed-an-aston-martin/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.motor1.com/news/375313/dad-3d-prints-lambo-aventador/">https://www.motor1.com/news/375313/dad-3d-prints-lambo-aventador/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.meshmixer.com/download.html">https://www.meshmixer.com/download.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://amzn.to/2NtcDq9">https://amzn.to/2NtcDq9</a> - 3d pen</li>
-<li><a target="_blank" rel="noopener" href="https://amzn.to/3dDlHDE">https://amzn.to/3dDlHDE</a> - filament</li>
-<li><a target="_blank" rel="noopener" href="https://amzn.to/3bqxHpa">ender 5 plus</a></li>
+	  <p><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/MessagesForMacintosh">https://github.com/CamHenlin/MessagesForMacintosh</a></p>
+<p>Finally after building up lots of tooling for classic Macintosh, we can develop a full application. </p>
+<h2 id="If-you’re-stumbling-on-this-article-without-context-you-might-want-to-start-with-these-to-get-up-to-speed"><a href="#If-you’re-stumbling-on-this-article-without-context-you-might-want-to-start-with-these-to-get-up-to-speed" class="headerlink" title="If you’re stumbling on this article without context, you might want to start with these to get up to speed:"></a>If you’re stumbling on this article without context, you might want to start with these to get up to speed:</h2><ul>
+<li></li>
+<li></li>
+<li></li>
 </ul>
-<p>The idea is to:</p>
-<ul>
-<li>take a model of the shell of a car,</li>
-<li>thicken it to say 2mm,</li>
-<li>slice it in to a bunch of panels,</li>
-<li>print it.</li>
-</ul>
-<p>I’ve been interested in 3D printing a car body for a while. I’ve read about some other stories of people doing 3D printed bodies for replica Lamborghinis or Aston Martins - basically unattainable stuff for regular people. It’s a pretty great idea. From what I can tell, those vehicles used custom tube chassis. But what about re-bodying an existing car?</p>
-<p>I want to explore doing it on my own.</p>
-<p>Here’s what I’m thinking:</p>
-<ul>
-<li>grab a model offline (or draw your own - of your favorite car)</li>
-<li>add some thickness to its shell in Meshmixer (using the “offset” tool in the edit menu. I’m thinking 2mm)</li>
-<li>then use Fusion 360 (or Meshmixer, I think - I’m not really as familiar,) and cut the model up in to pieces small enough to fit on to your 3D printer. I use an <a target="_blank" rel="noopener" href="https://amzn.to/3bqxHpa">ender 5 plus</a> so I can do pretty big pieces. The Ender 5 plus is barely big enough. I wouldn’t even attempt this with anything smaller - the bigger, the better</li>
-</ul>
-<p>You should make sure your printer is dialed in enough to do some extreme overhangs so you can print without any supports. Supports are going to be a big waste of filament and you’ll have a lot of printing to do. I print one piece at a time so a failure doesn’t waste a lot of filament. I also swapped to a 0.8mm nozzle so prints go pretty quickly.</p>
-<p>I estimate the 3D printing costs at approximately $400 worth of ABS at $20/spool for a complete body. There will be approximately 20 spools used over 80 panels. Each approximately 300mm x 300mm x 2mm “panel” is about 250g of filament so I can get about 4 “panels” from one spool. A little leftover from the spools is ok, because I will use a 3D pen to “weld” then apenls together.</p>
-<p>The body will obviously be a collection of “panels”. I will weld them together using a 3D printing pen and ABS. My plan is to set two edges together, and scribble across the edge while extruding from the pen. After I spot things together in one or two spots I can</p>
-<p>After the body is together, I am going to wrap it in fiberglass. Since I used ABS to print, I believe I can dissolve ABS, Acetone and bits of fiberglass such as <a target="_blank" rel="noopener" href="https://amzn.to/3kbgiF7">https://amzn.to/3kbgiF7</a> then paint that mixture on to the body. This will give a “hair” fiber-laced body for the fiberglass sheets and resin to really stick to.</p>
-<p>It would be interesting to start a business producing 3D printed and fiberglass or carbon fiber-wrapped bodies for people to assemble on their own chassis.</p>
-<p>Some chassis that I think would be really great platforms:</p>
-<p>C4 or C5 Corvettes for front engined stuff - decent handling platforms, decent brakes, etc<br>Porsche Boxster S for mid engined - again decent handling platform, good brakes, good transmission if you want to do 400+hp, etc</p>
-
+<h2 id="The-motivation"><a href="#The-motivation" class="headerlink" title="The motivation"></a>The motivation</h2><p>Ultimately I want to use a Macintosh Classic all day, every day, for useful things and have it be a major part of my workflow. </p>
+<p>To that end, I want to create an iMessage client to send and receive messages with my friends.</p>
+<h2 id="The-major-components"><a href="#The-major-components" class="headerlink" title="The major components"></a>The major components</h2><h3 id="The-“new”-Mac-app"><a href="#The-“new”-Mac-app" class="headerlink" title="The “new” Mac app"></a>The “new” Mac app</h3><h3 id="The-“old”-Macintosh-app"><a href="#The-“old”-Macintosh-app" class="headerlink" title="The “old” Macintosh app"></a>The “old” Macintosh app</h3><h3 id="The-“glue”-app"><a href="#The-“glue”-app" class="headerlink" title="The “glue” app"></a>The “glue” app</h3><h2 id="Putting-it-all-together"><a href="#Putting-it-all-together" class="headerlink" title="Putting it all together"></a>Putting it all together</h2>
 	  <div class="article-footer-copyright" style="display: none;">
 © 2020 cameron henlin's Blog
 </div>
@@ -143,7 +117,7 @@ https://www.mo">
 	</div>
 
 	
-	<span id="/2021/02/03/3D-printing-a-car/" class="leancloud-visitors view" data-flag-title="3D printing a car">
+	<span id="/2021/12/21/Building-a-useful-Macintosh-application-with-Nuklear-and-CoprocessorJS-Messages-for-Macintosh/" class="leancloud-visitors view" data-flag-title="Building a useful Macintosh application with Nuklear and CoprocessorJS (Messages for Macintosh)">
 		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
 	</span>
 	
@@ -154,13 +128,13 @@ https://www.mo">
 
     
     
-    <a href="/2021/02/03/sucker-car-notes/" type="button" class="btn btn-default"><i
+    <a href="/2021/12/21/Profiling-your-Retro68-application/" type="button" class="btn btn-default"><i
                 class="fa fa-arrow-circle-o-left"></i> Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2020/11/30/Destroyed-Datsun-240Z-dashboard-brought-back-to-life/" type="button" class="btn btn-default ">Next<i
+    <a href="/2021/12/21/Introducing-Nuklear-for-Macintosh/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -212,7 +186,7 @@ https://www.mo">
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2021-02-03 
+	2021-12-21 
 	</div>
 	
 

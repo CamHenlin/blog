@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>A simplified guide to classic Macintosh development using Retro68 and pce-macplus | cam henlin&#39;s blog</title>
+  <meta name="author" content="cameron henlin">
+  
+  <meta name="description" content="I started playing around using Retro68 on a modern Linux-based machine to do development work for old Macintosh computers in the spirit of one of my p">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="A simplified guide to classic Macintosh development using Retro68 and pce-macplus"/>
+  <meta property="og:site_name" content="cam henlin&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">cam henlin&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> A simplified guide to classic Macintosh development using Retro68 and pce-macplus</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <p>I started playing around using <a target="_blank" rel="noopener" href="https://github.com/autc04/Retro68">Retro68</a> on a modern Linux-based machine to do development work for old Macintosh computers in the spirit of <a href="/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/">one of my previous posts</a>.</p>
+<p>Who can use this guide? Anyone who wants to get up and running with Mac development being cross compiled from a modern Linux environment as quickly as possible. I’ve laid out the commands and explanations in the most straightforward way I could with the simple goal of running a hello world application.</p>
+<p>I used a few other guides to build up to what I ultimately wound up using for my development workflow:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/">http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/</a> - this is hands down the best guide I have seen and what I base most of this workflow on</li>
+<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/">http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/">http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/autc04/Retro68">https://github.com/autc04/Retro68</a></li>
+</ul>
+<p>I used Ubuntu running on an intel-based Mac Mini for my build environment. To run the complete toolchain that I’ll outline in this post and several other following posts, you’ll need a Linux-based environment as that is the only way I’m aware of to make full use of pce-macplus’s serial port. Off we go…</p>
+<h2 id="Setting-up-Retro68"><a href="#Setting-up-Retro68" class="headerlink" title="Setting up Retro68"></a>Setting up Retro68</h2><p>There are complete instructions at <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/">http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/</a>, these are abridged for Ubuntu between the toughdev and Retro68 docs:</p>
+<p>First ensure prereqs are installed:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake libgmp-dev libmpfr-dev libmpc-dev libboost-all-dev bison flex texinfo ruby</span><br></pre></td></tr></table></figure>
+
+<p>Then clone the repo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;autc04&#x2F;Retro68.git</span><br><span class="line">cd Retro68</span><br><span class="line">git pull</span><br><span class="line">git submodule update</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+
+<p>Get the MPW includes downloaded and in place:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;henlin.net&#x2F;images&#x2F;Retro68_includes.zip</span><br><span class="line">unzip Retro68_includes.zip</span><br><span class="line">mv -R .&#x2F;Retro68_includes&#x2F;* Retro68&#x2F;InterfacesAndLibraries</span><br></pre></td></tr></table></figure>
+
+<p>Build Retro68:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir Retro68-build</span><br><span class="line">cd Retro68-build</span><br><span class="line">..&#x2F;Retro68&#x2F;build-toolchain.bash</span><br></pre></td></tr></table></figure>
+
+<p>If everything went well, you should now have a functional Retro68 environment! Back to that in a bit…</p>
+<h2 id="Setting-up-serial-port-emulation"><a href="#Setting-up-serial-port-emulation" class="headerlink" title="Setting up serial port emulation"></a>Setting up serial port emulation</h2><p>One of the motivations here is that we have full serial communication to enable the development of software utilizing the serial port on the Macintosh for bidirectional communication. We emulate that locally with tty0tty</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;freemed&#x2F;tty0tty</span><br><span class="line">tar xf tty0tty-1.2.tgz</span><br><span class="line">cd tty0tty-1.2&#x2F;module</span><br><span class="line">make</span><br><span class="line">sudo cp tty0tty.ko &#x2F;lib&#x2F;modules&#x2F;$(uname -r)&#x2F;kernel&#x2F;drivers&#x2F;misc&#x2F;</span><br><span class="line">sudo depmod</span><br><span class="line">sudo modprobe tty0tty</span><br><span class="line">sudo chmod 666 &#x2F;dev&#x2F;tnt*</span><br></pre></td></tr></table></figure>
+
+<p>You should now have functional fake serial port pairs at <code>/dev/tnt*</code> (ex, <code>/dev/tnt0</code> is linked to <code>/dev/tnt1</code>, etc)</p>
+<h2 id="Setting-up-pce-macplus"><a href="#Setting-up-pce-macplus" class="headerlink" title="Setting up pce-macplus"></a>Setting up pce-macplus</h2><p>Again, complete instructions are available at <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/">http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/</a></p>
+<p>To run pce-macplus on latest Ubuntu, we need to compile it ourselves. We’ll do that with the following:</p>
+<p>First we need some prereqs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libx11-dev libx11-doc libxau-dev libxcb1-dev libxdmcp-dev x11proto-core-dev x11proto-input-dev x11proto-kb-dev xorg-sgml-doctools xtrans-dev</span><br><span class="line">sudo apt-get install libsdl1.2-dev libsdl1.2debian</span><br></pre></td></tr></table></figure>
+
+<p>Then we’ll download and install pce-macplus:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;www.hampa.ch&#x2F;pub&#x2F;pce&#x2F;pce-0.2.2.tar.gz</span><br><span class="line">tar -xvf pce-0.2.2.tar.gz</span><br><span class="line">cd pce-0.2.2</span><br><span class="line">.&#x2F;configure -with-x --with-sdl --enable-tun --enable-char-ppp --enable-char-tcp --enable-sound-oss --enable-char-slip --enable-char-pty --enable-char-posix --enable-char-termios</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>Now we’ll drop a custom configuration in place for pce-macplus, which is used for setting up our serial port to point at <code>/dev/tnt0</code> that we set up in the last part of the guide. If we use the default configuration in place, it will work, but will not interact with tty0tty if we want to do serial port development.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;gist.githubusercontent.com&#x2F;CamHenlin&#x2F;054adf631210cc46159f40b04f5c34a0&#x2F;raw&#x2F;8d545c497a26aa5f5f956efb3b77c75f2d08dcbf&#x2F;mac-classic.cfg</span><br><span class="line">mv .&#x2F;mac-classic.cfg ~&#x2F;Documents&#x2F;Mac\ OS\ Emulators&#x2F;pce-mac&#x2F;pce-mac-classic&#x2F;mac-classic.cfg</span><br></pre></td></tr></table></figure>
+
+<h2 id="Setting-up-VSCode"><a href="#Setting-up-VSCode" class="headerlink" title="Setting up VSCode"></a>Setting up VSCode</h2><p>Download a sample application to start working with. I recommend <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> as a project base and I will use it as the example here as I know it will function in this environment.</p>
+<h2 id="Setting-up-VSCode-1"><a href="#Setting-up-VSCode-1" class="headerlink" title="Setting up VSCode"></a>Setting up VSCode</h2><p>We’re about ready to start coding. VSCode is a great place to do development work on Retro68 projects. Here’s how we can set it up:</p>
+<h2 id="Running-a-“hello-world”-application"><a href="#Running-a-“hello-world”-application" class="headerlink" title="Running a “hello world” application"></a>Running a “hello world” application</h2><h2 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h2>
+	  <div class="article-footer-copyright" style="display: none;">
+© 2020 cameron henlin's Blog
+</div>
+
+	</div>
+
+	
+	<span id="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/" class="leancloud-visitors view" data-flag-title="A simplified guide to classic Macintosh development using Retro68 and pce-macplus">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2021/12/21/Introducing-CoprocessorJS/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//henlin-net.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-12-03 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+<script type="text/javascript">
+var disqus_shortname = 'henlin-net';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2021 cameron henlin's Blog
+  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎top</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+</body>
+   </html>
