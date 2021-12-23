@@ -9,7 +9,8 @@
   <title>Introducing Nuklear for Macintosh | cam henlin&#39;s blog</title>
   <meta name="author" content="cameron henlin">
   
-  <meta name="description" content="I was curious what people’s opinions were on the state of GUI programming on old Macs. Here goes my rambling post on the subject, hopefully this is en">
+  <meta name="description" content="The motivationGUI programming on old Macs can be pretty painful.
+For some background, I am relatively new to Mac programming but experienced with prog">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -99,27 +100,53 @@
 	<div class="mypage">
 	  
 
-	  <p>I was curious what people’s opinions were on the state of GUI programming on old Macs. Here goes my rambling post on the subject, hopefully this is enough to get a discussion going. :D</p>
-<p>For some background, I am new to Mac programming but experienced with programming in general. I have been doing a fair amount of programming using the Retro68 console recently, but now I’m looking to create some more GUI-based applications, so they can feel more “Mac-like”.</p>
+	  <h2 id="The-motivation"><a href="#The-motivation" class="headerlink" title="The motivation"></a>The motivation</h2><p>GUI programming on old Macs can be pretty painful.</p>
+<p>For some background, I am relatively new to Mac programming but experienced with programming in general. I have been doing a fair amount of programming using the Retro68 console recently, but now I’m looking to create some more GUI-based applications, so they can feel more “Mac-like”.</p>
 <p>I’ve been pouring through the books “Inside Macintosh: Macintosh Toolbox Essentials” and “Inside Macintosh: More Macintosh Toolbox” along with some other resources online, and have been playing around a bit manipulating the “MenuSample” test app from this blog post: <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/">http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/</a>.</p>
-<p>I’m forming some opinions that I’m wondering if I should be swayed on:<br>programming against the Macintosh Toolbox is cumbersome, difficult to use<br>for example, even creating a textbox to handle input on the screen requires multiple steps across multiple files (res file definition + handling in code and the code is non-trivial compared to how one might do it today)<br>it is difficult to define layouts and respond to size changes. adding lots of elements to a window and dealing with them is pretty hard<br>this is probably hindering the creation of at least a subset of new Mac apps that could be getting developed… Personally I think there is a lot of interest but the barrier to entry is high<br>GUI programming has advanced a lot in the last 30 years and even basic GUI libraries do a lot more for the programmer these days<br>Programmers writing software for Macs in the 80s and 90s were heroes. It’s amazing what they accomplished with the tooling and resources that they had</p>
-<p>Am I wrong about any of that? What do you think?</p>
-<p>So, I’m wondering: back in the day, were there libraries or other resources used to aide the creation of complicated Mac GUIs? Obviously you could slap together whatever you want in HyperCard or something, but I mean libraries that would have been used with MPW, THINK C, etc</p>
-<p>Additionally, along those lines, but more modern: Has anyone considered writing a QuickDraw implementation for <a target="_blank" rel="noopener" href="https://github.com/Immediate-Mode-UI/Nuklear">https://github.com/Immediate-Mode-UI/Nuklear</a> or <a target="_blank" rel="noopener" href="https://github.com/ocornut/imgui">https://github.com/ocornut/imgui</a>? I think that either would be relatively straightforward. For example the Allegro5 and SDL2 back ends for both libraries have a lot of the same functionality that QuickDraw exposes and these libraries both support the creation of some pretty complicated apps without a lot of the difficult code involved. As an aside, I think there used to be an old SDL1 version that supported PPC Classic MacOS that could likely be backported further as well (see: <a target="_blank" rel="noopener" href="https://nondisplayable.ca/2017/12/20/sdl-on-classic-mac.html">https://nondisplayable.ca/2017/12/20/sdl-on-classic-mac.html</a>), but I think that just rolling with QuickDraw here would be the way to go and likely more performant.</p>
-<p>I’m interested in hearing your thoughts on GUI programming for old Macs, things that you’ve dealt with in your own code, your opinion on why I am wrong about Macintosh Toolbox, opinions on single file C libraries, etc</p>
-<p>I’m still interested in others’ input, but I think I am pretty set on trying to create a QuickDraw back end for nuklear using the allegro5 back end as a guide. I am going to start looking at this tonight or tomorrow evening. I have some older experience with Alllegro so this seems like a good fit for me. </p>
-<p>My intents up front will be:</p>
+<p>I formed some opinions as I got started: </p>
+<ul>
+<li>programming against the Macintosh Toolbox is cumbersome, difficult to use</li>
+<li>for example, even creating a textbox to handle input on the screen requires multiple steps across multiple files (res file definition + handling in code and the code is non-trivial compared to how one might do it today)</li>
+<li>it is difficult to define layouts and respond to size changes. adding lots of elements to a window and dealing with them is pretty hard</li>
+<li>this is probably hindering the creation of at least a subset of new Mac apps that could be getting developed… Personally I think there is a lot of interest but the barrier to entry is high</li>
+<li>GUI programming has advanced a lot in the last 30 years and even basic GUI libraries do a lot more for the programmer these days</li>
+<li>Programmers writing software for Macs in the 80s and 90s were heroes. It’s amazing what they accomplished with the tooling and resources that they had</li>
+</ul>
+<p>Am I wrong about any of that? What do you think? To prove myself wrong, I have spent some time playing with getting some of Mac sample apps working with Retro68, such as: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/TESample">https://github.com/CamHenlin/TESample</a> – check out how much code is required just to get a text area working! We can do better</p>
+<h2 id="What-can-we-do-about-it"><a href="#What-can-we-do-about-it" class="headerlink" title="What can we do about it?"></a>What can we do about it?</h2><p>There are a lot of modern micro UI libraries aimed at embedded devices or to be embedded in other pieces of software. Some of these include:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Immediate-Mode-UI/Nuklear">https://github.com/Immediate-Mode-UI/Nuklear</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ocornut/imgui">https://github.com/ocornut/imgui</a></li>
+<li><a target="_blank" rel="noopener" href="https://lvgl.io/">https://lvgl.io/</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/achimdoebler/UGUI">https://github.com/achimdoebler/UGUI</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rxi/microui">https://github.com/rxi/microui</a></li>
+</ul>
+<p>There are some others that I’m probably missing that would be mentionable as well.</p>
+<h2 id="My-expirements"><a href="#My-expirements" class="headerlink" title="My expirements"></a>My expirements</h2><p>I set on trying to create a QuickDraw back end for a few of these libraries using QuickDraw and targetting System 6 Macs. Here are a few of those repos:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/LVGLQuickDraw">https://github.com/CamHenlin/LVGLQuickDraw</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/UGUIQuickDraw">https://github.com/CamHenlin/UGUIQuickDraw</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/microui-quickdraw">https://github.com/CamHenlin/microui-quickdraw</a></li>
+</ul>
+<p>My intents for these were:</p>
 <ul>
 <li>Get a POC working as quickly as possible to prove the idea is solid, get the source code online for others to look at.</li>
-<li>only support 1 font up front - loading in other fonts from nuklear would require more complex image rendering that QuickDraw can’t provide</li>
+<li>Fully functioning, easy to use and define, GUI</li>
+<li>only support 1 font up front - loading in other fonts from nuklear (or others) would require more complex image rendering that QuickDraw can’t provide</li>
 <li>no image support of any kind - again, QuickDraw has limited facilities for handling images, I think PICTv1 only. this could happen in the future maybe, but someone would need to create a function to render at least BMPs using quickdraw (probably pretty easy tbh)</li>
 <li>b&amp;w support only - again, might be easy to use color QuickDraw here, but I am personally more interested in coding for b&amp;w Macs</li>
 </ul>
-<p>I made some progress on building a QuickDraw backend for Nuklear (<a target="_blank" rel="noopener" href="https://github.com/Immediate-Mode-UI/Nuklear">https://github.com/Immediate-Mode-UI/Nuklear</a>) last night and finally got it drawing a UI! Not usable yet but I’m liking where it’s going. I’ve found the “Inside Macintosh: Imaging with QuickDraw” most helpful here so far: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw/tree/messy-but-kinda-working">https://github.com/CamHenlin/nuklear-quickdraw/tree/messy-but-kinda-working</a></p>
-<p>I’ve got it trying to display (and run) a calculator and took a short video. I believe I’ll have it fully functioning soon. Even if it ends up not being entirely useful I’m learning a lot building it out </p>
-<p>I’ve now got nuklear fully working outside of a few small things and code cleanup  (for test apps anyways, going to start using it to build something more useful soon…) using B&amp;W QuickDraw at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a>. I think having a simple immediate mode GUI library is really nice and is going to be an excellent choice for building out small apps for Classic Macs rather than needing to dive in on the toolbox. The UI performance is excellent, with no flicker of any kind and instant response to user input, on the Mac Classic emulator running at standard speed. Using the default system font and standard drawing routines I think also gives things a very “Mac-like” feel.</p>
-<p>Yes, I was able to do the same thing. The entire UI is drawn using QuickDraw commands to an offscreen bitmap, then then drawn to the window as a single CopyBits command, much like double buffering in a video game engine. This works really really well and made the UI perform perfectly, eliminated flicker, etc. Like I said the performance here is really, really good. </p>
-<p>It looks and runs pretty good, maybe needs a little tweaking here and there but seems totally acceptable to build an app with, keeping the limitations in mind. The code behind the app demo is really small in terms of what you would expect for such a complicated Mac gui (see: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw/blob/main/overview.c">https://github.com/CamHenlin/nuklear-quickdraw/blob/main/overview.c</a>) - some of the features don’t quite work correctly or could just be ignored on Mac. Text input isn’t perfect, graphs aren’t perfect (looking at you axis labels), I don’t have images implemented, (but now have myself eyeing adding a B&amp;W PNG decoder to the repo!) etc…</p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>After much expirementation and time I came to the conclusion that Nuklear would likely be the best fit in terms of these types of libraries due to the possibility for leveraging several built in QuickDraw commands to draw the UI. I think having a simple immediate mode GUI library is really nice and is going to be an excellent choice for building out small apps for Classic Macs rather than needing to dive in on the toolbox.</p>
+<p>It took a lot of work to get things to the point of being usable despite Nuklear being the “most usable” out of box. These optimizations (from base Nuklear) include:</p>
+<ul>
+<li>All nuklear floating point math has been modified to be integer-based math</li>
+<li>Some utf8 support has been removed (Macintosh doesn’t support it anyways!)</li>
+<li>The QuickDraw graphics layer has been optimized to draw as little as necessary</li>
+</ul>
+<p>After much optimization, the UI performance is close to excellent. I think I was able to come to approximately 10x performance improvement from base Nuklear with these changes which was necessary to work well on an 8MHz Macintosh. Performance gains were quantified and verified using (this strategy for profiling Retro68 applications)[]. Using the default system font and standard drawing routines I think also gives things a very “Mac-like” feel.</p>
+<p>I have the <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> up with a small example application ready to build against – the repo README file outlines the necessary steps to get started on your own changes and my other post (here)[] should help get you up and running with a development workflow. You can start developing your own Nuklear-based Macintosh application using this repo as a base today.</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>put demo gif here</p>
 
 	  <div class="article-footer-copyright" style="display: none;">
 © 2020 cameron henlin's Blog
