@@ -112,7 +112,7 @@ For some background, I am relatively new to Mac programming but experienced with
 <li>GUI programming has advanced a lot in the last 30 years and even basic GUI libraries do a lot more for the programmer these days</li>
 <li>Programmers writing software for Macs in the 80s and 90s were heroes. It’s amazing what they accomplished with the tooling and resources that they had</li>
 </ul>
-<p>Am I wrong about any of that? What do you think? To prove myself wrong, I have spent some time playing with getting some of Mac sample apps working with Retro68, such as: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/TESample">https://github.com/CamHenlin/TESample</a> – check out how much code is required just to get a text area working! We can do better</p>
+<p>To prove myself wrong, I have spent some time playing with getting some of Mac sample apps working with Retro68, such as: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/TESample">https://github.com/CamHenlin/TESample</a> – check out how much code is required just to get a text area working! We can do better!</p>
 <h2 id="What-can-we-do-about-it"><a href="#What-can-we-do-about-it" class="headerlink" title="What can we do about it?"></a>What can we do about it?</h2><p>There are a lot of modern micro UI libraries aimed at embedded devices or to be embedded in other pieces of software. Some of these include:</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/Immediate-Mode-UI/Nuklear">https://github.com/Immediate-Mode-UI/Nuklear</a></li>
@@ -121,7 +121,7 @@ For some background, I am relatively new to Mac programming but experienced with
 <li><a target="_blank" rel="noopener" href="https://github.com/achimdoebler/UGUI">https://github.com/achimdoebler/UGUI</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/rxi/microui">https://github.com/rxi/microui</a></li>
 </ul>
-<p>There are some others that I’m probably missing that would be mentionable as well.</p>
+<p>There are some others that I’m probably missing that would be mentionable as well, but all of these seemed like they would fit the bill.</p>
 <h2 id="My-expirements"><a href="#My-expirements" class="headerlink" title="My expirements"></a>My expirements</h2><p>I set on trying to create a QuickDraw back end for a few of these libraries using QuickDraw and targetting System 6 Macs. Here are a few of those repos:</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a></li>
@@ -140,13 +140,22 @@ For some background, I am relatively new to Mac programming but experienced with
 <h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>After much expirementation and time I came to the conclusion that Nuklear would likely be the best fit in terms of these types of libraries due to the possibility for leveraging several built in QuickDraw commands to draw the UI. I think having a simple immediate mode GUI library is really nice and is going to be an excellent choice for building out small apps for Classic Macs rather than needing to dive in on the toolbox.</p>
 <p>It took a lot of work to get things to the point of being usable despite Nuklear being the “most usable” out of box. These optimizations (from base Nuklear) include:</p>
 <ul>
-<li>All nuklear floating point math has been modified to be integer-based math</li>
-<li>Some utf8 support has been removed (Macintosh doesn’t support it anyways!)</li>
-<li>The QuickDraw graphics layer has been optimized to draw as little as necessary</li>
+<li>All nuklear floating point math has been modified to be integer-based math. This was likely our single biggest performance increase as the 68000 processor does not have a floating point unit.</li>
+<li>Some UTF8 support has been removed (Macintosh doesn’t support it anyways!)</li>
+<li>The QuickDraw graphics layer has been optimized to draw as little as necessary. We’re doing two things here: Between nuklear draw runs, we only draw commands that are changed from one run to the next. This results in us avoiding full window redraws when we are typing for example. The other thing we’re doing is only copying over the bits of the screen that are changed during our double buffering operations.</li>
 </ul>
 <p>After much optimization, the UI performance is close to excellent. I think I was able to come to approximately 10x performance improvement from base Nuklear with these changes which was necessary to work well on an 8MHz Macintosh. Performance gains were quantified and verified using (this strategy for profiling Retro68 applications)[]. Using the default system font and standard drawing routines I think also gives things a very “Mac-like” feel.</p>
 <p>I have the <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> up with a small example application ready to build against – the repo README file outlines the necessary steps to get started on your own changes and my other post (here)[] should help get you up and running with a development workflow. You can start developing your own Nuklear-based Macintosh application using this repo as a base today.</p>
 <h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>put demo gif here</p>
+<h2 id="That’s-great-but-what-can-we-do-with-Nuklear"><a href="#That’s-great-but-what-can-we-do-with-Nuklear" class="headerlink" title="That’s great, but what can we do with Nuklear?"></a>That’s great, but what can we do with Nuklear?</h2><p>Using the project skeleton at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> and <a href="public/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/index.html">my Retro68 getting started guide</a>, you can use Nuklear to develop GUI-based Macintosh apps with relative ease.</p>
+<p>Everything that applies to some of the Nuklear documentation that you find online should work here:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://immediate-mode-ui.github.io/Nuklear/doc/index.html">https://immediate-mode-ui.github.io/Nuklear/doc/index.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.thecodingfox.com/nuklear-usage-guide-lwjgl">https://www.thecodingfox.com/nuklear-usage-guide-lwjgl</a> – this is a really good one</li>
+<li><a target="_blank" rel="noopener" href="https://dexp.in/articles/nuklear-intro/">https://dexp.in/articles/nuklear-intro/</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.orx-project.org/en/tutorials/ui/nuklear">https://wiki.orx-project.org/en/tutorials/ui/nuklear</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PL3-G4vZDng04veWuMASV708VAnSKgV8PK">https://www.youtube.com/playlist?list=PL3-G4vZDng04veWuMASV708VAnSKgV8PK</a></li>
+</ul>
 
 	  <div class="article-footer-copyright" style="display: none;">
 © 2020 cameron henlin's Blog
