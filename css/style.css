@@ -197,7 +197,7 @@ a {
 }
 
 a:focus {
-    color: #fefe54;
+    color: #000;
     background: #41FF00
 }
 
@@ -207,7 +207,7 @@ a:hover {
 }
 
 a:active {
-    color: #fefe54;
+    color: #000;
     background: #41FF00
 }
 
