@@ -44,7 +44,7 @@ body {
 
 .page,
 .post {
-    line-height: 1.5em;
+    line-height: 1.6em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -193,12 +193,12 @@ em.search-keyword {
 }
 
 a {
-    color: #de7915
+    color: #41FF00
 }
 
 a:focus {
     color: #fefe54;
-    background: #a50
+    background: #41FF00
 }
 
 a:hover {
@@ -208,7 +208,7 @@ a:hover {
 
 a:active {
     color: #fefe54;
-    background: #a50
+    background: #41FF00
 }
 
 a.label-anchor {
@@ -220,7 +220,7 @@ a.label-anchor {
 }
 
 a.label-anchor:target span {
-    background-color: #b94a48
+    background-color: #41FF00
 }
 
 a.label-anchor:hover {
@@ -362,15 +362,15 @@ h2 {
     margin-bottom: .6667em
 }
 h3 {
-    font-size: 1.5em;
-    margin-bottom: .6667em
-}
-h4 {
     font-size: 1.3em;
     margin-bottom: .6667em
 }
-h5 {
+h4 {
     font-size: 1.1em;
+    margin-bottom: .6667em
+}
+h5 {
+    font-size: 0.9em;
     margin-bottom: .6667em
 }
 h1,
