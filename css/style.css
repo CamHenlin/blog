@@ -197,7 +197,7 @@ a {
 }
 
 a:focus {
-    color: #000;
+    color: #fefe54;
     background: #41FF00
 }
 
@@ -207,7 +207,7 @@ a:hover {
 }
 
 a:active {
-    color: #000;
+    color: #fefe54;
     background: #41FF00
 }
 
@@ -381,7 +381,7 @@ h5,
 h6 {
     text-rendering: optimizelegibility;
     font-weight: bold;
-    line-height: 1.2em;
+    line-height: 1.6em;
     color: #fff
 }
 
