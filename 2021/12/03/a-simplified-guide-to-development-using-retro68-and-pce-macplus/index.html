@@ -103,23 +103,23 @@
 <p>Who can use this guide? Anyone who wants to get up and running with Mac development being cross compiled from a modern Linux environment as quickly as possible. I’ve laid out the commands and explanations in the most straightforward way I could with the simple goal of running a hello world application. I do not go very in depth as to what I am laying out here but link out to other resources for you to learn more.</p>
 <p>I used a few other guides to build up to what I ultimately wound up using for my development workflow. You should read them if you get stuck or are interested:</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/">http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/</a> - this is hands down the best guide I have seen and what I base most of this workflow on</li>
-<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/">http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/">http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/autc04/Retro68">https://github.com/autc04/Retro68</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/">Developing vintage 68K Macintosh apps with CodeLite IDE, Retro68 and pce-macplus emulator</a> - this is hands down the best guide I have seen and what I base most of this workflow on</li>
+<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/">PCE/macplus, the ultimate 68K Macintosh emulator</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/">Exploring Retro68 GCC-based SDK for 68K Macintosh computers</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/autc04/Retro68">Retro68 GitHub</a></li>
 </ul>
 <p>I used Ubuntu running on an intel-based Mac Mini for my build environment. To run the complete toolchain that I’ll outline in this post and several other following posts, you’ll need a Linux-based environment as that is the only way I’m aware of to make full use of pce-macplus’s serial port. I’ve additionally tested running though this guide on an ARM64 Ubuntu 20 VM using UTM on an M1 Mac Mini. Off we go…</p>
-<h2 id="Setting-up-Retro68"><a href="#Setting-up-Retro68" class="headerlink" title="Setting up Retro68"></a>Setting up Retro68</h2><p>There are complete instructions at <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/">http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/</a>, these are abridged for Ubuntu between the toughdev and Retro68 docs:</p>
+<h2 id="Setting-up-Retro68"><a href="#Setting-up-Retro68" class="headerlink" title="Setting up Retro68"></a>Setting up Retro68</h2><p>There are <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2017/03/exploring-retro68-gcc-based-sdk-for-68k-macintoshes/">complete instructions and in-depth</a> available online already, these are abridged for Ubuntu between the toughdev and Retro68 docs:</p>
 <p>First ensure prereqs are installed:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake libgmp-dev libmpfr-dev libmpc-dev libboost-all-dev bison flex texinfo ruby g++ hfsutils</span><br></pre></td></tr></table></figure>
 
-<p>Then clone the Retro68 repo:</p>
+<p>Then clone the Retro68 git repo:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;autc04&#x2F;Retro68.git</span><br><span class="line">cd Retro68</span><br><span class="line">git pull</span><br><span class="line">git submodule update --init</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure>
 
 <p>Get the MPW includes downloaded and in place:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;henlin.net&#x2F;images&#x2F;Interfaces\&amp;Libraries.zip</span><br><span class="line">unzip &quot;Interfaces&amp;Libraries.zip&quot; -d Retro68&#x2F;InterfacesAndLibraries</span><br></pre></td></tr></table></figure>
 
-<p>Build Retro68:</p>
+<p>Now build Retro68:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir Retro68-build</span><br><span class="line">cd Retro68-build</span><br><span class="line">..&#x2F;Retro68&#x2F;build-toolchain.bash</span><br></pre></td></tr></table></figure>
 
 <p>If everything went well, you should now have a functional Retro68 environment! Back to that in a bit…</p>
@@ -128,7 +128,7 @@
 
 <p>You should now have functional fake serial port pairs at <code>/dev/tnt*</code> (ex, <code>/dev/tnt0</code> is linked to <code>/dev/tnt1</code>, etc)</p>
 <p>note: you may have to do this after every reboot. Some of the tty0tty docs describe how to persist across reboots but I haven’t been able to get that working and also haven’t spent much time on it.</p>
-<h2 id="Setting-up-pce-macplus"><a href="#Setting-up-pce-macplus" class="headerlink" title="Setting up pce-macplus"></a>Setting up pce-macplus</h2><p>Again, complete instructions are available at <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/">http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/</a></p>
+<h2 id="Setting-up-pce-macplus"><a href="#Setting-up-pce-macplus" class="headerlink" title="Setting up pce-macplus"></a>Setting up pce-macplus</h2><p>pce-macplus is the emulator environment we’re going to use. Again, complete instructions are available <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2016/11/pcemacplus-the-ultimate-68k-classic-macintosh-emulator/">here</a>.</p>
 <p>We choose pce-macplus because it emulates full serial communication and works well on Linux. To run pce-macplus on latest Ubuntu, we need to compile it ourselves. We’ll do that with the following:</p>
 <p>First we need some prereqs:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libx11-dev libx11-doc libxau-dev libxcb1-dev libxdmcp-dev x11proto-core-dev x11proto-input-dev x11proto-kb-dev xorg-sgml-doctools xtrans-dev libsdl1.2-dev libsdl1.2debian</span><br></pre></td></tr></table></figure>
@@ -136,10 +136,10 @@
 <p>Then we’ll download and install pce-macplus:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;www.hampa.ch&#x2F;pub&#x2F;pce&#x2F;pce-0.2.2.tar.gz</span><br><span class="line">tar -xvf pce-0.2.2.tar.gz</span><br><span class="line">cd pce-0.2.2</span><br><span class="line">.&#x2F;configure -with-x --with-sdl --enable-tun --enable-char-ppp --enable-char-tcp --enable-sound-oss --enable-char-slip --enable-char-pty --enable-char-posix --enable-char-termios</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">cd ~</span><br></pre></td></tr></table></figure>
 
-<h2 id="Getting-a-sample-application"><a href="#Getting-a-sample-application" class="headerlink" title="Getting a sample application"></a>Getting a sample application</h2><p>Download a sample application to start working with. There are some included in Retro68 that you can try or you can continue on to try one of mine. I recommend <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> as a Macintosh project base and I will use it as the example here as I know it will function in this environment.</p>
+<h2 id="Getting-a-sample-application"><a href="#Getting-a-sample-application" class="headerlink" title="Getting a sample application"></a>Getting a sample application</h2><p>Download a sample application to start working with. There are some included in Retro68 that you can try out or you can continue on to try one of mine. I recommend <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">https://github.com/CamHenlin/nuklear-quickdraw</a> as a Macintosh project base and I will use it as the example here as I know it will function in this environment.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;CamHenlin&#x2F;nuklear-quickdraw</span><br></pre></td></tr></table></figure>
 
-<h2 id="Setting-up-VSCode"><a href="#Setting-up-VSCode" class="headerlink" title="Setting up VSCode"></a>Setting up VSCode</h2><p>We’re about ready to start coding. VSCode is a great place to do development work on Retro68 projects. You want to add this to your <code>includePath</code> setting to get code completion on Mac-specific libraries:</p>
+<h2 id="Setting-up-VSCode"><a href="#Setting-up-VSCode" class="headerlink" title="Setting up VSCode"></a>Setting up VSCode</h2><p>We’re about ready to start coding. VSCode is a great place to do development work on Retro68 projects. You want to add this to your <code>includePath</code> setting to get code completion on Mac-specific libraries. VSCode should prompt you to import the <code>includePath</code> the first time you open your project:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;Retro68&#x2F;InterfacesAndLibraries&#x2F;**</span><br></pre></td></tr></table></figure>
 
 <h2 id="Running-a-“hello-world”-application"><a href="#Running-a-“hello-world”-application" class="headerlink" title="Running a “hello world” application"></a>Running a “hello world” application</h2><p>We have code in place. We have everything set up. Now we just need a few convenience scripts in place to run our code for us. From <a target="_blank" rel="noopener" href="http://www.toughdev.com/content/2018/12/developing-68k-mac-apps-with-codelite-ide-retro68-and-pce-macplus-emulator/">this ToughDev article</a> we can get a set of scripts to help us out there. I’ve conveniently cloned them and edited them to work with the directory structure outlined here. The other set of files that we need to retrieve is the pre-built configuration for pce-macplus:</p>
@@ -158,12 +158,12 @@
 
 <p>Where <code>my test output</code> will be appended to <code>~/pce-mac-classic/ser_b.out</code> any time that code is called.</p>
 <p>I recommend always having one terminal window open and tailing <code>~/pce-mac-classic/ser_b.out</code></p>
-<h3 id="Profiling-code"><a href="#Profiling-code" class="headerlink" title="Profiling code"></a>Profiling code</h3><p>See my other post (here)[/2021/12/21/Profiling-your-Retro68-application/index.html] regarding profiling your Retro68 application. <code>nuklear-quickdraw</code> contains example profiling code.</p>
+<h3 id="Profiling-code"><a href="#Profiling-code" class="headerlink" title="Profiling code"></a>Profiling code</h3><p>See my other post <a href="/2021/12/21/Profiling-your-Retro68-application/index.html">here</a> regarding profiling your Retro68 application. <code>nuklear-quickdraw</code> contains example profiling code.</p>
 <h3 id="Running-code-after-changes"><a href="#Running-code-after-changes" class="headerlink" title="Running code after changes"></a>Running code after changes</h3><p>Any time you’re ready to run new code, just use the line that we used to test our hello world application earlier:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;build_and_run.sh nuklear-quickdraw&#x2F;</span><br></pre></td></tr></table></figure>
 
 <p>I like to keep a terminal window open just for this use case.</p>
-<h2 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h2><p>Go hog wild! Write the custom app of your dreams! You’re finally ready to do Macintosh development You could look into using the <a href="/2021/12/21/Introducing-CoprocessorJS/index.html">CoprocessorJS</a> or <a href="">Nuklear</a> libraries too.</p>
+<h2 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h2><p>Go hog wild! Write the custom app of your dreams! You’re finally ready to do Macintosh development You could look into using the <a href="/2021/12/21/Introducing-CoprocessorJS/index.html">CoprocessorJS</a> or <a href="/2021/12/21/Introducing-Nuklear-for-Macintosh/index.html">Nuklear</a> libraries too.</p>
 
 	  <div class="article-footer-copyright" style="display: none;">
 © 2020 cameron henlin's Blog
@@ -249,6 +249,14 @@
     
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/retro68-pce-mac-plus-nuklear-coprocessorjs-macintosh-retro-dev/">retro68, pce-mac-plus, nuklear, coprocessorjs, macintosh, retro, dev<span>1</span></a></li>
+    </ul>
+	</div>
 		
 
 	<!-- toc -->
