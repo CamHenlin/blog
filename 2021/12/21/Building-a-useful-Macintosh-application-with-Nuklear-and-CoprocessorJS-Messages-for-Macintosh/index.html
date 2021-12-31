@@ -102,14 +102,28 @@ Finally after building up lots of tooling for classic Macintosh, we can develop 
 
 	  <p><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/MessagesForMacintosh">https://github.com/CamHenlin/MessagesForMacintosh</a></p>
 <p>Finally after building up lots of tooling for classic Macintosh, we can develop a full application. </p>
-<h2 id="If-you’re-stumbling-on-this-article-without-context-you-might-want-to-start-with-these-to-get-up-to-speed"><a href="#If-you’re-stumbling-on-this-article-without-context-you-might-want-to-start-with-these-to-get-up-to-speed" class="headerlink" title="If you’re stumbling on this article without context, you might want to start with these to get up to speed:"></a>If you’re stumbling on this article without context, you might want to start with these to get up to speed:</h2><ul>
-<li></li>
-<li></li>
+<p>If you’re stumbling on this article without context, you might want to start with these to get up to speed:</p>
+<ul>
+<li><a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/index.html">A simplified guide to classic Macintosh development using Retro68 and pce-macplus</a></li>
+<li><a href="/2021/12/21/Introducing-CoprocessorJS/index.html">Introducing CoprocessorJS</a></li>
+<li><a href="/2021/12/21/Introducing-Nuklear-for-Macintosh/index.html">Introducing Nuklear for Macintosh</a></li>
 <li></li>
 </ul>
 <h2 id="The-motivation"><a href="#The-motivation" class="headerlink" title="The motivation"></a>The motivation</h2><p>Ultimately I want to use a Macintosh Classic all day, every day, for useful things and have it be a major part of my workflow. </p>
-<p>To that end, I want to create an iMessage client to send and receive messages with my friends.</p>
-<h2 id="The-major-components"><a href="#The-major-components" class="headerlink" title="The major components"></a>The major components</h2><h3 id="The-“new”-Mac-app"><a href="#The-“new”-Mac-app" class="headerlink" title="The “new” Mac app"></a>The “new” Mac app</h3><h3 id="The-“old”-Macintosh-app"><a href="#The-“old”-Macintosh-app" class="headerlink" title="The “old” Macintosh app"></a>The “old” Macintosh app</h3><h3 id="The-“glue”-app"><a href="#The-“glue”-app" class="headerlink" title="The “glue” app"></a>The “glue” app</h3><h2 id="Putting-it-all-together"><a href="#Putting-it-all-together" class="headerlink" title="Putting it all together"></a>Putting it all together</h2>
+<p>To that end, I want to create an iMessage client to send and receive messages with my friends, and I want to run it on System 6.</p>
+<h2 id="The-major-components"><a href="#The-major-components" class="headerlink" title="The major components"></a>The major components</h2><ul>
+<li>The Macintosh Classic and the software that we’ll be running on it - the “old” Macintosh app</li>
+<li>An intermediary “modern” computer connected to a serial port on the Macintosh via an RS422 to USB cable (could be a Raspberry Pi)</li>
+<li>A CoprocessorJS instance running on the “modern” computer connected to the Mac’s serial port - the “glue” app</li>
+<li>A Mac running a small nodejs server application, signed in to an iMessage account - the “new” Mac app</li>
+</ul>
+<h3 id="The-“old”-Macintosh-app"><a href="#The-“old”-Macintosh-app" class="headerlink" title="The “old” Macintosh app"></a>The “old” Macintosh app</h3><p>This is arguably where most of work lies. We’re using all 3 of these articles to culminate in a relatively complex Nuklear application running on a System 6 Mac:</p>
+<ul>
+<li><a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/index.html">A simplified guide to classic Macintosh development using Retro68 and pce-macplus</a></li>
+<li><a href="/2021/12/21/Introducing-CoprocessorJS/index.html">Introducing CoprocessorJS</a></li>
+<li><a href="/2021/12/21/Introducing-Nuklear-for-Macintosh/index.html">Introducing Nuklear for Macintosh</a></li>
+</ul>
+<h3 id="The-“glue”-app"><a href="#The-“glue”-app" class="headerlink" title="The “glue” app"></a>The “glue” app</h3><h3 id="The-“new”-Mac-app"><a href="#The-“new”-Mac-app" class="headerlink" title="The “new” Mac app"></a>The “new” Mac app</h3><h2 id="Putting-it-all-together"><a href="#Putting-it-all-together" class="headerlink" title="Putting it all together"></a>Putting it all together</h2>
 	  <div class="article-footer-copyright" style="display: none;">
 © 2020 cameron henlin's Blog
 </div>
