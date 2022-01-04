@@ -414,6 +414,10 @@ em{
     padding-right: 5px
 }
 
+.row {
+    background-color: #111;
+}
+
 .page .entry .col-md-8 {
     margin: 10px 0
 }
