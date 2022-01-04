@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Introducing CoprocessorJS | cam henlin&#39;s blog</title>
+  <meta name="author" content="cameron henlin">
+  
+  <meta name="description" content="The motivation – what is CoprocessorJS and what am I hoping to accomplish?One of my dreams is to create a modern piece of software that allows program">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Introducing CoprocessorJS"/>
+  <meta property="og:site_name" content="cam henlin&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GS3GPZ8RZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4GS3GPZ8RZ');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">cam henlin&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Introducing CoprocessorJS</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h2 id="The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish"><a href="#The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish" class="headerlink" title="The motivation – what is CoprocessorJS and what am I hoping to accomplish?"></a>The motivation – what is CoprocessorJS and what am I hoping to accomplish?</h2><p>One of my dreams is to create a modern piece of software that allows programmers on any old machine to hand off work loads off to a modern machine over the serial port and get a response back that they can then interact with. This software will provide a standard interface for serial-connected devices to provide code to execute.</p>
+<p>For my first approach, I am going to have workloads all be in modern nodejs. I like nodejs because it has a vast ecosystem of easy to use packages via npm, and if you are using an old computer, should be “fast enough” to do whatever it is you are trying to do. I have built a C-based package aimed at classic (System 6-based) Macintoshes as a first use case.</p>
+<p>Ultimately I think that using libraries like CoprocessorJS, we can enable a new class of useful, modern, Internet-connected applications for classic machines without hacking around old TCP/IP libraries or fighting encryption.</p>
+<h2 id="What-can-it-do"><a href="#What-can-it-do" class="headerlink" title="What can it do?"></a>What can it do?</h2><p>The basic functions that will go into a library include: </p>
+<ul>
+<li>one for loading nodejs programs over the serial port</li>
+<li>one function for calling functions in the nodejs program over the serial port back and getting a response</li>
+<li>one for evaluating raw string code within the nodejs app on the serial port and getting a response.</li>
+</ul>
+<p>The current iteration of the code allows chunks of data in a function or eval response to reach up to 100kb, beyond that a programmer will have to manually chunk data. That’s really a lot of data and should allow for some interesting stuff.</p>
+<h2 id="Testing-it-out"><a href="#Testing-it-out" class="headerlink" title="Testing it out"></a>Testing it out</h2><p>In addition to that, I’ve worked out a simple shell script for packaging complete nodejs applications in to a C application to send over the wire, and used this strategy to create a slightly more interesting Retro68 C test application. The test application includes a nodejs application that sets up puppeteer (headless chrome) on the remote system, and uses puppeteer to grab the text contents of a web page, then dumps that text back across the serial port. I think this is pretty neat. </p>
+<p>This code is up at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/retro68-coprocessorjs-test">https://github.com/CamHenlin/retro68-coprocessorjs-test</a></p>
+<p>At this point, I think someone could use the Retro68 test application to create just about any terminal-based application they want, with all of the heavy lifting done in modern JS on the other side of a serial port, as long as the Retro68 console suits their needs. Writing Internet-conected applications is now easy, without mucking around with old TCP libraries or expensive hardware. If you need instructions on how to build a physical USB cable to plug in to your Mac’s serial port, see my other post <a href="">here</a></p>
+<h2 id="Getting-the-library"><a href="#Getting-the-library" class="headerlink" title="Getting the library"></a>Getting the library</h2><p>In addition to that, the C library file itself is also up in a discrete repository with a lengthy README explaining how to use the library to build a coprocessorjs application. That new repo is at: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/coprocessorjslib">https://github.com/CamHenlin/coprocessorjslib</a>. I tried to make the README as clear as possible, let me know if you have any questions about it. I intend to consume this library in a more interesting application (with a corresponding post!) soon.</p>
+
+	  <div class="article-footer-copyright" style="display: none;">
+© 2020 cameron henlin's Blog
+</div>
+
+	</div>
+
+	
+	<span id="/2021/12/21/Introducing-CoprocessorJS/" class="leancloud-visitors view" data-flag-title="Introducing CoprocessorJS">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//henlin-net.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-12-21 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+<script type="text/javascript">
+var disqus_shortname = 'henlin-net';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2022 cameron henlin's Blog
+  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎top</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+</body>
+   </html>
