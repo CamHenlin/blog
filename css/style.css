@@ -416,6 +416,7 @@ em{
 
 .entry {
     background-color: #111;
+    padding: 10px;
 }
 
 .page .entry .col-md-8 {
