@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Introducing Messages for Macintosh | cam henlin&#39;s blog</title>
+  <meta name="author" content="cameron henlin">
+  
+  <meta name="description" content="Messages for Macintosh - what is it?Messages for Macintosh is a new software suite for classic Macintosh (System 2.0 through MacOS 9.2.2) systems to i">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Introducing Messages for Macintosh"/>
+  <meta property="og:site_name" content="cam henlin&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GS3GPZ8RZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4GS3GPZ8RZ');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">cam henlin&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Introducing Messages for Macintosh</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+		<!-- content -->
+		<div class="entry">
+			<div class="mypage">
+			
+
+			<h2 id="Messages-for-Macintosh-what-is-it"><a href="#Messages-for-Macintosh-what-is-it" class="headerlink" title="Messages for Macintosh - what is it?"></a>Messages for Macintosh - what is it?</h2><p>Messages for Macintosh is a new software suite for classic Macintosh (System 2.0 through MacOS 9.2.2) systems to interoperate with Apple iMessages via a familiar interface, with supporting software running on a newer Mac computer.</p>
+<p><img src="/images/messagesformacintosh.png" alt="messages for macintosh"></p>
+<h2 id="What-is-the-purpose-of-this-article"><a href="#What-is-the-purpose-of-this-article" class="headerlink" title="What is the purpose of this article?"></a>What is the purpose of this article?</h2><p>The purpose of this article is to outline how to get your classic Macintosh system set up to send and receive iMessages with a familiar interface, just like what you would get on new Mac, iPhone, iPad, etc. This article will outline the simplest path to getting up and running, without a functioning development environment. If you want more in-depth instructions involving local development workflow, see <a href="/2022/02/26/Messages-for-Macintosh-Developer-Guide/">here</a>.</p>
+<h2 id="System-Requirements-pre-requisites"><a href="#System-Requirements-pre-requisites" class="headerlink" title="System Requirements + pre-requisites"></a>System Requirements + pre-requisites</h2><ul>
+<li>A “modern” Macintosh, capable of sending and receiving iMessages through Messages.app. I tested this using an <a target="_blank" rel="noopener" href="https://amzn.to/3uiPB8t">M1 Mac Mini</a> running macOS Monterey.</li>
+<li>A network-connected machine capable of running CoprocessorJS (we’ll include setup instructions for that here) connected to your “classic” Macintosh via a serial port — a <a target="_blank" rel="noopener" href="https://amzn.to/3GkRF20">raspberry pi</a> is a great option, but I used a 2011 i5 Mac Mini running Ubuntu 20.04</li>
+<li>A USB to mini din 8 RS422 serial cable (see <a href="/2022/02/10/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/">this article for how to build your own</a>)</li>
+<li>A <a target="_blank" rel="noopener" href="https://ebay.us/DO3lFO">“classic” Macintosh</a>, with its modem serial port connected to the previously mentioned machine via the previously mentioned cable. In my case I will be using a Macintosh Classic running System 6.0.8 with 4MB of RAM, but the software has been tested in an emulator down to a Macintosh SE running System 2.0 with 1MB RAM. It is known to not run on System 1.1 due to unimplemented function calls, but may be able to run on a 512k Mac with System 2.0 or greater – if anyone tries it, let me know! I have not tested System 7 or greater but they should work fine. </li>
+<li>A <a href="(https://amzn.to/35BWIOR)">USB floppy drive</a> and <a target="_blank" rel="noopener" href="https://ebay.us/Q2ohxZ">floppy disk</a>, or some other way of transfering files to your classic Macintosh.</li>
+<li>Alternatively, this is all capable of running in emulators on a single modern Mac for development and testing purposes. Running within an emulator is outlined in the companion article <a href="/2022/02/10/Building-a-useful-Macintosh-application-with-Nuklear-and-CoprocessorJS-Messages-for-Macintosh">here</a>.</li>
+</ul>
+<h2 id="How-to-run-Messages-for-Macintosh"><a href="#How-to-run-Messages-for-Macintosh" class="headerlink" title="How to run Messages for Macintosh"></a>How to run Messages for Macintosh</h2><p>There are 3 major things we’re going to do to get Messages for Macintosh chatting:</p>
+<ul>
+<li>Set up our “modern” Mac</li>
+<li>Set up an intermediary machine to handle communication between our “classic” Macintosh and our “modern” Mac (can be the “modern” Mac itself)</li>
+<li>Set up our “classic” Macintosh</li>
+</ul>
+<p>Let’s get started. </p>
+<h3 id="Setting-up-your-“modern”-Mac-to-run-iMessage-Server"><a href="#Setting-up-your-“modern”-Mac-to-run-iMessage-Server" class="headerlink" title="Setting up your “modern” Mac to run iMessage Server"></a>Setting up your “modern” Mac to run iMessage Server</h3><p>We need to install some server software on our modern Mac, giving us hooks into its iMessage send/receive capabilities. It should be signed into the iMessage account that we want to access from our “classic” Mac. You can download the server software directly <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/imessagegraphqlserver/raw/main/dist/imessagegraphqlserver.zip">from this link</a> or install it from source from this <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/imessagegraphqlserver">git repo</a>. The git repo contains detailed installation instructions, but either install method on a modern Mac and granting the server requested permissions should get you moving.</p>
+<p>Once you’re up and running, the iMessage Server software will display the IP addresses that it’s listening on in the top left corner, like this:</p>
+<p><img src="/images/mfmserverscreengrab.png" alt="server screenshot"></p>
+<p>Here you can see mine is <em>10.0.1.45</em>. Save your IP address for later.</p>
+<h3 id="Setting-up-your-“intermediary”-computer-to-run-CoprocessorJS"><a href="#Setting-up-your-“intermediary”-computer-to-run-CoprocessorJS" class="headerlink" title="Setting up your “intermediary” computer to run CoprocessorJS"></a>Setting up your “intermediary” computer to run CoprocessorJS</h3><p>Next, we need to get up and running with the software that will handle communication between our classic Macintosh and our modern Mac. We do that using <a href="/2021/12/21/Introducing-CoprocessorJS/">CoprocessorJS</a> running on the intermediary computer and a USB to mini din 8 RS422 serial cable (again, see <a href="/2022/02/10/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/">this article for how to build your own</a>). (note: the intermediary machine can be the same machine as your modern Mac, but could also be another new-ish Mac, a Linux machine, raspberry pi, etc – I am using an older Mac Mini running Ubuntu 20.04 as I test this out)</p>
+<p>CoprocessorJS will handle serial communication with our classic Macintosh and will execute workloads on the Macintosh’s behalf, allowing it to communicate over a network with our modern Mac. Because of the varied machines that you might run this on, I opted not to create a downloadable package and will instead walk you through how to run Coprocessor from source for now. More in depth instructions and explanation is available at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/coprocessor.js">the coprocessor repo’s readme</a>.</p>
+<h4 id="Finding-your-serial-cable’s-tty"><a href="#Finding-your-serial-cable’s-tty" class="headerlink" title="Finding your serial cable’s tty"></a>Finding your serial cable’s tty</h4><p>If you’re using a new USB to serial port adapter (maybe like the one I outlined <a href="/2022/02/10/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/">here</a>) you may not know what port you’re running on. Here’s an easy way to figure it out:</p>
+<p>In a new terminal window, with the USB portion of the cable unplugged from your host machine, run:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output1&#x3D;$(ls &#x2F;dev&#x2F;*)</span><br></pre></td></tr></table></figure>
+
+<p>Then, plug in the USB portion of the cable to your host machine, and in the same terminal window, run:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">output2&#x3D;$(ls &#x2F;dev&#x2F;*)</span><br><span class="line">diff &lt;(echo &quot;$output1&quot;) &lt;(echo &quot;$output2&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>This should output something that looks like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; &#x2F;dev&#x2F;ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<p>Which is your USB to serial cable’s tty!</p>
+<h4 id="Running-CoprocessorJS"><a href="#Running-CoprocessorJS" class="headerlink" title="Running CoprocessorJS"></a>Running CoprocessorJS</h4><p>Here is how to quickly get up and running with CoprocessorJS now that we know how to reference our serial cable. In a terminal window on your “intermediary” machine:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:CamHenlin&#x2F;coprocessor.js.git</span><br><span class="line">cd coprocessor.js</span><br><span class="line">npm install</span><br><span class="line">sudo SERIAL_PORT&#x3D;&quot;&#x2F;dev&#x2F;ttyUSB0&quot; node index</span><br></pre></td></tr></table></figure>
+<p>(note: the final line’s <code>/dev/ttyUSB0</code> came from the “Finding your serial cable’s tty” section)</p>
+<p>You should be rewarded with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">instantiated program, waiting for data on &#x2F;dev&#x2F;ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Getting-up-and-running-on-your-classic-Macintosh-finally"><a href="#Getting-up-and-running-on-your-classic-Macintosh-finally" class="headerlink" title="Getting up and running on your classic Macintosh (finally!)"></a>Getting up and running on your classic Macintosh (finally!)</h3><p>Now comes the easy part. We’re ready to set up our classic Macintosh to communicate over its serial cable, to its host machine, and then over a network, to a modern Mac, which will give us iMessage access. We’ll first load our sofware on to a floppy disk, then we’ll open it and configure it on our classic Mac. </p>
+<h4 id="Writing-Messages-for-Macintosh-to-your-floppy"><a href="#Writing-Messages-for-Macintosh-to-your-floppy" class="headerlink" title="Writing Messages for Macintosh to your floppy"></a>Writing Messages for Macintosh to your floppy</h4><p>You can play a similar game to what we played in “Finding your serial cable’s tty” above with your USB floppy drive if you don’t know how to access it. Just unplug/plug in the floppy disk drive with a disk loaded into it, and you should wind up with something like <code>/dev/rdisk5</code>, which is what my USB floppy drive happens to be on my modern Mac. Or if I run through these steps on my Linux Mac Mini, I will get <code>/dev/sdb</code>. Once you’ve figured out where your floppy drive is located, try this in a terminal window (replace /dev/rdisk5 with your floppy disk drive):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;CamHenlin&#x2F;MessagesForMacintosh&#x2F;raw&#x2F;main&#x2F;dist&#x2F;MessagesForMacintosh.zip</span><br><span class="line">unzip MessagesForMacintosh.zip</span><br><span class="line">sudo dd if&#x3D;MessagesForMacintosh.dsk of&#x3D;&#x2F;dev&#x2F;rdisk5 bs&#x3D;1024</span><br></pre></td></tr></table></figure>
+
+<p>For reference, this process takes approximately 3 minutes with a USB floppy drive. After it’s done, eject the disk and insert it into your classic Macintosh</p>
+<h4 id="Setting-up-Messages-for-Macintosh-on-the-classic-Macintosh"><a href="#Setting-up-Messages-for-Macintosh-on-the-classic-Macintosh" class="headerlink" title="Setting up Messages for Macintosh on the classic Macintosh"></a>Setting up Messages for Macintosh on the classic Macintosh</h4><p>We’re in the home stretch and nearly ready to start chatting! Here are our final steps for getting up and running:</p>
+<ul>
+<li>Plug the serial cable connected to your machine running CoprocessorJS to the modem serial port on your classic Macintosh</li>
+<li>Insert the floppy disk that you just created into your classic Macintosh</li>
+<li>Once the floppy appears on the desktop, open it</li>
+<li>Double click on <code>MessagesForMacintosh</code> which will launch the app</li>
+<li>The app will take a few moments to load depending on the speed of your internet connection, as it installs supporting software on the CoprocessorJS device</li>
+<li>After the app is done loading, you will see a new window appear titled “Enter iMessage GraphQL Server”</li>
+<li>Enter the IP address from the step above labelled “Setting up your “modern” Mac to run iMessage Server” in to the input and click save</li>
+<li>The chat window should appear with a familiar-looking interface</li>
+<li>Start chatting! We’re done!</li>
+</ul>
+<h2 id="Animated-demo"><a href="#Animated-demo" class="headerlink" title="Animated demo"></a>Animated demo</h2><p>Here is a short demo of the classic Mac app in operation:</p>
+<p><img src="/images/messagesformacdemo.gif" alt="messages for macintosh demo animation"></p>
+<h3 id="and-a-shot-of-it-running-on-real-hardware-with-some-annotations"><a href="#and-a-shot-of-it-running-on-real-hardware-with-some-annotations" class="headerlink" title="and a shot of it running on real hardware, with some annotations:"></a>and a shot of it running on real hardware, with some annotations:</h3><p><img src="/images/IMG_0063.png" alt="messages for macintosh real hardware"><br>Left: i5 Mac Mini running Ubuntu, connected via serial cable to a Macintosh Classic<br>Right: M1 Mac Mini macOS Monterey, connected via network to the Mac Mini running Ubuntu</p>
+<h2 id="Questions-Comments-Issues"><a href="#Questions-Comments-Issues" class="headerlink" title="Questions? Comments? Issues?"></a>Questions? Comments? Issues?</h2><p>If you’ve got any questions, comments, problems, etc., please drop a comment on the page here. Heck – even if you just try it out, please post about it here. I’d love to hear about your experience!</p>
+
+
+			<h2>Did you enjoy my post?</h2>
+			<p>I'm really excited about the work that I'm doing here. If you enjoyed my post and my work, please <a target="_blank" rel="noopener" href="https://ko-fi.com/camhenlin">consider tipping me with a coffee</a>. I appreciate you taking the time to read my post!</p>
+
+			<div class="article-footer-copyright" style="display: none;">
+© 2020 cameron henlin's Blog
+</div>
+
+			</div>
+
+			
+			<span id="/2022/02/26/Introducing-Messages-for-Macintosh/" class="leancloud-visitors view" data-flag-title="Introducing Messages for Macintosh">
+				<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+			</span>
+			
+		</div>
+		<div>
+		<center>
+
+		<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2022/02/26/Messages-for-Macintosh-Developer-Guide/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+		</center>
+		</div>
+
+		<!-- comment -->
+		
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//henlin-net.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2022-02-26 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/macintosh/">macintosh<span>7</span></a></li> <li><a href="/tags/retro/">retro<span>7</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+kofiWidgetOverlay.draw('camhenlin', {
+	'type': 'floating-chat',
+	'floating-chat.donateButton.text': 'Support Me',
+	'floating-chat.donateButton.background-color': '#000',
+	'floating-chat.donateButton.text-color': '#fff'
+});
+</script>
+<style>
+	.donateButton {
+		border: 2px #fff solid !important;
+	}
+</style>
+<!--
+<script type="text/javascript">
+var disqus_shortname = 'henlin-net';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2022 cameron henlin's Blog
+  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎top</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+</body>
+   </html>

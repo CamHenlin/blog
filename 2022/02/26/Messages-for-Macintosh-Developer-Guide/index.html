@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Messages for Macintosh Developer Guide | cam henlin&#39;s blog</title>
+  <meta name="author" content="cameron henlin">
+  
+  <meta name="description" content="Let’s get developingAfter building up lots of tooling for classic Macintosh, we can develop a full application: Messages for Macintosh. 
+If you’re stu">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Messages for Macintosh Developer Guide"/>
+  <meta property="og:site_name" content="cam henlin&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GS3GPZ8RZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4GS3GPZ8RZ');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">cam henlin&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Messages for Macintosh Developer Guide</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+		<!-- content -->
+		<div class="entry">
+			<div class="mypage">
+			
+
+			<h2 id="Let’s-get-developing"><a href="#Let’s-get-developing" class="headerlink" title="Let’s get developing"></a>Let’s get developing</h2><p>After building up lots of tooling for classic Macintosh, we can develop a full application: Messages for Macintosh. </p>
+<p>If you’re stumbling on this article without context, you might want to start with these to get up to speed:</p>
+<ul>
+<li><a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/index.html">A simplified guide to classic Macintosh development using Retro68 and pce-macplus</a></li>
+<li><a href="/2021/12/21/Introducing-CoprocessorJS/index.html">Introducing CoprocessorJS</a></li>
+<li><a href="/2021/12/21/Introducing-Nuklear-for-Macintosh/index.html">Introducing Nuklear for Macintosh</a> </li>
+</ul>
+<h2 id="The-motivation"><a href="#The-motivation" class="headerlink" title="The motivation"></a>The motivation</h2><p>This is the developer-oriented companion article to <a href="/2022/02/26/Introducing-Messages-for-Macintosh/">the Messages for Macintosh introduction post</a>. If you’re stumbling upon this just wanting to get Messages for Macintosh up and running, click over there.</p>
+<h2 id="What-is-Messages-for-Macintosh"><a href="#What-is-Messages-for-Macintosh" class="headerlink" title="What is Messages for Macintosh?"></a>What is Messages for Macintosh?</h2><p>Messages for Macintosh is a new software suite for classic Macintosh systems to interoperate with Apple iMessages via a familiar interface, with supporting software running on a newer Mac computer. Messages for Macintosh is built with:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/coprocessor.js">CoprocessorJS</a>, which handles allowing the classic Macintosh hand off nodejs-based workloads over its serial port to run on another machine</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/nuklear-quickdraw">Nuklear</a>, a heavily modified version of <a target="_blank" rel="noopener" href="https://github.com/Immediate-Mode-UI/Nuklear">nuklear</a> targeted at classic Macintosh systems</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/serialperformanceanalyzer">serialperformanceanalyzer</a>, a library I built for assisting with the performance modification necessary to get Nuklear usable</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/autc04/Retro68">Retro68</a>, a GCC-based cross compilation env for classic Macintosh systems</li>
+</ul>
+<p><img src="/images/messagesformacintosh.png" alt="messages for macintosh"></p>
+<h2 id="What-is-the-purpose-of-this-article"><a href="#What-is-the-purpose-of-this-article" class="headerlink" title="What is the purpose of this article?"></a>What is the purpose of this article?</h2><p>The purpose of this article is to outline how to run the development work flow for getting a classic Macintosh system to send and receive iMessages with a familiar interface, just like what you would get on new Mac, iPhone, iPad, etc. This article will outline the developer-oriented path using a single machine and emulated classic Macintosh. If you want simple instructions to get up and running with Messages for Macintosh, see <a href="/2022/02/26/Introducing-Messages-for-Macintosh/">here</a>.</p>
+<h2 id="System-Requirements-pre-requisites"><a href="#System-Requirements-pre-requisites" class="headerlink" title="System Requirements + pre-requisites"></a>System Requirements + pre-requisites</h2><ul>
+<li>A “modern” Mac, capable of sending and receiving iMessages through Messages.app. I tested this using an <a target="_blank" rel="noopener" href="https://amzn.to/3uiPB8t">M1 Mac Mini</a> running macOS Monterey. With tweaks, this should be able to support any version of macOS capable of sending/receiving iMessages</li>
+<li>A function Retro68 development environment with functional serial port communications. Like the one I outlined <a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/">here</a> – I recommend running this whole thing in UTM on your “modern” Mac so you can keep this entire workflow on one machine, just like in my post</li>
+</ul>
+<h3 id="Setting-up-your-“modern”-Mac-to-run-iMessage-Server"><a href="#Setting-up-your-“modern”-Mac-to-run-iMessage-Server" class="headerlink" title="Setting up your “modern” Mac to run iMessage Server"></a>Setting up your “modern” Mac to run iMessage Server</h3><p>We need to install some custom-developed server software on our modern Mac, giving us hooks into its iMessage send/receive capabilities. We should install the Server via its <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/imessagegraphqlserver">git repo</a>. This is a plain old JavaScript nodejs application implementing a very small GraphQL API. The git repo contains detailed installation instructions, but essentially you’ll be doing:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:CamHenlin&#x2F;imessagegraphqlserver.git</span><br><span class="line">cd imessagegraphqlserver</span><br><span class="line">npm install</span><br><span class="line">node index</span><br></pre></td></tr></table></figure>
+<p><code>developer note: you can edit imessagegraphqlserver as needed from here!</code></p>
+<p>and allowing a couple of permissions requests.</p>
+<p>Once you’re up and running, the iMessage Server software will display the IP addresses that it’s listening on in the top left corner, like this:</p>
+<p><img src="/images/mfmserverscreengrab.png" alt="server screenshot"></p>
+<p>Here you can see mine is <em>10.0.1.45</em>. Save your IP address for later.</p>
+<h3 id="Setting-up-your-CoprocessorJS-development-environment"><a href="#Setting-up-your-CoprocessorJS-development-environment" class="headerlink" title="Setting up your CoprocessorJS development environment"></a>Setting up your CoprocessorJS development environment</h3><p>Next, we need to get up and running with the software that will handle communication between our classic Macintosh and our modern Mac. CoprocessorJS is outlined in depth <a href="/2021/12/21/Introducing-CoprocessorJS/">here</a> as well as at its <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/coprocessor.js">readme file</a>.</p>
+<p>CoprocessorJS will handle serial communication with our classic Macintosh and will execute workloads on the Macintosh’s behalf, allowing it to communicate over a network with our modern Mac. Because of the varied machines that you might run this on, I opted not to create a downloadable package and will instead walk you through how to run Coprocessor from source for now. More in depth instructions and explanation is available at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/coprocessor.js">the coprocessor repo’s readme</a>.</p>
+<h4 id="Running-CoprocessorJS"><a href="#Running-CoprocessorJS" class="headerlink" title="Running CoprocessorJS"></a>Running CoprocessorJS</h4><p>Here is how to quickly get up and running with CoprocessorJS. In a terminal window on your “intermediary” machine, which would mean inside of UTM if you are using my suggested development environment:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:CamHenlin&#x2F;coprocessor.js.git</span><br><span class="line">cd coprocessor.js</span><br><span class="line">npm install</span><br><span class="line">sudo SERIAL_PORT&#x3D;&quot;&#x2F;dev&#x2F;tnt0&quot; node index</span><br></pre></td></tr></table></figure>
+<p><code>developer note: this is a great time to take a look at what CoprocessorJS is, how to use it, etc.</code></p>
+<p>You should be rewarded with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">instantiated program, waiting for data on &#x2F;dev&#x2F;tnt0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Getting-Messages-for-Macintosh-compiling-and-running-in-pce-macplus"><a href="#Getting-Messages-for-Macintosh-compiling-and-running-in-pce-macplus" class="headerlink" title="Getting Messages for Macintosh compiling and running in pce-macplus"></a>Getting Messages for Macintosh compiling and running in pce-macplus</h3><p>Now comes the easy part. This should be done inside of your UTM VM if you are using my suggested development workflow. Essentially we need to get the Messages for Macintosh git repo in place, and then run it. If you’re seeing this without context, refer to the <a href="/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/">dev environment setup instructions</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:CamHenlin&#x2F;MessagesForMacintosh.git</span><br><span class="line">.&#x2F;build_and_run.sh MessagesForMacintosh</span><br></pre></td></tr></table></figure>
+<p><code>developer note: you can make edits to the MessagesForMacintosh directory and then build_and_run.sh to see your changes</code><br><code>developer note 2: if you make edits to the JavaScript files (which will be executed by CoprocessorJS), run ./compile_js.sh in the MessagesForMacintosh directory and restart CoprocessorJS</code></p>
+<p>Your classic Macintosh VM should launch and you should see a floppy disk appear on the desktop.</p>
+<h4 id="Setting-up-Messages-for-Macintosh-on-the-classic-Macintosh"><a href="#Setting-up-Messages-for-Macintosh-on-the-classic-Macintosh" class="headerlink" title="Setting up Messages for Macintosh on the classic Macintosh"></a>Setting up Messages for Macintosh on the classic Macintosh</h4><p>This is the same as the non-developer instructions. We’re in the home stretch and nearly ready to start chatting! Here are our final steps for getting up and running:</p>
+<ul>
+<li>Once the floppy appears on the desktop, open it</li>
+<li>Double click on <code>MessagesForMacintosh</code> which will launch the app</li>
+<li>The app will take a few moments to load depending on the speed of your internet connection, as it installs supporting software on the CoprocessorJS device</li>
+<li>After the app is done loading, you will see a new window appear titled “Enter iMessage GraphQL Server”</li>
+<li>Enter the IP address from the step above labelled “Setting up your “modern” Mac to run iMessage Server” in to the input and click save</li>
+<li>The chat window should appear with a familiar-looking interface</li>
+<li>Start chatting! We’re done!</li>
+</ul>
+<h2 id="Questions-Comments-Issues"><a href="#Questions-Comments-Issues" class="headerlink" title="Questions? Comments? Issues?"></a>Questions? Comments? Issues?</h2><p>If you’ve got any questions, comments, problems, etc., please drop a comment on the page here. Heck – even if you just try it out, please post about it here. I’d love to hear about your experience!</p>
+<h2 id="Pull-requests-welcome"><a href="#Pull-requests-welcome" class="headerlink" title="Pull requests welcome"></a>Pull requests welcome</h2><p>If you make improvements to any part of the process, feel free to submit PRs to the relevant repositories.</p>
+
+
+			<h2>Did you enjoy my post?</h2>
+			<p>I'm really excited about the work that I'm doing here. If you enjoyed my post and my work, please <a target="_blank" rel="noopener" href="https://ko-fi.com/camhenlin">consider tipping me with a coffee</a>. I appreciate you taking the time to read my post!</p>
+
+			<div class="article-footer-copyright" style="display: none;">
+© 2020 cameron henlin's Blog
+</div>
+
+			</div>
+
+			
+			<span id="/2022/02/26/Messages-for-Macintosh-Developer-Guide/" class="leancloud-visitors view" data-flag-title="Messages for Macintosh Developer Guide">
+				<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+			</span>
+			
+		</div>
+		<div>
+		<center>
+
+		<div class="pagination">
+
+    
+    
+    <a href="/2022/02/26/Introducing-Messages-for-Macintosh/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2021/12/21/Cool-Retro68-projects/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+		</center>
+		</div>
+
+		<!-- comment -->
+		
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//henlin-net.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2022-02-26 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/retro68/">retro68<span>5</span></a></li> <li><a href="/tags/pce-mac-plus/">pce-mac-plus<span>3</span></a></li> <li><a href="/tags/nuklear/">nuklear<span>3</span></a></li> <li><a href="/tags/coprocessorjs/">coprocessorjs<span>4</span></a></li> <li><a href="/tags/macintosh/">macintosh<span>7</span></a></li> <li><a href="/tags/retro/">retro<span>7</span></a></li> <li><a href="/tags/dev/">dev<span>5</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+kofiWidgetOverlay.draw('camhenlin', {
+	'type': 'floating-chat',
+	'floating-chat.donateButton.text': 'Support Me',
+	'floating-chat.donateButton.background-color': '#000',
+	'floating-chat.donateButton.text-color': '#fff'
+});
+</script>
+<style>
+	.donateButton {
+		border: 2px #fff solid !important;
+	}
+</style>
+<!--
+<script type="text/javascript">
+var disqus_shortname = 'henlin-net';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2022 cameron henlin's Blog
+  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎top</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+</body>
+   </html>

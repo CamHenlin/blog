@@ -9,7 +9,7 @@
   <title>A simplified guide to classic Macintosh development using Retro68 and pce-macplus | cam henlin&#39;s blog</title>
   <meta name="author" content="cameron henlin">
   
-  <meta name="description" content="I started playing around using Retro68 on a modern Linux-based machine to do development work for old Macintosh computers in the spirit of one of my p">
+  <meta name="description" content="What’s going on here?I started playing around using Retro68 on a modern Linux-based machine to do development work for old Macintosh computers in the ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -111,7 +111,7 @@
 			<div class="mypage">
 			
 
-			<p>I started playing around using <a target="_blank" rel="noopener" href="https://github.com/autc04/Retro68">Retro68</a> on a modern Linux-based machine to do development work for old Macintosh computers in the spirit of <a href="/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/">one of my previous posts</a>. In doing so, I ran into many problems while getting started and coming up with my own workflow. I hope that others can find this guide helpful in getting up and running with their own classic Macintosh dev stories.</p>
+			<h2 id="What’s-going-on-here"><a href="#What’s-going-on-here" class="headerlink" title="What’s going on here?"></a>What’s going on here?</h2><p>I started playing around using <a target="_blank" rel="noopener" href="https://github.com/autc04/Retro68">Retro68</a> on a modern Linux-based machine to do development work for old Macintosh computers in the spirit of <a href="/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/">one of my previous posts</a>. In doing so, I ran into many problems while getting started and coming up with my own workflow. I hope that others can find this guide helpful in getting up and running with their own classic Macintosh dev stories.</p>
 <p>Who can use this guide? Anyone who wants to get up and running with Mac development being cross compiled from a modern Linux environment as quickly as possible. I’ve laid out the commands and explanations in the most straightforward way I could with the simple goal of running a hello world application. I do not go very in depth as to what I am laying out here but link out to other resources for you to learn more.</p>
 <p>I used a few other guides to build up to what I ultimately wound up using for my development workflow. You should read them if you get stuck or are interested in further reading:</p>
 <ul>
@@ -137,6 +137,7 @@
 <p>If everything went well, you should now have a functional Retro68 environment! Back to that in a bit…</p>
 <h2 id="Optional-Setting-up-serial-port-emulation"><a href="#Optional-Setting-up-serial-port-emulation" class="headerlink" title="Optional: Setting up serial port emulation"></a>Optional: Setting up serial port emulation</h2><p>One of the motivations here is that we have full serial communication to enable the development of software utilizing the serial port on the Macintosh for bidirectional communication. Check out one of my other posts <a href="/2021/12/21/Introducing-Nuklear-for-Macintosh/index.html">here</a> for more information. We emulate that locally with <code>tty0tty</code>. This step is marked as optional, because if you don’t care about working with <a href="/2021/12/21/Introducing-CoprocessorJS/index.html">CoprocessorJS</a> you may not need this step.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;freemed&#x2F;tty0tty</span><br><span class="line">cd tty0tty&#x2F;module</span><br><span class="line">make</span><br><span class="line">sudo cp tty0tty.ko &#x2F;lib&#x2F;modules&#x2F;$(uname -r)&#x2F;kernel&#x2F;drivers&#x2F;misc&#x2F;</span><br><span class="line">sudo depmod</span><br><span class="line">sudo modprobe tty0tty</span><br><span class="line">sudo chmod 666 &#x2F;dev&#x2F;tnt*</span><br><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">note! I got a build error on my most recent test with these instructions.</span><br><span class="line">You may have to modify module&#x2F;tty0tty.c. Change line :258 from:</span><br><span class="line"></span><br><span class="line">static unsigned int tty0tty_write_room(struct tty_struct *tty)</span><br><span class="line"></span><br><span class="line">to:</span><br><span class="line"></span><br><span class="line">static int tty0tty_write_room(struct tty_struct *tty)</span><br><span class="line"></span><br><span class="line">then re-run make to resolve the error.</span><br></pre></td></tr></table></figure>
 
 <p>You should now have functional fake serial port pairs at <code>/dev/tnt*</code> (ex, <code>/dev/tnt0</code> is linked to <code>/dev/tnt1</code>, etc)</p>
 <p>note: you may have to do this after every reboot. Some of the tty0tty docs describe how to persist across reboots but I haven’t been able to get that working and also haven’t spent much time on it.</p>
@@ -170,6 +171,7 @@
 
 <p>Where <code>my test output</code> will be appended to <code>~/pce-mac-classic/ser_b.out</code> any time that code is called.</p>
 <p>I recommend always having one terminal window open and tailing <code>~/pce-mac-classic/ser_b.out</code></p>
+<p><code>note: if you leave any logging code in place when you take your program to a physical Mac, it will be dumping data out the printer serial port to whatever is hooked up to it!</code></p>
 <h3 id="Profiling-code"><a href="#Profiling-code" class="headerlink" title="Profiling code"></a>Profiling code</h3><p>See my other post <a href="/2021/12/21/Profiling-your-Retro68-application/index.html">here</a> regarding profiling your Retro68 application. <code>nuklear-quickdraw</code> contains example profiling code.</p>
 <h3 id="Running-code-after-changes"><a href="#Running-code-after-changes" class="headerlink" title="Running code after changes"></a>Running code after changes</h3><p>Any time you’re ready to run new code, just use the line that we used to test our hello world application earlier:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;build_and_run.sh nuklear-quickdraw&#x2F;</span><br></pre></td></tr></table></figure>
@@ -271,7 +273,7 @@
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/retro68/">retro68<span>4</span></a></li> <li><a href="/tags/pce-mac-plus/">pce-mac-plus<span>2</span></a></li> <li><a href="/tags/nuklear/">nuklear<span>2</span></a></li> <li><a href="/tags/coprocessorjs/">coprocessorjs<span>3</span></a></li> <li><a href="/tags/macintosh/">macintosh<span>5</span></a></li> <li><a href="/tags/retro/">retro<span>5</span></a></li> <li><a href="/tags/dev/">dev<span>4</span></a></li>
+  <li><a href="/tags/retro68/">retro68<span>5</span></a></li> <li><a href="/tags/pce-mac-plus/">pce-mac-plus<span>3</span></a></li> <li><a href="/tags/nuklear/">nuklear<span>3</span></a></li> <li><a href="/tags/coprocessorjs/">coprocessorjs<span>4</span></a></li> <li><a href="/tags/macintosh/">macintosh<span>7</span></a></li> <li><a href="/tags/retro/">retro<span>7</span></a></li> <li><a href="/tags/dev/">dev<span>5</span></a></li>
     </ul>
 	</div>
 		
