@@ -9,7 +9,7 @@
   <title>Introducing CoprocessorJS | cam henlin&#39;s blog</title>
   <meta name="author" content="cameron henlin">
   
-  <meta name="description" content="The motivation – what is CoprocessorJS and what am I hoping to accomplish?One of my dreams is to create a modern piece of software that allows program">
+  <meta name="description" content="The motivation – what is CoprocessorJS and what am I hoping to accomplish?One of my interests is to make old computers more useful in modern times so ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -111,10 +111,10 @@
 			<div class="mypage">
 			
 
-			<h2 id="The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish"><a href="#The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish" class="headerlink" title="The motivation – what is CoprocessorJS and what am I hoping to accomplish?"></a>The motivation – what is CoprocessorJS and what am I hoping to accomplish?</h2><p>One of my dreams is to create a modern piece of software that allows programmers on any old machine to hand off work loads off to a modern machine over the serial port and get a response back that they can then interact with. This software will provide a standard interface for serial-connected devices to provide code to execute.</p>
-<p>For my first approach, I am going to have workloads all be in modern nodejs. I like nodejs because it has a vast ecosystem of easy to use packages via npm, and if you are using an old computer, should be “fast enough” to do whatever it is you are trying to do. I have built a C-based package aimed at classic (System 6-based) Macintoshes as a first use case.</p>
-<p>Ultimately I think that using libraries like CoprocessorJS, we can enable a new class of useful, modern, Internet-connected applications for classic machines without hacking around old TCP/IP libraries or fighting encryption.</p>
-<h2 id="What-can-it-do"><a href="#What-can-it-do" class="headerlink" title="What can it do?"></a>What can it do?</h2><p>The basic functions that will go into a library include: </p>
+			<h2 id="The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish"><a href="#The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish" class="headerlink" title="The motivation – what is CoprocessorJS and what am I hoping to accomplish?"></a>The motivation – what is CoprocessorJS and what am I hoping to accomplish?</h2><p>One of my interests is to make old computers more useful in modern times so that they can once again be used in our day-to-day workflows. To that end, I’ve created a modern piece of software that allows programmers on nearly any old machine to hand off work loads to a modern machine over a serial port, and get a response back that they can then interact with. This software will provide a standard interface for serial-connected devices to provide code to execute. The serial port is a great choice here because it is relatively common, even on old machines, and fast enough for most tasks if you can break them down small enough.</p>
+<p>With CoprocessorJS, all workloads will be in modern nodejs. I like nodejs because it has a vast ecosystem of easy to use packages via npm, and if you are using an old computer, should be “fast enough” to do whatever it is you are trying to do. I have built a C-based package aimed at classic (System 6-based, because it’s what I have on hand) Macintoshes as a first use case, but the C code is nothing special and should be easily portable to other systems that support C – I can easily imagine building out a CoprocessorJS package for DOS, early Windows versions, GS/OS, Windows CE, Amiga, Be, etc, etc, etc. and using it to build useful modern software for those systems as well.</p>
+<p>Ultimately I think that using libraries like CoprocessorJS, we can enable a new class of useful, modern, Internet-connected applications for classic machines without hacking around old TCP/IP libraries or fighting encryption on systems that are just not fast enough for it. Instead we can push as much processing as much work possible to a modern device and handle rendering on the old one.</p>
+<h2 id="What-can-CoprocessorJS-do"><a href="#What-can-CoprocessorJS-do" class="headerlink" title="What can CoprocessorJS do?"></a>What can CoprocessorJS do?</h2><p>The basic functions that will go into a library include: </p>
 <ul>
 <li>one for loading nodejs programs over the serial port</li>
 <li>one function for calling functions in the nodejs program over the serial port back and getting a response</li>
@@ -122,9 +122,17 @@
 </ul>
 <p>The current iteration of the code allows chunks of data in a function or eval response to reach up to 100kb, beyond that a programmer will have to manually chunk data. That’s really a lot of data and should allow for some interesting stuff.</p>
 <h2 id="Testing-it-out"><a href="#Testing-it-out" class="headerlink" title="Testing it out"></a>Testing it out</h2><p>In addition to that, I’ve worked out a simple shell script for packaging complete nodejs applications in to a C application to send over the wire, and used this strategy to create a slightly more interesting Retro68 C test application. The test application includes a nodejs application that sets up puppeteer (headless chrome) on the remote system, and uses puppeteer to grab the text contents of a web page, then dumps that text back across the serial port. I think this is pretty neat. </p>
-<p>This code is up at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/retro68-coprocessorjs-test">https://github.com/CamHenlin/retro68-coprocessorjs-test</a></p>
-<p>At this point, I think someone could use the Retro68 test application to create just about any terminal-based application they want, with all of the heavy lifting done in modern JS on the other side of a serial port, as long as the Retro68 console suits their needs. Writing Internet-conected applications is now easy, without mucking around with old TCP libraries or expensive hardware. If you need instructions on how to build a physical USB cable to plug in to your Mac’s serial port, see my other post <a href="">here</a></p>
+<p>This code is up at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/retro68-coprocessorjs-test">this repo</a></p>
+<p>At this point, I think someone could use the Retro68 test application to create just about any terminal-based application they want, with all of the heavy lifting done in modern JS on the other side of a serial port, as long as the Retro68 console suits their needs. Writing Internet-conected applications is now easy, without mucking around with old TCP libraries or expensive hardware. If you need instructions on how to build a physical USB cable to plug in to your Mac’s serial port, see my other post <a href="/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/">here</a></p>
 <h2 id="Getting-the-library"><a href="#Getting-the-library" class="headerlink" title="Getting the library"></a>Getting the library</h2><p>In addition to that, the C library file itself is also up in a discrete repository with a lengthy README explaining how to use the library to build a coprocessorjs application. That new repo is at: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/coprocessorjslib">https://github.com/CamHenlin/coprocessorjslib</a>. I tried to make the README as clear as possible, let me know if you have any questions about it. I intend to consume this library in a more interesting application (with a corresponding post!) soon.</p>
+<h2 id="Software-using-CoprocessorJS"><a href="#Software-using-CoprocessorJS" class="headerlink" title="Software using CoprocessorJS"></a>Software using CoprocessorJS</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/retro68-coprocessorjs-test">the CoprocessorJS test</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/MessagesForMacintosh">Messages for Macintosh</a></li>
+</ul>
+
+
+			<h2>Did you enjoy my post?</h2>
+			<p>I'm really excited about the work that I'm doing here. If you enjoyed my post and my work, please <a target="_blank" rel="noopener" href="https://ko-fi.com/camhenlin">consider tipping me with a coffee</a>. I appreciate you taking the time to read my post!</p>
 
 			<div class="article-footer-copyright" style="display: none;">
 © 2020 cameron henlin's Blog
@@ -211,6 +219,14 @@
     
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/retro68/">retro68<span>4</span></a></li> <li><a href="/tags/pce-mac-plus/">pce-mac-plus<span>2</span></a></li> <li><a href="/tags/coprocessorjs/">coprocessorjs<span>3</span></a></li> <li><a href="/tags/macintosh/">macintosh<span>5</span></a></li> <li><a href="/tags/retro/">retro<span>5</span></a></li> <li><a href="/tags/dev/">dev<span>4</span></a></li>
+    </ul>
+	</div>
 		
 
 	<!-- toc -->
@@ -230,6 +246,21 @@
 
 </div><!-- row -->
 
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+kofiWidgetOverlay.draw('camhenlin', {
+	'type': 'floating-chat',
+	'floating-chat.donateButton.text': 'Support Me',
+	'floating-chat.donateButton.background-color': '#000',
+	'floating-chat.donateButton.text-color': '#fff'
+});
+</script>
+<style>
+	.donateButton {
+		border: 2px #fff solid !important;
+	}
+</style>
 <!--
 <script type="text/javascript">
 var disqus_shortname = 'henlin-net';
