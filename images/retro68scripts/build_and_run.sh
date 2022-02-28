@@ -2,11 +2,6 @@ clear;
 
 EMFOLDER="$HOME/pce-mac-classic"
 
-if [ $# -ne 3 ] ; then
-    echo 'Syntax: ./build_and_run.sh [project_name]'
-    exit 1
-fi
-
 if [ ! -d "$1" ]; then
     echo 'The specified project folder does not exist'
     exit 1
