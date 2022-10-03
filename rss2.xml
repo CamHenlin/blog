@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>cam henlin&#39;s blog</title>
+    <link>http://example.com/</link>
+    
+    <image>
+      <url>http://example.com/icon.png</url>
+      <title>cam henlin&#39;s blog</title>
+      <link>http://example.com/</link>
+    </image>
+    
+    <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Sun, 02 Oct 2022 14:28:29 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Introducing FocusedEdit for classic Macintosh</title>
+      <link>http://example.com/2022/10/02/Introducing-FocusedEdit-for-classic-Macintosh/</link>
+      <guid>http://example.com/2022/10/02/Introducing-FocusedEdit-for-classic-Macintosh/</guid>
+      <pubDate>Sun, 02 Oct 2022 08:03:46 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Introducing-FocusedEdit&quot;&gt;&lt;a href=&quot;#Introducing-FocusedEdit&quot; class=&quot;headerlink&quot; title=&quot;Introducing FocusedEdit&quot;&gt;&lt;/a&gt;Introducing</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/retro68/">retro68</category>
+      
+      <category domain="http://example.com/tags/coprocessorjs/">coprocessorjs</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      <category domain="http://example.com/tags/dev/">dev</category>
+      
+      <category domain="http://example.com/tags/Macintosh/">Macintosh</category>
+      
+      
+      <comments>http://example.com/2022/10/02/Introducing-FocusedEdit-for-classic-Macintosh/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Introducing Messages for Macintosh</title>
+      <link>http://example.com/2022/02/26/Introducing-Messages-for-Macintosh/</link>
+      <guid>http://example.com/2022/02/26/Introducing-Messages-for-Macintosh/</guid>
+      <pubDate>Sun, 27 Feb 2022 07:49:26 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Messages-for-Macintosh-what-is-it&quot;&gt;&lt;a href=&quot;#Messages-for-Macintosh-what-is-it&quot; class=&quot;headerlink&quot; title=&quot;Messages for Macintosh -</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/macintosh/">macintosh</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      
+      <comments>http://example.com/2022/02/26/Introducing-Messages-for-Macintosh/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Messages for Macintosh Developer Guide</title>
+      <link>http://example.com/2022/02/26/Messages-for-Macintosh-Developer-Guide/</link>
+      <guid>http://example.com/2022/02/26/Messages-for-Macintosh-Developer-Guide/</guid>
+      <pubDate>Sun, 27 Feb 2022 07:48:46 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Let’s-get-developing&quot;&gt;&lt;a href=&quot;#Let’s-get-developing&quot; class=&quot;headerlink&quot; title=&quot;Let’s get developing&quot;&gt;&lt;/a&gt;Let’s get</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/retro68/">retro68</category>
+      
+      <category domain="http://example.com/tags/pce-mac-plus/">pce-mac-plus</category>
+      
+      <category domain="http://example.com/tags/nuklear/">nuklear</category>
+      
+      <category domain="http://example.com/tags/coprocessorjs/">coprocessorjs</category>
+      
+      <category domain="http://example.com/tags/macintosh/">macintosh</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      <category domain="http://example.com/tags/dev/">dev</category>
+      
+      
+      <comments>http://example.com/2022/02/26/Messages-for-Macintosh-Developer-Guide/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Cool Retro68 projects</title>
+      <link>http://example.com/2021/12/21/Cool-Retro68-projects/</link>
+      <guid>http://example.com/2021/12/21/Cool-Retro68-projects/</guid>
+      <pubDate>Tue, 21 Dec 2021 19:24:22 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Retro68-projects-cool-old-Macintosh-projects&quot;&gt;&lt;a href=&quot;#Retro68-projects-cool-old-Macintosh-projects&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/retro68/">retro68</category>
+      
+      <category domain="http://example.com/tags/macintosh/">macintosh</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      <category domain="http://example.com/tags/dev/">dev</category>
+      
+      
+      <comments>http://example.com/2021/12/21/Cool-Retro68-projects/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Profiling your Retro68 application</title>
+      <link>http://example.com/2021/12/21/Profiling-your-Retro68-application/</link>
+      <guid>http://example.com/2021/12/21/Profiling-your-Retro68-application/</guid>
+      <pubDate>Tue, 21 Dec 2021 19:08:51 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Profiling-your-Retro68-application-using-serialperformanceanalyzer&quot;&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>http://example.com/2021/12/21/Profiling-your-Retro68-application/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Introducing Nuklear for Macintosh</title>
+      <link>http://example.com/2021/12/21/Introducing-Nuklear-for-Macintosh/</link>
+      <guid>http://example.com/2021/12/21/Introducing-Nuklear-for-Macintosh/</guid>
+      <pubDate>Tue, 21 Dec 2021 18:53:34 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;The-motivation&quot;&gt;&lt;a href=&quot;#The-motivation&quot; class=&quot;headerlink&quot; title=&quot;The motivation&quot;&gt;&lt;/a&gt;The motivation&lt;/h2&gt;&lt;p&gt;GUI programming on</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>http://example.com/2021/12/21/Introducing-Nuklear-for-Macintosh/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Building a USB to RS422 cable for your classic Macintosh</title>
+      <link>http://example.com/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/</link>
+      <guid>http://example.com/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/</guid>
+      <pubDate>Tue, 21 Dec 2021 18:52:42 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Parts-list&quot;&gt;&lt;a href=&quot;#Parts-list&quot; class=&quot;headerlink&quot; title=&quot;Parts list&quot;&gt;&lt;/a&gt;Parts list&lt;/h2&gt;&lt;p&gt;I’ve listed out everything that I</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/macintosh/">macintosh</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      
+      <comments>http://example.com/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Introducing CoprocessorJS</title>
+      <link>http://example.com/2021/12/21/Introducing-CoprocessorJS/</link>
+      <guid>http://example.com/2021/12/21/Introducing-CoprocessorJS/</guid>
+      <pubDate>Tue, 21 Dec 2021 18:52:34 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish&quot;&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/retro68/">retro68</category>
+      
+      <category domain="http://example.com/tags/pce-mac-plus/">pce-mac-plus</category>
+      
+      <category domain="http://example.com/tags/coprocessorjs/">coprocessorjs</category>
+      
+      <category domain="http://example.com/tags/macintosh/">macintosh</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      <category domain="http://example.com/tags/dev/">dev</category>
+      
+      
+      <comments>http://example.com/2021/12/21/Introducing-CoprocessorJS/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>A simplified guide to classic Macintosh development using Retro68 and pce-macplus</title>
+      <link>http://example.com/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/</link>
+      <guid>http://example.com/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/</guid>
+      <pubDate>Sat, 04 Dec 2021 07:44:32 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;What’s-going-on-here&quot;&gt;&lt;a href=&quot;#What’s-going-on-here&quot; class=&quot;headerlink&quot; title=&quot;What’s going on here?&quot;&gt;&lt;/a&gt;What’s going on</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/retro68/">retro68</category>
+      
+      <category domain="http://example.com/tags/pce-mac-plus/">pce-mac-plus</category>
+      
+      <category domain="http://example.com/tags/nuklear/">nuklear</category>
+      
+      <category domain="http://example.com/tags/coprocessorjs/">coprocessorjs</category>
+      
+      <category domain="http://example.com/tags/macintosh/">macintosh</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      <category domain="http://example.com/tags/dev/">dev</category>
+      
+      
+      <comments>http://example.com/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Technical idea - Making old Macs more useful</title>
+      <link>http://example.com/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/</link>
+      <guid>http://example.com/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/</guid>
+      <pubDate>Thu, 11 Feb 2021 18:58:57 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;If I had unlimited time on my hands I would work on software to make old computers more useful.&lt;/p&gt;
+&lt;p&gt;My ultimate goal is that I would</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/retro68/">retro68</category>
+      
+      <category domain="http://example.com/tags/nuklear/">nuklear</category>
+      
+      <category domain="http://example.com/tags/coprocessorjs/">coprocessorjs</category>
+      
+      <category domain="http://example.com/tags/macintosh/">macintosh</category>
+      
+      <category domain="http://example.com/tags/retro/">retro</category>
+      
+      <category domain="http://example.com/tags/dev/">dev</category>
+      
+      
+      <comments>http://example.com/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>turbo miata parts list</title>
+      <link>http://example.com/2021/02/04/turbo-miata-parts-list/</link>
+      <guid>http://example.com/2021/02/04/turbo-miata-parts-list/</guid>
+      <pubDate>Fri, 05 Feb 2021 07:09:26 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;here is my budget turbo miata parts formula.&lt;/p&gt;
+&lt;p&gt;Parts listed are for a 1.8L build, adjust parts for 1.6 as needed. Should be capable</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/cars-miata-turbo/">cars, miata, turbo</category>
+      
+      
+      <comments>http://example.com/2021/02/04/turbo-miata-parts-list/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>sucker / fan car notes</title>
+      <link>http://example.com/2021/02/03/sucker-car-notes/</link>
+      <guid>http://example.com/2021/02/03/sucker-car-notes/</guid>
+      <pubDate>Thu, 04 Feb 2021 06:37:14 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;So you want to build a sucker or fan car.&lt;/p&gt;
+&lt;p&gt;Here are some background info links&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/cars/">cars</category>
+      
+      
+      <comments>http://example.com/2021/02/03/sucker-car-notes/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>3D printing a car</title>
+      <link>http://example.com/2021/02/03/3D-printing-a-car/</link>
+      <guid>http://example.com/2021/02/03/3D-printing-a-car/</guid>
+      <pubDate>Thu, 04 Feb 2021 06:36:54 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;Okay, well, maybe just a car body.&lt;/p&gt;
+&lt;p&gt;Some background links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/cars/">cars</category>
+      
+      
+      <comments>http://example.com/2021/02/03/3D-printing-a-car/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Destroyed Datsun 240Z dashboard brought back to life</title>
+      <link>http://example.com/2020/11/30/Destroyed-Datsun-240Z-dashboard-brought-back-to-life/</link>
+      <guid>http://example.com/2020/11/30/Destroyed-Datsun-240Z-dashboard-brought-back-to-life/</guid>
+      <pubDate>Mon, 30 Nov 2020 22:57:37 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;Repairing-and-flocking-a-dashboard-specifically-a-Destroyed-Datsun-240Z-dashboard-brought-back-to-life&quot;&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/Datsun/">Datsun</category>
+      
+      
+      <comments>http://example.com/2020/11/30/Destroyed-Datsun-240Z-dashboard-brought-back-to-life/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>http://example.com/2020/11/23/hello-world-1/</link>
+      <guid>http://example.com/2020/11/23/hello-world-1/</guid>
+      <pubDate>Mon, 23 Nov 2020 18:31:22 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;This is my very first blog post. I’ve been meaning to set up a blog for a while to post about interesting projects that I’m working</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="http://example.com/tags/first-post/">first post</category>
+      
+      <category domain="http://example.com/tags/nerdery/">nerdery</category>
+      
+      <category domain="http://example.com/tags/hello-world/">hello world</category>
+      
+      <category domain="http://example.com/tags/todo/">todo</category>
+      
+      <category domain="http://example.com/tags/repair/">repair</category>
+      
+      
+      <comments>http://example.com/2020/11/23/hello-world-1/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>cam henlin&#39;s blog</title>
+  <icon>http://example.com/icon.png</icon>
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-10-02T14:28:29.462Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>cameron henlin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Introducing FocusedEdit for classic Macintosh</title>
+    <link href="http://example.com/2022/10/02/Introducing-FocusedEdit-for-classic-Macintosh/"/>
+    <id>http://example.com/2022/10/02/Introducing-FocusedEdit-for-classic-Macintosh/</id>
+    <published>2022-10-02T08:03:46.000Z</published>
+    <updated>2022-10-02T14:28:29.462Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Introducing-FocusedEdit&quot;&gt;&lt;a href=&quot;#Introducing-FocusedEdit&quot; class=&quot;headerlink&quot; title=&quot;Introducing FocusedEdit&quot;&gt;&lt;/a&gt;Introducing</summary>
+        
+      
+    
+    
+    
+    
+    <category term="retro68" scheme="http://example.com/tags/retro68/"/>
+    
+    <category term="coprocessorjs" scheme="http://example.com/tags/coprocessorjs/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+    <category term="dev" scheme="http://example.com/tags/dev/"/>
+    
+    <category term="Macintosh" scheme="http://example.com/tags/Macintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introducing Messages for Macintosh</title>
+    <link href="http://example.com/2022/02/26/Introducing-Messages-for-Macintosh/"/>
+    <id>http://example.com/2022/02/26/Introducing-Messages-for-Macintosh/</id>
+    <published>2022-02-27T07:49:26.000Z</published>
+    <updated>2022-02-27T17:49:54.845Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Messages-for-Macintosh-what-is-it&quot;&gt;&lt;a href=&quot;#Messages-for-Macintosh-what-is-it&quot; class=&quot;headerlink&quot; title=&quot;Messages for Macintosh -</summary>
+        
+      
+    
+    
+    
+    
+    <category term="macintosh" scheme="http://example.com/tags/macintosh/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Messages for Macintosh Developer Guide</title>
+    <link href="http://example.com/2022/02/26/Messages-for-Macintosh-Developer-Guide/"/>
+    <id>http://example.com/2022/02/26/Messages-for-Macintosh-Developer-Guide/</id>
+    <published>2022-02-27T07:48:46.000Z</published>
+    <updated>2022-02-27T07:48:46.432Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Let’s-get-developing&quot;&gt;&lt;a href=&quot;#Let’s-get-developing&quot; class=&quot;headerlink&quot; title=&quot;Let’s get developing&quot;&gt;&lt;/a&gt;Let’s get</summary>
+        
+      
+    
+    
+    
+    
+    <category term="retro68" scheme="http://example.com/tags/retro68/"/>
+    
+    <category term="pce-mac-plus" scheme="http://example.com/tags/pce-mac-plus/"/>
+    
+    <category term="nuklear" scheme="http://example.com/tags/nuklear/"/>
+    
+    <category term="coprocessorjs" scheme="http://example.com/tags/coprocessorjs/"/>
+    
+    <category term="macintosh" scheme="http://example.com/tags/macintosh/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+    <category term="dev" scheme="http://example.com/tags/dev/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cool Retro68 projects</title>
+    <link href="http://example.com/2021/12/21/Cool-Retro68-projects/"/>
+    <id>http://example.com/2021/12/21/Cool-Retro68-projects/</id>
+    <published>2021-12-21T19:24:22.000Z</published>
+    <updated>2022-02-27T07:21:11.982Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Retro68-projects-cool-old-Macintosh-projects&quot;&gt;&lt;a href=&quot;#Retro68-projects-cool-old-Macintosh-projects&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="retro68" scheme="http://example.com/tags/retro68/"/>
+    
+    <category term="macintosh" scheme="http://example.com/tags/macintosh/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+    <category term="dev" scheme="http://example.com/tags/dev/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Profiling your Retro68 application</title>
+    <link href="http://example.com/2021/12/21/Profiling-your-Retro68-application/"/>
+    <id>http://example.com/2021/12/21/Profiling-your-Retro68-application/</id>
+    <published>2021-12-21T19:08:51.000Z</published>
+    <updated>2021-12-26T07:25:55.785Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Profiling-your-Retro68-application-using-serialperformanceanalyzer&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Introducing Nuklear for Macintosh</title>
+    <link href="http://example.com/2021/12/21/Introducing-Nuklear-for-Macintosh/"/>
+    <id>http://example.com/2021/12/21/Introducing-Nuklear-for-Macintosh/</id>
+    <published>2021-12-21T18:53:34.000Z</published>
+    <updated>2021-12-31T22:33:09.095Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;The-motivation&quot;&gt;&lt;a href=&quot;#The-motivation&quot; class=&quot;headerlink&quot; title=&quot;The motivation&quot;&gt;&lt;/a&gt;The motivation&lt;/h2&gt;&lt;p&gt;GUI programming on</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Building a USB to RS422 cable for your classic Macintosh</title>
+    <link href="http://example.com/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/"/>
+    <id>http://example.com/2021/12/21/Building-a-USB-to-RS422-cable-for-your-classic-Macintosh/</id>
+    <published>2021-12-21T18:52:42.000Z</published>
+    <updated>2022-02-27T07:20:20.079Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Parts-list&quot;&gt;&lt;a href=&quot;#Parts-list&quot; class=&quot;headerlink&quot; title=&quot;Parts list&quot;&gt;&lt;/a&gt;Parts list&lt;/h2&gt;&lt;p&gt;I’ve listed out everything that I</summary>
+        
+      
+    
+    
+    
+    
+    <category term="macintosh" scheme="http://example.com/tags/macintosh/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introducing CoprocessorJS</title>
+    <link href="http://example.com/2021/12/21/Introducing-CoprocessorJS/"/>
+    <id>http://example.com/2021/12/21/Introducing-CoprocessorJS/</id>
+    <published>2021-12-21T18:52:34.000Z</published>
+    <updated>2022-02-11T05:54:12.031Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;The-motivation-–-what-is-CoprocessorJS-and-what-am-I-hoping-to-accomplish&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="retro68" scheme="http://example.com/tags/retro68/"/>
+    
+    <category term="pce-mac-plus" scheme="http://example.com/tags/pce-mac-plus/"/>
+    
+    <category term="coprocessorjs" scheme="http://example.com/tags/coprocessorjs/"/>
+    
+    <category term="macintosh" scheme="http://example.com/tags/macintosh/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+    <category term="dev" scheme="http://example.com/tags/dev/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A simplified guide to classic Macintosh development using Retro68 and pce-macplus</title>
+    <link href="http://example.com/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/"/>
+    <id>http://example.com/2021/12/03/a-simplified-guide-to-development-using-retro68-and-pce-macplus/</id>
+    <published>2021-12-04T07:44:32.000Z</published>
+    <updated>2022-02-27T07:45:34.644Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;What’s-going-on-here&quot;&gt;&lt;a href=&quot;#What’s-going-on-here&quot; class=&quot;headerlink&quot; title=&quot;What’s going on here?&quot;&gt;&lt;/a&gt;What’s going on</summary>
+        
+      
+    
+    
+    
+    
+    <category term="retro68" scheme="http://example.com/tags/retro68/"/>
+    
+    <category term="pce-mac-plus" scheme="http://example.com/tags/pce-mac-plus/"/>
+    
+    <category term="nuklear" scheme="http://example.com/tags/nuklear/"/>
+    
+    <category term="coprocessorjs" scheme="http://example.com/tags/coprocessorjs/"/>
+    
+    <category term="macintosh" scheme="http://example.com/tags/macintosh/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+    <category term="dev" scheme="http://example.com/tags/dev/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Technical idea - Making old Macs more useful</title>
+    <link href="http://example.com/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/"/>
+    <id>http://example.com/2021/02/11/technical-things-i-would-work-on-if-i-had-unlimited-time/</id>
+    <published>2021-02-11T18:58:57.000Z</published>
+    <updated>2022-01-04T18:41:40.465Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;If I had unlimited time on my hands I would work on software to make old computers more useful.&lt;/p&gt;
+&lt;p&gt;My ultimate goal is that I would</summary>
+        
+      
+    
+    
+    
+    
+    <category term="retro68" scheme="http://example.com/tags/retro68/"/>
+    
+    <category term="nuklear" scheme="http://example.com/tags/nuklear/"/>
+    
+    <category term="coprocessorjs" scheme="http://example.com/tags/coprocessorjs/"/>
+    
+    <category term="macintosh" scheme="http://example.com/tags/macintosh/"/>
+    
+    <category term="retro" scheme="http://example.com/tags/retro/"/>
+    
+    <category term="dev" scheme="http://example.com/tags/dev/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>turbo miata parts list</title>
+    <link href="http://example.com/2021/02/04/turbo-miata-parts-list/"/>
+    <id>http://example.com/2021/02/04/turbo-miata-parts-list/</id>
+    <published>2021-02-05T07:09:26.000Z</published>
+    <updated>2022-01-31T23:59:05.150Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;here is my budget turbo miata parts formula.&lt;/p&gt;
+&lt;p&gt;Parts listed are for a 1.8L build, adjust parts for 1.6 as needed. Should be capable</summary>
+        
+      
+    
+    
+    
+    
+    <category term="cars, miata, turbo" scheme="http://example.com/tags/cars-miata-turbo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sucker / fan car notes</title>
+    <link href="http://example.com/2021/02/03/sucker-car-notes/"/>
+    <id>http://example.com/2021/02/03/sucker-car-notes/</id>
+    <published>2021-02-04T06:37:14.000Z</published>
+    <updated>2022-01-04T18:41:26.080Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;So you want to build a sucker or fan car.&lt;/p&gt;
+&lt;p&gt;Here are some background info links&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="cars" scheme="http://example.com/tags/cars/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3D printing a car</title>
+    <link href="http://example.com/2021/02/03/3D-printing-a-car/"/>
+    <id>http://example.com/2021/02/03/3D-printing-a-car/</id>
+    <published>2021-02-04T06:36:54.000Z</published>
+    <updated>2022-02-01T07:20:39.284Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Okay, well, maybe just a car body.&lt;/p&gt;
+&lt;p&gt;Some background links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="cars" scheme="http://example.com/tags/cars/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Destroyed Datsun 240Z dashboard brought back to life</title>
+    <link href="http://example.com/2020/11/30/Destroyed-Datsun-240Z-dashboard-brought-back-to-life/"/>
+    <id>http://example.com/2020/11/30/Destroyed-Datsun-240Z-dashboard-brought-back-to-life/</id>
+    <published>2020-11-30T22:57:37.000Z</published>
+    <updated>2022-01-04T18:41:03.792Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Repairing-and-flocking-a-dashboard-specifically-a-Destroyed-Datsun-240Z-dashboard-brought-back-to-life&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Datsun" scheme="http://example.com/tags/Datsun/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hello world</title>
+    <link href="http://example.com/2020/11/23/hello-world-1/"/>
+    <id>http://example.com/2020/11/23/hello-world-1/</id>
+    <published>2020-11-23T18:31:22.000Z</published>
+    <updated>2021-02-03T19:22:49.574Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;This is my very first blog post. I’ve been meaning to set up a blog for a while to post about interesting projects that I’m working</summary>
+        
+      
+    
+    
+    
+    
+    <category term="first post" scheme="http://example.com/tags/first-post/"/>
+    
+    <category term="nerdery" scheme="http://example.com/tags/nerdery/"/>
+    
+    <category term="hello world" scheme="http://example.com/tags/hello-world/"/>
+    
+    <category term="todo" scheme="http://example.com/tags/todo/"/>
+    
+    <category term="repair" scheme="http://example.com/tags/repair/"/>
+    
+  </entry>
+  
+</feed>
