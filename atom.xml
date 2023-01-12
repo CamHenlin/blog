@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-12T20:08:08.572Z</updated>
+  <updated>2023-01-12T20:57:38.896Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -20,12 +20,25 @@
     <title>Using an Arduino UNO R3 to drive a 7 segment display and stepper motor</title>
     <link href="http://example.com/2023/01/12/Using-an-Arduino-UNO-R3-to-drive-a-7-segment-display-and-stepper-motor/"/>
     <id>http://example.com/2023/01/12/Using-an-Arduino-UNO-R3-to-drive-a-7-segment-display-and-stepper-motor/</id>
-    <published>2023-01-12T20:08:08.000Z</published>
-    <updated>2023-01-12T20:08:08.572Z</updated>
+    <published>2023-01-12T18:52:42.000Z</published>
+    <updated>2023-01-12T20:57:38.896Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Parts-list&quot;&gt;&lt;a href=&quot;#Parts-list&quot; class=&quot;headerlink&quot; title=&quot;Parts list&quot;&gt;&lt;/a&gt;Parts list&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
     
     
     
     
+    <category term="arduino" scheme="http://example.com/tags/arduino/"/>
+    
+    <category term="programming" scheme="http://example.com/tags/programming/"/>
     
   </entry>
   

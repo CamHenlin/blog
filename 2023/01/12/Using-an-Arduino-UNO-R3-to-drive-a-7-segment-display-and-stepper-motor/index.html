@@ -9,6 +9,11 @@
   <title>Using an Arduino UNO R3 to drive a 7 segment display and stepper motor | cam henlin&#39;s blog</title>
   <meta name="author" content="cameron henlin">
   
+  <meta name="description" content="Parts list
+Elegoo UNO Project Super Starter Kit
+
+Getting startedThe Elegoo UNO Project Super Starter Kit is a super fun and comprehensive kit that pro">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -111,7 +116,69 @@
 			<div class="mypage">
 			
 
-			
+			<h2 id="Parts-list"><a href="#Parts-list" class="headerlink" title="Parts list"></a>Parts list</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit</a></li>
+</ul>
+<h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><p>The <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit</a> is a super fun and comprehensive kit that provides everything needed to get started with Arduino programming. The kit comes with a variety of components, including a 4-digit 7-segment display, which can be used for just about anything you’d think up. In this article, for example purposes, I’m going to use it rotate a stepper motor from 0 to 2 radians, and to display the angle of a stepper motor in radians on the display.</p>
+<p>The Elegoo UNO Project Super Starter Kit also comes with a comprehensive tutorial book that explains how to use each component in the kit and provides sample code for a variety of projects. This makes it easy for beginners to get started with Arduino programming and quickly build their own projects.</p>
+<p>Overall, the <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit with Tutorial and UNO R3 Compatible with Arduino IDE</a> is an excellent choice for anyone looking to get started with Arduino programming and other electronics projects. The included 4-digit 7-segment display and stepper motor, and other included sensors, are powerful tools that can be used to create a wide range of projects and applications.</p>
+<p>Let’s get started!</p>
+<h2 id="Wiring-the-stepper-motor"><a href="#Wiring-the-stepper-motor" class="headerlink" title="Wiring the stepper motor"></a>Wiring the stepper motor</h2><p>At a high level, this section will explain of how the wires are wired from the stepper motor driver and stepper motor to the arduino.</p>
+<p>The <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit</a> includes a 4 Phase ULN2003 Stepper Motor Driver PCB, which is used to control the stepper motor. To wire the stepper motor driver and stepper motor to the Arduino, the following steps should be taken:</p>
+<ul>
+<li>Connect the stepper motor to the stepper motor driver by connecting the wires from the stepper motor to the corresponding connectors on the stepper motor driver PCB. The wiring diagram for the stepper motor should be followed to ensure that the wires are connected correctly.</li>
+<li>Connect the stepper motor driver PCB to the Arduino by connecting the four control pins of the stepper motor driver to the corresponding digital pins on the Arduino. The control pins are usually labeled IN1, IN2, IN3, and IN4 and can be connected to any digital pins on the Arduino. Take note of which digital pins you’re connecting each of these to because it will be important for your code later.</li>
+<li>Connect the power supply to the stepper motor driver PCB. The stepper motor driver PCB requires a DC power supply of around 12V to function. The power supply should be connected to the +V and GND terminals on the stepper motor driver PCB.</li>
+<li>Connect the 4-digit 7-segment display to the Arduino. The digital pins of the display should be connected to the corresponding digital pins on the Arduino.</li>
+<li>Once the stepper motor, stepper motor driver, and 4-digit 7-segment display are connected to the Arduino, the code can be uploaded to control the stepper motor and display the angle in radians on the 4-digit 7-segment display. It is important to note that the ULN2003 Stepper Motor Driver PCB has 4 inputs that are connected to the arduino digital pins and 4 outputs that are connected to the stepper motor.</li>
+</ul>
+<p>Now we’re done with the hardware!</p>
+<h2 id="Writing-the-code"><a href="#Writing-the-code" class="headerlink" title="Writing the code"></a>Writing the code</h2><p>This section will describe starting a new project in Arduino IDE and writing the required code to rotate from 0 to 2 radians on the stepper motor while displaying the angle in radians on the 4 digit 7 segment display.</p>
+<p>To start a new project in Arduino IDE, the following steps should be taken:</p>
+<ul>
+<li>Open the Arduino IDE software on your computer.</li>
+<li>Click on the “File” menu and select “New” to create a new sketch.</li>
+<li>Give a name to your sketch and save it in a location of your choice.</li>
+<li>In the Arduino IDE, you will need to import the stepper library by going to the Sketch menu and selecting Include Library, then Stepper. This library contains all the functions needed to control the stepper motor.</li>
+<li>Next, you need to declare the digital pins on the Arduino that will be connected to the corresponding IN1, IN2, IN3, and IN4 ports on the ULN2003 stepper motor driver PCB.</li>
+<li>Declare a variable for the stepper motor, using the Stepper class and the number of steps per revolution of your stepper motor.</li>
+<li>Declare a variable for the stepper motor driver, using the ULN2003Stepper class and the digital pins that you have connected to the IN1, IN2, IN3, and IN4 ports on the stepper motor driver PCB.</li>
+<li>Next, in the setup() function, initialize the stepper motor by using the stepper.setSpeed() function and specifying the RPM speed you want the motor to rotate at.</li>
+<li>In the loop() function, you can use the stepper.step(steps) function to rotate the stepper motor from 0 to 2 radians. The steps variable is calculated by multiplying the number of steps per revolution by the angle in radians divided by 2π.</li>
+<li>To display the angle in radians on the 4-digit 7-segment display, you can use the Arduino digitalWrite() function to send the appropriate signals to the digital pins connected to the display.</li>
+<li>Finally, you can use the delay() function to add a delay between steps, in order to slow down the rotation of the stepper motor, and make it more visible.</li>
+<li>Here is an example of the code that could be used to rotate the stepper motor from 0 to 2 radians while displaying the angle in radians on the 4-digit 7-segment display:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;Stepper.h&gt;</span><br><span class="line">#include &lt;ULN2003Stepper.h&gt;</span><br><span class="line"></span><br><span class="line">const int stepsPerRevolution &#x3D; 200;</span><br><span class="line">const int IN1 &#x3D; 1;</span><br><span class="line">const int IN2 &#x3D; 2;</span><br><span class="line">const int IN3 &#x3D; 3;</span><br><span class="line">const int IN4 &#x3D; 4;</span><br><span class="line">const int display_pin_1 &#x3D; 5;</span><br><span class="line">const int display_pin_2 &#x3D; 6;</span><br><span class="line">const int display_pin_3 &#x3D; 7;</span><br><span class="line">const int display_pin_4 &#x3D; 8;</span><br><span class="line"></span><br><span class="line">ULN2003Stepper stepper(IN1, IN2, IN3, IN4);</span><br><span class="line"></span><br><span class="line">void setup() &#123;</span><br><span class="line">  stepper.setSpeed(30);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void loop() &#123;</span><br><span class="line">  for (float angle &#x3D; 0; angle &lt; 2; angle +&#x3D; 0.01) &#123;</span><br><span class="line">    int steps &#x3D; angle * stepsPerRevolution &#x2F; (2 * 3.14);</span><br><span class="line">    stepper.step(steps);</span><br><span class="line">    delay(100);</span><br><span class="line">    digitalWrite(display_pin_1, angle &#x2F; 1000);</span><br><span class="line">    digitalWrite(display_pin_2, (angle % 1000) &#x2F; 100);</span><br><span class="line">    digitalWrite(display_pin_3, (angle % 100) &#x2F; 10);</span><br><span class="line">    digitalWrite(display_pin_4, angle % 10);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The <code>digitalWrite()</code> function is a built-in function in the Arduino programming language that allows you to control the state of a digital pin on the Arduino board. The function takes two arguments: the pin number and the state (HIGH or LOW). When you call digitalWrite(pin, state), it sets the specified pin to the specified state, in this case the corresponding digits.</p>
+<p>Additionally, to some readers, the pin assignments between code and the physical Arduino may be confusing. In the Arduino IDE code, the digital pins on the Arduino UNO R3 Controller Board are represented by variables. These variables can be used in the code to refer to the specific digital pin that is being used. For example, if you want to use digital pin 13 to control an LED, you would use the variable “13” in the code to refer to that pin. It’s important to note that the mapping of the physical pins to the variables in the code is not arbitrary, the mapping is fixed and you can check it on the arduino board itself or on the official documentation.</p>
+<h2 id="Let’s-get-running"><a href="#Let’s-get-running" class="headerlink" title="Let’s get running"></a>Let’s get running</h2><p>Lastly, we need to hook our computer up to the Arduino, stepper motor, and 7 segment display, run the code, and see our results. Here’s how we do that: </p>
+<p>To hook up the Arduino UNO R3 Controller Board to a computer to upload code to the device, the following steps should be taken:</p>
+<ul>
+<li>Connect the Arduino UNO R3 Controller Board to the computer using a USB cable. The USB cable should be connected to the USB connector on the Arduino board and the USB port on the computer.</li>
+<li>Install the Arduino IDE software on your computer if it is not already installed. You can download the latest version of the Arduino IDE from the official Arduino website.</li>
+<li>Open the Arduino IDE software on your computer and select the appropriate board and port from the “Tools” menu. In the board menu, select Arduino/Genuino Uno, and in the port menu, select the port that your Arduino is connected to.</li>
+<li>Write or open the code you want to upload to the Arduino board in the Arduino IDE.</li>
+<li>Verify the code by clicking the “Verify” button, this will check the code for any errors.</li>
+<li>Upload the code to the Arduino board by clicking the “Upload” button. This will transfer the code from the computer to the Arduino board.</li>
+<li>The upload process may take a few seconds, wait until the upload is complete and the message “Done uploading” appears on the Arduino IDE.</li>
+<li>Once the code has been uploaded to the Arduino board, it will automatically begin running on the device. You should hear your motor begin rotating and you should see the digits change on the display. </li>
+</ul>
+<p>It’s important to note that the Arduino board needs to be connected to the computer while uploading the code, and it’s also important to make sure that the board and the port are correctly selected in the Arduino IDE before uploading the code.</p>
+<h2 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h2><p>You didn’t come here just to build a toy that rotates from 0 to 2 radians. Use your new found knowledge to modify the code to do other stuff, or do some other interesting projects with your kit:</p>
+<ul>
+<li>Add a potentiometer to the circuit to allow the user to control the rotation speed of the stepper motor. This can be done by connecting the potentiometer to an analog pin on the Arduino board and using the analogRead() function to read the value of the potentiometer.</li>
+<li>Add an ultrasonic sensor to the circuit to allow the user to control the rotation of the stepper motor based on the distance detected by the sensor. This can be done by connecting the ultrasonic sensor to the digital pins on the Arduino board and using the pulseIn() function to measure the duration of the ultrasonic pulse.</li>
+<li>Add a Bluetooth module to the circuit to allow the user to remotely control the rotation of the stepper motor. This can be done by connecting the Bluetooth module to the digital pins on the Arduino board and using the SoftwareSerial library to communicate with the module.</li>
+<li>Add a OLED display module to the circuit to display more information such as current angle, rotation speed, or total rotation time. This can be done by connecting the OLED display module to the digital pins on the Arduino board and using the Adafruit_SSD1306 and Adafruit_GFX libraries to control the display.</li>
+<li>Add a real-time clock module to the circuit to display the current time on the 4 digit 7 segment display. This can be done by connecting the real-time clock module to the digital pins on the Arduino board and using the RTClib library to communicate with the module.</li>
+</ul>
+<p>Thank you for reading the article on using the <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit with Tutorial and UNO R3 Compatible with Arduino IDE</a>. I hope that this article was helpful in providing an overview of the features and capabilities of the kit and how to use it to build a simple project.</p>
+<p>I encourage you to experiment with the kit and see what you can create. If you used the kit to build something, please leave a comment below and let me know what you built and how it turned out. I would love to hear about your experiences and see your creations.</p>
+<p>The <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit</a> is a great way to learn about the basics of arduino programming and electronics in general. It’s a great tool to get started on your journey to become a maker, and as you can see, there’s plenty of room for modifications and improvements to the projects that come with the kit.</p>
+<p>I wish you the best in your future projects and please don’t hesitate to reach out if you have any questions or need help.</p>
+
 
 			<h2>Did you enjoy my post?</h2>
 			<p>I'm really excited about the work that I'm doing here. If you enjoyed my post and my work, please <a target="_blank" rel="noopener" href="https://ko-fi.com/camhenlin">consider tipping me with a coffee</a>. I appreciate you taking the time to read my post!</p>
@@ -200,6 +267,14 @@
     
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/arduino/">arduino<span>1</span></a></li> <li><a href="/tags/programming/">programming<span>1</span></a></li>
+    </ul>
+	</div>
 		
 
 	<!-- toc -->
