@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-12T20:59:28.449Z</updated>
+  <updated>2023-01-12T21:02:46.849Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://example.com/2023/01/12/Using-an-Arduino-UNO-R3-to-drive-a-7-segment-display-and-stepper-motor/"/>
     <id>http://example.com/2023/01/12/Using-an-Arduino-UNO-R3-to-drive-a-7-segment-display-and-stepper-motor/</id>
     <published>2023-01-12T18:52:42.000Z</published>
-    <updated>2023-01-12T20:59:28.449Z</updated>
+    <updated>2023-01-12T21:02:46.849Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;In this post, we’ll be using an Arduino UNO R3 to drive a 7 segment display and stepper motor. We’ll also build a small sample program</summary>
+    <summary type="html">&lt;p&gt;In this post, we’ll be using an Arduino UNO R3 to drive a 7 segment display and stepper motor as a sort of “getting started with</summary>
         
       
     
