@@ -9,10 +9,7 @@
   <title>Using an Arduino UNO R3 to drive a 7 segment display and stepper motor | cam henlin&#39;s blog</title>
   <meta name="author" content="cameron henlin">
   
-  <meta name="description" content="Parts list
-Elegoo UNO Project Super Starter Kit
-
-Getting startedThe Elegoo UNO Project Super Starter Kit is a super fun and comprehensive kit that pro">
+  <meta name="description" content="In this post, we’ll be using an Arduino UNO R3 to drive a 7 segment display and stepper motor. We’ll also build a small sample program to make the two">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -116,14 +113,15 @@ Getting startedThe Elegoo UNO Project Super Starter Kit is a super fun and compr
 			<div class="mypage">
 			
 
-			<h2 id="Parts-list"><a href="#Parts-list" class="headerlink" title="Parts list"></a>Parts list</h2><ul>
+			<p>In this post, we’ll be using an Arduino UNO R3 to drive a 7 segment display and stepper motor. We’ll also build a small sample program to make the two work together and discuss other general projects that you could build using an Arduino UNO.</p>
+<h2 id="Parts-list"><a href="#Parts-list" class="headerlink" title="Parts list"></a>Parts list</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit</a></li>
 </ul>
 <h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><p>The <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit</a> is a super fun and comprehensive kit that provides everything needed to get started with Arduino programming. The kit comes with a variety of components, including a 4-digit 7-segment display, which can be used for just about anything you’d think up. In this article, for example purposes, I’m going to use it rotate a stepper motor from 0 to 2 radians, and to display the angle of a stepper motor in radians on the display.</p>
 <p>The Elegoo UNO Project Super Starter Kit also comes with a comprehensive tutorial book that explains how to use each component in the kit and provides sample code for a variety of projects. This makes it easy for beginners to get started with Arduino programming and quickly build their own projects.</p>
 <p>Overall, the <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit with Tutorial and UNO R3 Compatible with Arduino IDE</a> is an excellent choice for anyone looking to get started with Arduino programming and other electronics projects. The included 4-digit 7-segment display and stepper motor, and other included sensors, are powerful tools that can be used to create a wide range of projects and applications.</p>
 <p>Let’s get started!</p>
-<h2 id="Wiring-the-stepper-motor"><a href="#Wiring-the-stepper-motor" class="headerlink" title="Wiring the stepper motor"></a>Wiring the stepper motor</h2><p>At a high level, this section will explain of how the wires are wired from the stepper motor driver and stepper motor to the arduino.</p>
+<h2 id="Wiring-the-stepper-motor-and-display"><a href="#Wiring-the-stepper-motor-and-display" class="headerlink" title="Wiring the stepper motor and display"></a>Wiring the stepper motor and display</h2><p>At a high level, this section will explain of how the wires are wired from the stepper motor driver and stepper motor to the arduino.</p>
 <p>The <a target="_blank" rel="noopener" href="https://amzn.to/3GXp1Yq">Elegoo UNO Project Super Starter Kit</a> includes a 4 Phase ULN2003 Stepper Motor Driver PCB, which is used to control the stepper motor. To wire the stepper motor driver and stepper motor to the Arduino, the following steps should be taken:</p>
 <ul>
 <li>Connect the stepper motor to the stepper motor driver by connecting the wires from the stepper motor to the corresponding connectors on the stepper motor driver PCB. The wiring diagram for the stepper motor should be followed to ensure that the wires are connected correctly.</li>

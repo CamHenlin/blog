@@ -15,7 +15,7 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 12 Jan 2023 20:57:38 GMT</pubDate>
+    <pubDate>Thu, 12 Jan 2023 20:59:28 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -28,8 +28,7 @@
         
           
           
-      <description>&lt;h2 id=&quot;Parts-list&quot;&gt;&lt;a href=&quot;#Parts-list&quot; class=&quot;headerlink&quot; title=&quot;Parts list&quot;&gt;&lt;/a&gt;Parts list&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a</description>
+      <description>&lt;p&gt;In this post, we’ll be using an Arduino UNO R3 to drive a 7 segment display and stepper motor. We’ll also build a small sample program</description>
           
         
       
