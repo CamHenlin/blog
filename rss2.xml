@@ -15,7 +15,7 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 13 Jan 2023 21:38:20 GMT</pubDate>
+    <pubDate>Fri, 13 Jan 2023 21:46:14 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -24,9 +24,19 @@
       <guid>http://example.com/2023/01/13/Having-fun-with-the-AnnoyingPCB/</guid>
       <pubDate>Fri, 13 Jan 2023 21:38:20 GMT</pubDate>
       
+        
+        
+          
+          
+      <description>&lt;p&gt;I had recently heard about a new product called the &lt;a href=&quot;https://amzn.to/3Wb0FP2&quot;&gt;AnnoyingPCB&lt;/a&gt;. It’s essentially a small circuit</description>
+          
+        
       
       
       
+      
+      
+      <category domain="http://example.com/tags/pranking/">pranking</category>
       
       
       <comments>http://example.com/2023/01/13/Having-fun-with-the-AnnoyingPCB/#disqus_thread</comments>
