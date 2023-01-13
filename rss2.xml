@@ -15,8 +15,23 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 12 Jan 2023 21:02:46 GMT</pubDate>
+    <pubDate>Fri, 13 Jan 2023 21:38:20 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Having fun with the AnnoyingPCB</title>
+      <link>http://example.com/2023/01/13/Having-fun-with-the-AnnoyingPCB/</link>
+      <guid>http://example.com/2023/01/13/Having-fun-with-the-AnnoyingPCB/</guid>
+      <pubDate>Fri, 13 Jan 2023 21:38:20 GMT</pubDate>
+      
+      
+      
+      
+      
+      
+      <comments>http://example.com/2023/01/13/Having-fun-with-the-AnnoyingPCB/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Using an Arduino UNO R3 to drive a 7 segment display and stepper motor</title>
