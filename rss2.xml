@@ -15,9 +15,25 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 14 Jan 2023 06:54:26 GMT</pubDate>
+    <pubDate>Wed, 09 Sep 2026 23:30:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
+
+    <item>
+      <title>Introducing Dangerous Alone</title>
+      <link>http://example.com/2026/09/09/Introducing-Dangerous-Alone/</link>
+      <guid>http://example.com/2026/09/09/Introducing-Dangerous-Alone/</guid>
+      <pubDate>Wed, 09 Sep 2026 23:30:00 GMT</pubDate>
+      <description>&lt;p&gt;Dangerous Alone is an unofficial browser engine for The Legend of Zelda (NES, 1986). You drop a legally obtained USA NES dump on the window, the engine extracts the cartridge in the browser, and from there it can run the full first and second quests.&lt;/p&gt;</description>
+      <category domain="http://example.com/tags/zelda/">zelda</category>
+      <category domain="http://example.com/tags/nes/">nes</category>
+      <category domain="http://example.com/tags/javascript/">javascript</category>
+      <category domain="http://example.com/tags/pixi/">pixi</category>
+      <category domain="http://example.com/tags/retro/">retro</category>
+      <category domain="http://example.com/tags/multiplayer/">multiplayer</category>
+      <category domain="http://example.com/tags/dev/">dev</category>
+      <comments>http://example.com/2026/09/09/Introducing-Dangerous-Alone/#disqus_thread</comments>
+    </item>
     <item>
       <title>Having fun with the AnnoyingPCB</title>
       <link>http://example.com/2023/01/13/Having-fun-with-the-AnnoyingPCB/</link>

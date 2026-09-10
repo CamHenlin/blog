@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Introducing Dangerous Alone | cam henlin&#39;s blog</title>
+  <meta name="author" content="cameron henlin">
+  
+  <meta name="description" content="What is it?Dangerous Alone is an unofficial browser engine for The Legend of Zelda (NES, 1986). You drop a legally obtained USA NES dump on the window">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Introducing Dangerous Alone"/>
+  <meta property="og:site_name" content="cam henlin&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GS3GPZ8RZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4GS3GPZ8RZ');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">cam henlin&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Introducing Dangerous Alone</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+		<!-- content -->
+		<div class="entry">
+			<div class="mypage">
+			
+
+			<h2 id="What-is-it"><a href="#What-is-it" class="headerlink" title="What is it?"></a>What is it?</h2><p><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone">Dangerous Alone</a> is an unofficial browser engine for <em>The Legend of Zelda</em> (NES, 1986). You drop a legally obtained USA NES dump on the window, the engine extracts the cartridge in the browser, and from there it can run the full first and second quests: overworld, labyrinths, caves, combat, items, bosses, saves, and music.</p>
+<p>It is not a Nintendo product, it does not include Nintendo assets, and it is not an emulator wrapped in a window. Maps, graphics, and audio come from the ROM you already own. Without that ROM, the window is a dropzone.</p>
+<p>What the engine <em>adds</em> is a modern play layer around the original game:</p>
+<ul>
+<li><strong>Split-screen co-op</strong> — one to four players share the same world, each with a full NES-sized camera. Join or leave mid-session. Seats can be in different modes at once (overworld, dungeon, cave).</li>
+<li><strong>Continuous camera</strong> — walk the overworld and visited dungeon rooms without the original screen-wipe. Unvisited dungeon rooms stay fogged until you enter.</li>
+<li><strong>Readable story</strong> — expanded NPC, pickup, and labyrinth text in a paged dialogue box, plus map marks for the next dungeon and hinted secrets.</li>
+<li><strong>Feel tweaks</strong> — arcing sword, integer display scale, keyboard/gamepad rebinding, and browser saves that survive a refresh.</li>
+</ul>
+<p>Solo play is meant to stay recognizable. You can <a target="_blank" rel="noopener" href="https://camhenlin.github.io/Dangerous-Alone/">run the engine here</a> or clone the source at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone">github.com/CamHenlin/Dangerous-Alone</a>.</p>
+<p><img src="/images/dangerous-alone.png" alt="Four-player split-screen: one seat in a dungeon, one on the overworld, two waiting to join"></p>
+<p>That screenshot is also in the repo: <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone/blob/master/example.png">example.png</a>.</p>
+<h2 id="Why-this-exists"><a href="#Why-this-exists" class="headerlink" title="Why this exists"></a>Why this exists</h2><p>I wanted to play through the original <em>Legend of Zelda</em> with my three kids. They pointed out the obvious problem: on a real NES, only one of us gets the controller and everybody else just watches. They figured it would be a lot more fun if we could all be in Hyrule at the same time.</p>
+<p>So that became the goal — four seats, four cameras, one shared world. The rest of the quality-of-life work (continuous camera, longer and more coherent story text, rebindable controls) grew out of the same wish: make the 1986 cartridge something a family can play together on the couch today.</p>
+<p>In spirit this is to NES <em>Zelda</em> what <a target="_blank" rel="noopener" href="https://www.shipofharkinian.com/">Ship of Harkinian</a> is to <em>Ocarina of Time</em>: an unofficial engine that plays a cartridge you already own, on hardware Nintendo never shipped it for, with extras the original box could not do. The implementation is different — Ship of Harkinian is a native port on a matching decompilation; this repo extracts tables from your dump and reimplements the systems in the browser — but the overall idea is the same.</p>
+<h2 id="What-we-did-not-build"><a href="#What-we-did-not-build" class="headerlink" title="What we did not build"></a>What we did not build</h2><p>The tempting shortcut is to run the ROM in an emulator and draw four copies of the PPU. That would have been playable quickly, and it would have been the wrong project.</p>
+<p>An emulator is a 6502, a PPU, and an APU. It is a great development tool — we kept <a target="_blank" rel="noopener" href="https://github.com/SourMesen/Mesen2">Mesen</a> open the whole time — but it cannot give you four independent cameras looking at different rooms of one simulation. It also cannot give you a continuous overworld camera, a paged dialogue box, or a <code>story/</code> folder you can edit without reassembling the cartridge.</p>
+<p>So the rule we wrote down on day one, and kept:</p>
+<ol>
+<li>Load world, dungeon, item, and enemy <strong>data from a user-supplied ROM</strong>. No hardcoded dumps in git.</li>
+<li>Implement play systems in portable JavaScript — collision, combat, secrets, save, UI, audio.</li>
+<li>Render and mix audio through modern APIs. No 6502 / PPU / APU at runtime.</li>
+<li>Match the supported cartridge closely enough that the original game is playable through this engine.</li>
+</ol>
+<p>Emulators stayed as the reference. The product is the engine.</p>
+<h2 id="The-bet"><a href="#The-bet" class="headerlink" title="The bet"></a>The bet</h2><p>NES <em>Zelda</em> is a data-driven game wearing a tiny 6502 costume. Screens are compressed columns of blocks. Dungeons are room templates plus door tables. Enemies spawn from list IDs. Caves are a handful of type bytes plus a text table. If you extract those tables into JSON you own the schema for, you can reimplement the <em>systems</em> against that data and verify them against a disassembly.</p>
+<p>We followed that path:</p>
+<ol>
+<li>Extract structured packs from the ROM (maps, tiles, palettes, spawn tables, music sequences).</li>
+<li>Reimplement overworld, underworld, player, enemies, items, shops, and audio against those packs.</li>
+<li>Use published disassemblies and Data Crystal maps as the <strong>behavior oracle</strong>, and Mesen as a visual/behavioral reference.</li>
+</ol>
+<p>We did not need a byte-identical recompilation of the NES binary. We did need extracted data that matches the ROM, and logic that matches observed behavior.</p>
+<p>The cartridge we targeted is USA <strong>PRG1</strong> / NES-ZL-1 (PRG CRC32 <code>EAF7ED72</code>). Offsets in community docs are usually PRG-relative; add <code>+0x10</code> for iNES file offsets. The extractor refuses the wrong mapper or PRG size.</p>
+<p>Prior art we actually used, rather than reinvented:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/aldonunez/zelda1-disassembly">aldonunez/zelda1-disassembly</a> — complete buildable ca65 disassembly</li>
+<li><a target="_blank" rel="noopener" href="https://www.computerarcheology.com/NES/Zelda/">Computer Archeology — Zelda</a> — bank map and boot path</li>
+<li><a target="_blank" rel="noopener" href="https://datacrystal.tcrf.net/wiki/The_Legend_of_Zelda/ROM_map">Data Crystal ROM map</a> and <a target="_blank" rel="noopener" href="https://datacrystal.tcrf.net/wiki/The_Legend_of_Zelda/Dungeon_Data">Dungeon Data</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.romhacking.net/documents/845/">RHDN column/screen docs</a></li>
+<li>Mesen / FCEUX for CHR viewing and RAM watch</li>
+</ul>
+<h2 id="How-we-worked"><a href="#How-we-worked" class="headerlink" title="How we worked"></a>How we worked</h2><p>The whole project was planned as <strong>vertical slices</strong>. Each phase had to end with something runnable or a verifiable artifact. We did not try to reverse the whole ROM before writing an engine.</p>
+<p>That sounds obvious. It is also the only reason this shipped. The first playable thing is not “Hyrule.” It is Link walking on the starting screen with collision that matches the original within a few pixels. Then you can walk to Level 1. Then you can swing a sword. Then you can clear Level 1. Then you can finish Quest 1. Then you can start arguing about cameras.</p>
+<p>The engineering handbook lives in <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone/blob/master/DEV.md"><code>DEV.md</code></a>. Living checklists live in <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone/tree/master/docs/phases"><code>docs/phases/</code></a>. Cross-cutting rules live in a <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone/blob/master/docs/behavior-oracle.md">behavior oracle</a> — things like bomb fuse frames, sword knockback, and which foes count toward room clear. If a behavior had to match the NES, it got a row. If we were going to diverge on purpose, that got a row too.</p>
+<p>The stack is boring on purpose: vanilla JavaScript (ES modules), PixiJS v8 for the 256×240 stage, Web Audio for sequenced music and SFX, Vite for the play client, Node for extractors and tests. One language across tools and engine. No game framework, because we did not want to fight Phaser over NES collision and timing.</p>
+<p>Fidelity was earned with tests, not vibes:</p>
+<ul>
+<li>Extractor tests against table hashes (fixtures stay private; CI has no ROM).</li>
+<li>Unit tests for collision helpers, column expansion, damage tables, shop prices, story charset, etc.</li>
+<li>A headless play sim (<code>playSim.js</code>) that can be stepped with no Pixi, no <code>window</code>, and a rolling hash of every frame. Hashing only the final state once passed a deliberately broken build where the sword landed a frame late — the Octorok still died. The trajectory hash caught it.</li>
+<li>A Playwright harness over the real client for the orchestration the Node sim cannot reach.</li>
+<li>Side-by-side with Mesen when hunting a specific bug.</li>
+</ul>
+<p>We also used coding agents heavily. The phase markdown was the contract: an agent would pick up a phase, implement against the checklist, keep <code>npm test</code> green, and leave notes in the phase file (offsets, decisions, the weird NES behaviors). That is why the repo is full of small modules with sharp edges — <code>collision.js</code>, <code>mazes.js</code>, <code>spawn.js</code>, <code>storyText.js</code> — instead of one 20,000-line play loop. The play loop is still large. The things you can prove things about are not.</p>
+<p>Nintendo assets never go in git. <code>.gitignore</code> covers the ROM, <code>assets/extracted/</code>, the manual, and the walkthrough. CI builds with no cartridge. In the browser, extraction happens on the device; the file is never uploaded.</p>
+<p>Calendar-wise this ran from early August through early September 2026: data and a completable game first, then a fidelity pass, then the quality-of-life and multiplayer work the kids actually asked for.</p>
+<h2 id="The-phases"><a href="#The-phases" class="headerlink" title="The phases"></a>The phases</h2><p>There were 22 numbered phases plus a thorough review. They group into five jobs.</p>
+<h3 id="Phases-0–4-—-make-the-cartridge-into-data"><a href="#Phases-0–4-—-make-the-cartridge-into-data" class="headerlink" title="Phases 0–4 — make the cartridge into data"></a>Phases 0–4 — make the cartridge into data</h3><p>Phase 0 was hygiene: identify the dump, ignore it in git, clone the disassembly under a gitignored <code>reference/</code> folder, install Mesen.</p>
+<p>Phase 1 was a bank splitter. USA Zelda is MMC1, 8 × 16 KiB PRG, bank 7 fixed at <code>$C000–$FFFF</code>. <code>npm run extract -- info</code> prints the PRG hash; <code>banks</code> writes eight files whose CRC32s we pinned.</p>
+<p>Phase 2 decoded NES 2bpp pattern tables into PNG sheets and palettes. Zelda stores patterns in PRG and copies them into CHR-RAM, so you follow the bank loads the game uses, not a CHR ROM that does not exist. A tiny Pixi tile viewer let us confirm bushes, water, dungeon walls, and Link frames before anyone walked.</p>
+<p>Phase 3 extracted the overworld: 16×8 = 128 screens, each an arrangement byte pointing at 16 compressed columns of 11 squares, each square a 2×2 of CHR tiles, plus attribute tables for palettes, Zora, caves, enemies, secrets, and exits. The stitched map had to look like Hyrule. A <code>map.html</code> viewer let us click a screen and see why.</p>
+<p>Phase 4 did the same for underworld levels 1–9, both quests: room templates, doors, items, LevelInfo blobs, palettes. <code>dungeon.html</code> is the sibling viewer.</p>
+<p>At the end of this block we still did not have a game. We had a cartridge we could look at.</p>
+<h3 id="Phases-5–12-—-make-it-a-game"><a href="#Phases-5–12-—-make-it-a-game" class="headerlink" title="Phases 5–12 — make it a game"></a>Phases 5–12 — make it a game</h3><p>Phase 5 was the first playable slice: Vite + PixiJS, internal 256×240, integer scaled, Link on start screen <code>$77</code> at the ROM spawn (<code>X=$78</code>, <code>Y=$8D</code>), 1.5 px/frame, NES walkable-tile collision. Edges clamped. No enemies, no HUD that meant anything. You could walk around the rocks you spawn between.</p>
+<p>Phase 6 made the overworld traversable: screen transitions, warp tiles into caves and dungeon stubs, a HUD. The walk to Level 1 is north four screens from start, stand on the tree mouth.</p>
+<p>Phase 7 was Link as a verb: wood / white / magic sword timings and damage from the disassembly, bombs, inventory, knockback, invuln frames, hearts as half-hearts, rupees / keys / bombs on the HUD.</p>
+<p>Phase 8 was enemies. Spawn tables per screen, then families: Octoroks and rocks on the overworld, Keese / Gel / Goriya / Stalfos / Wallmaster / Aquamentus in Level 1. Room-clear shutters. The bow in Level 1’s item room. The “done when” for this phase was clearing Level 1 end-to-end.</p>
+<p>Phase 9 turned dungeons into a system: keys, shutters, bombable walls, push blocks, dark rooms, candles, cellars, maps and compasses, Ganon and Zelda, Quest 2 dungeon packs. Quest 1 became completable.</p>
+<p>Phase 10 was the overworld progression graph people actually get stuck on: shops, gambling, clue caves, sword caves with heart gates, the letter and potion shop, burn / bomb / push / recorder secrets. A blind playthrough had to be able to get the swords and required items without cheats.</p>
+<p>Phase 11 was audio without an APU. We extracted the game’s own sequence data from Bank 0 and replayed it through Web Audio with square / triangle / noise approximations. Overworld playlist, dungeon theme, item fanfares, sword and hurt SFX, mute and volume. Tone is approximate; notes and timing are from the ROM.</p>
+<p>Phase 12 was the daily-driver 1.0: title and file select with three slots, SRAM-shaped saves in <code>localStorage</code>, options (scale, fullscreen, rebind), inventory layout matching the original, a minimap with a player dot, CI with no ROM.</p>
+<p>At this point you could play the game. It still screen-wiped. It was still one player. The old man still spoke in 1986 telegram.</p>
+<h3 id="Phases-13–17-—-make-it-match"><a href="#Phases-13–17-—-make-it-match" class="headerlink" title="Phases 13–17 — make it match"></a>Phases 13–17 — make it match</h3><p>A thorough review compared <code>tools/shared/</code>, <code>game/src/</code>, and the extractors against the ca65 disassembly, with a local walkthrough as playability context. Every item cited a ROM label. Community lore that did not match the disassembly got rejected, not implemented.</p>
+<p>That audit is why Lost Woods and Lost Hills exist as <code>CheckMazes</code>, why attract mode and the death / continue menu and the ending exist, why registering the name <code>ZELDA</code> unlocks Quest 2, why Gohma only dies through the eye, why Like-Likes steal the magic shield, why Wallmasters send you back to the dungeon entrance.</p>
+<p>Phases 13–17 were that work plus stretch systems: raft and ladder, flute, sword beam, Magical Rod, Moldorm, Lamnola, whirlwind, boss AI for Manhandla / Gleeok / Patra, Quest 2 overworld. The behavior oracle grew to well over a hundred rules. Where we diverged, we wrote it down (Web Audio instead of a cycle-accurate APU; an arcing sword later; B-item select that is a little more convenient than 1986).</p>
+<h3 id="Phases-18–21-—-make-it-nicer-to-sit-with"><a href="#Phases-18–21-—-make-it-nicer-to-sit-with" class="headerlink" title="Phases 18–21 — make it nicer to sit with"></a>Phases 18–21 — make it nicer to sit with</h3><p>Phase 18 replaced the NES screen-wipe on the overworld and in visited dungeon rooms with a camera that follows Link and streams neighbor tiles and enemies as they come into view. Hard cuts stayed for caves, dungeon enter/exit, cellars, raft, whirlwind, and death. Unvisited dungeon rooms draw black fog. Link’s sword started swinging on an arc, closer to <em>Link’s Awakening</em> than to the original jab.</p>
+<p>Phase 20 existed because Phase 18 broke four assumptions that were only true on a single screen. Enemy sprites outlived their enemies (a 4,200-frame walk left 45 orphaned pictures and 8 live foes). One monster table served a whole neighborhood of rooms, so you could starve a screen of slots. Collision was sampled against the anchor room’s grid while Link’s pixel position had already crossed a seam, which is how you walk into a tree that is visually in the next screen. Cave mouths and shutter triggers were still “are you on this screen,” which is a different question from “are you standing on this tile in a camera that spans two rooms.” Streaming cleanup was a phase because those bugs were not one-liners.</p>
+<p>Phase 19 built a paged, typewriter dialogue box and a <code>story/</code> folder. Phase 21 filled it in: prologue, pickups, labyrinth briefings, an ending that pays off the story the rest of the text tells, and map marks for the next dungeon and hinted secrets. The pack keeps one name per thing so a nine-year-old never has to decide whether two words mean the same object. The box draws with the NES background charset — <code>A–Z</code>, digits, and a handful of punctuation — and <code>npm test</code> fails on a character the font cannot draw.</p>
+<p>The story files are ordinary JavaScript. Edit them, reload, no re-extract. Delete an entry and you get the 1986 line back, except for item pickups, which the NES never narrated at all.</p>
+<h3 id="Phase-22-—-make-it-a-party"><a href="#Phase-22-—-make-it-a-party" class="headerlink" title="Phase 22 — make it a party"></a>Phase 22 — make it a party</h3><p>Every phase until this one assumed one hero. <code>main.js</code> had closure-local <code>link</code>, <code>inv</code>, and <code>sword</code>, with well over a thousand references. The shared helpers were already parameterized (<code>stepLink(link, …)</code>), but they were parameterized for <em>the</em> hero, not <em>a</em> hero.</p>
+<p>Three decisions were made before the code:</p>
+<ol>
+<li>Two or more players grow the frame so each quadrant is a full-size NES view. Solo never pays for the larger canvas.</li>
+<li>Players are fully independent and may be in different modes at the same time.</li>
+<li>There is still one simulation. Four cameras draw it.</li>
+</ol>
+<p>The work that made that possible, in order:</p>
+<p><strong>A sim you can prove things about.</strong> Lift the step out of the Pixi closure. Golden hashes over the trajectory. Solo goldens had to stay on the same traces through the whole plural-hero refactor. If <code>players.length === 1</code> ever behaved differently from the original one Link, we stopped and fixed that first.</p>
+<p><strong>A roster, not a rewrite.</strong> The first player record holds the same objects the old locals pointed at, so existing references kept working while the structure went in around them. World context (<code>mode</code>, <code>roomId</code>, <code>screen</code>, <code>dungeon</code>) is not threaded through 600 call sites. A <code>playerFocus</code> module says <em>whose</em> those variables are for this frame. Copying happens when focus moves, not every frame — the first attempt saved and loaded every frame and hung the boot path, because <code>startGame()</code> sets <code>mode</code> from outside any frame.</p>
+<p><strong>Shared purse, private hearts.</strong> Items, quest flags, rupees, keys, bombs, and dungeon progress are shared. Hearts, knockback, B-slot, and death are per player. The clock is shared because it freezes enemies and the enemies are global. That split is an inventory-shaped view over two objects, not a signature change through 200 call sites.</p>
+<p><strong>Join on Start, leave with Start+Select.</strong> Two keyboard bind sets so two people can play with no gamepads. Spare pads join instead of stealing player one’s inventory. Empty quadrants say <code>PRESS START TO JOIN</code>. Dropping back to one player puts the ROM frame back on the stage.</p>
+<p><strong>One playfield, several pictures.</strong> At two or more players the same scene graph is rendered into a texture per camera. Streaming and culling answer to every camera. Two labyrinths do not share a room store; four people in the same overworld screen share one stream, because four copies of the same tiles would be four times the work for the same picture. The other Links in your quadrant get a player number over their head. Yours does not.</p>
+<p>Solo still looks like the 1986 game plus the QoL we already shipped. That was the constraint that made the rest of this phase take as long as it did.</p>
+<h2 id="A-few-things-that-surprised-me"><a href="#A-few-things-that-surprised-me" class="headerlink" title="A few things that surprised me"></a>A few things that surprised me</h2><p><strong>The overworld is a compression format, not a map.</strong> Once you have columns → squares → tiles, stitching 128 screens is the easy part. The hard part is every table that sits <em>on</em> those screens: enemy groups, secret flags, cave IDs, dock heart, recorder secrets. Getting the map picture right in week one hid about two weeks of “why can’t I enter this cave from this pixel.”</p>
+<p><strong>NES collision is a hotspot, not a sprite box.</strong> Link’s walkable probe is not his drawn rectangle. Ground enemies use a different probe. Keese ignore tiles. Continuous camera made that painfully obvious, because the probe and the art can be in different rooms.</p>
+<p><strong>Room clear is a policy, not “all sprites dead.”</strong> Bubbles and traps do not count. Ringleader rooms care about slot 1. Last-boss rooms care about a flag. Carry that policy into multiplayer and you have to decide whether <em>your</em> clear is <em>the</em> clear. The world is shared, so it is.</p>
+<p><strong>Determinism is a feature you implement.</strong> The browser goldens needed <code>?debug=1&amp;pause=1</code> so the loop stopped advancing on wall-clock time, a seeded RNG for edge spawns, and draining in-flight room loads at each frame boundary. Without those, “same inputs” is a wish.</p>
+<h2 id="How-to-try-it"><a href="#How-to-try-it" class="headerlink" title="How to try it"></a>How to try it</h2><p>You need a legally obtained <em>The Legend of Zelda</em> USA NES dump (iNES <code>.nes</code>). Nothing is uploaded; the file stays in your browser.</p>
+<p><strong>On the web:</strong> <a target="_blank" rel="noopener" href="https://camhenlin.github.io/Dangerous-Alone/">camhenlin.github.io/Dangerous-Alone</a>. Drop the ROM and wait for extract. Clearing site data removes the ROM (saves live in the same browser storage). <code>play.html?resetRom=1</code> forgets the dump without wiping save slots.</p>
+<p><strong>On your machine:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/CamHenlin/Dangerous-Alone.git</span><br><span class="line"><span class="built_in">cd</span> Dangerous-Alone</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br><span class="line"><span class="comment"># open http://localhost:5173/play.html</span></span><br></pre></td></tr></table></figure>
+
+<p>File select: ↑↓ slot · Enter continue/new · N rename · R register/overwrite · E erase · O options.</p>
+<p>In play: Arrows/WASD move · Z/Space sword · X/C B-item · Tab cycle item · Enter inventory · H / spare Start joins a second player · F5/F9 practice · M mute · ,/. volume.</p>
+<p>Progress autosaves to this browser. Options cover scale, fullscreen, and per-player keyboard/gamepad binds.</p>
+<h2 id="What-is-still-rough"><a href="#What-is-still-rough" class="headerlink" title="What is still rough"></a>What is still rough</h2><p>The game is 100% playable. The bugs that remain do not massively impact the experience, but they are real:</p>
+<ul>
+<li>Small collision errors at times, usually making Link not fully align to paths. Mostly visual.</li>
+<li>Some enemies do not behave as they are supposed to. Dodongos, for example, eat bombs much more easily than they should.</li>
+<li>Second quest text is a bit incoherent, because it reuses story text from the first quest.</li>
+</ul>
+<p>If you notice others, open a GitHub issue with screenshots and a detailed description.</p>
+<h2 id="Legal"><a href="#Legal" class="headerlink" title="Legal"></a>Legal</h2><p>This project ships engine code, not a cartridge. You bring a NES Zelda ROM you own. Nintendo owns <em>The Legend of Zelda</em>. Naming it here only describes which cartridge this engine understands. Personal / educational use with a ROM in your possession.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone">GitHub: CamHenlin/Dangerous-Alone</a></li>
+<li><a target="_blank" rel="noopener" href="https://camhenlin.github.io/Dangerous-Alone/">Play it in the browser</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone/blob/master/example.png">Example screenshot</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Dangerous-Alone/blob/master/DEV.md">DEV.md — architecture, extract CLI, phases</a></li>
+</ul>
+
+
+			<h2>Did you enjoy my post?</h2>
+			<p>I'm really excited about the work that I'm doing here. If you enjoyed my post and my work, please <a target="_blank" rel="noopener" href="https://ko-fi.com/camhenlin">consider tipping me with a coffee</a>. I appreciate you taking the time to read my post!</p>
+
+			<div class="article-footer-copyright" style="display: none;">
+© 2020 cameron henlin's Blog
+</div>
+
+			</div>
+
+			
+			<span id="/2026/09/09/Introducing-Dangerous-Alone/" class="leancloud-visitors view" data-flag-title="Introducing Dangerous Alone">
+				<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+			</span>
+			
+		</div>
+		<div>
+		<center>
+
+		<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2022/02/26/Introducing-Messages-for-Macintosh/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+		</center>
+		</div>
+
+		<!-- comment -->
+		
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//henlin-net.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2026-09-09 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/retro/">retro<span>8</span></a></li> <li><a href="/tags/dev/">dev<span>6</span></a></li> <li><a href="/tags/zelda/">zelda<span>1</span></a></li> <li><a href="/tags/nes/">nes<span>1</span></a></li> <li><a href="/tags/javascript/">javascript<span>1</span></a></li> <li><a href="/tags/pixi/">pixi<span>1</span></a></li> <li><a href="/tags/multiplayer/">multiplayer<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+kofiWidgetOverlay.draw('camhenlin', {
+	'type': 'floating-chat',
+	'floating-chat.donateButton.text': 'Support Me',
+	'floating-chat.donateButton.background-color': '#000',
+	'floating-chat.donateButton.text-color': '#fff'
+});
+</script>
+<style>
+	.donateButton {
+		border: 2px #fff solid !important;
+	}
+</style>
+<!--
+<script type="text/javascript">
+var disqus_shortname = 'henlin-net';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2026 cameron henlin's Blog
+  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎top</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+</body>
+   </html>
