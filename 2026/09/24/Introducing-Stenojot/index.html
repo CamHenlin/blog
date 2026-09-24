@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Introducing Stenojot | cam henlin&#39;s blog</title>
+  <meta name="author" content="cameron henlin">
+  
+  <meta name="description" content="What is it?Stenojot is a Mac app that listens while you talk, writes both sides of a conversation down, and then keeps working on what was said. Notes">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Introducing Stenojot"/>
+  <meta property="og:site_name" content="cam henlin&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GS3GPZ8RZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4GS3GPZ8RZ');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">cam henlin&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Introducing Stenojot</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+		<!-- content -->
+		<div class="entry">
+			<div class="mypage">
+			
+
+			<h2 id="What-is-it"><a href="#What-is-it" class="headerlink" title="What is it?"></a>What is it?</h2><p><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Stenojot">Stenojot</a> is a Mac app that listens while you talk, writes both sides of a conversation down, and then keeps working on what was said. Notes sit in the transcript. A language model on the same machine pulls action items out of a finished stretch, writes a summary of the day, and answers questions about a selection or about the whole day.</p>
+<p>It is a Mac app for Apple Silicon, macOS 14 or later. Speech goes through NVIDIA Parakeet. Questions, action items, and summaries go through an MLX language model you download once. Transcripts, notes, and those model replies live in a SQLite database under Application Support. Nothing in that path is uploaded.</p>
+<p>The name is steno and jot. Steno is shorthand for writing down what was said. Jot is the note that stays with it.</p>
+<p><img src="/images/stenojot.png" alt="Stenojot showing a day&#39;s transcript, a note between lines, and action items"></p>
+<p>You can <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Stenojot/releases/latest/download/Stenojot.zip">download a build</a>, read the shorter product page at <a target="_blank" rel="noopener" href="https://camhenlin.github.io/Stenojot/">camhenlin.github.io/Stenojot</a>, or clone the source at <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Stenojot">github.com/CamHenlin/Stenojot</a>.</p>
+<h2 id="Why-this-exists"><a href="#Why-this-exists" class="headerlink" title="Why this exists"></a>Why this exists</h2><p>I wanted a transcription tool that stayed on the computer and was still useful after the words were written down. The local tools I tried could turn speech into text, and then they stopped. I wanted one app that could do all of this:</p>
+<ul>
+<li>Transcribe a conversation well, including both sides of a call</li>
+<li>Force replacements, so names, terms, and recurring mistakes come out the way I want</li>
+<li>Annotate the transcript as it happens, and keep those notes with the text</li>
+<li>Use a local language model to pull action items out of what was said</li>
+<li>Use a local language model to write a summary of the day</li>
+<li>Ask that same model questions about part of a transcript, or about the whole day</li>
+</ul>
+<p>Nothing I found did all of that together, so I built it. The first version was a tool for me. By the time the database had hundreds of thousands of lines in it, the shape of the tool had changed, and the way it was built had to change with it.</p>
+<h2 id="What-it-was-first"><a href="#What-it-was-first" class="headerlink" title="What it was first"></a>What it was first</h2><p>The first commit is March 13, 2026. The app was called Parakeet Transcriber, and it was two programs.</p>
+<p>A Python sidecar captured 16 kHz mono audio from the default microphone with <code>sounddevice</code>, ran an energy-based voice detector, and transcribed a segment with <a target="_blank" rel="noopener" href="https://github.com/senstella/parakeet-mlx">parakeet-mlx</a> once the room had been quiet for about 600 ms. A Node process received newline-delimited JSON and inserted each line into SQLite. A separate Express server served a Vue page, in one HTML file, that polled the database every two seconds. You ran <code>npm start</code> to listen and <code>npm run serve</code> to read. Notes lived between lines. Search lived in the browser.</p>
+<p>That was enough to use every day. Over the spring and summer the page grew the things the transcript was missing: find-and-replace rules applied before a line was saved, and a chat panel that talked to a local <a target="_blank" rel="noopener" href="https://ollama.com/">Ollama</a> server. The speech model stayed in Python. The language model stayed in another program on localhost. The viewer stayed a web page looking at a file.</p>
+<p>By September that split was the problem. Launching the tool meant launching the listener and the viewer. The “all messages” view beachballed once the table was large. Ollama had to be running before a question meant anything. And the microphone was still one stream, so a call was a single column of text with no idea who had said it.</p>
+<p>On September 23 I threw out the web app and started over as a native Mac app, with one constraint written down first: the SQLite schema stays compatible, so the database I already had can be imported. The next day the app stopped being named after the speech model. Parakeet is the checkpoint. Stenojot is the note.</p>
+<h2 id="What-we-did-not-build"><a href="#What-we-did-not-build" class="headerlink" title="What we did not build"></a>What we did not build</h2><p>A few shortcuts were tempting and would have produced a worse app.</p>
+<p><strong>A cloud transcription API.</strong> The point of the project is that the words stay on the machine. Parakeet runs on the Apple GPU through MLX. The language model does too. The database never leaves Application Support.</p>
+<p><strong>A speaker-identification model.</strong> “You” and “Others” are not inferred from voice. They are two captures. The microphone is the person at the computer. System audio is everyone else on the call. Labeling is a routing problem, not a diarization problem.</p>
+<p><strong>A swap to a newer speech checkpoint just because the number on a leaderboard moved.</strong> <a target="_blank" rel="noopener" href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2">Parakeet TDT 0.6B v2</a> is the English model the sidecar already loads, published at 6.05% average word error rate on the Open ASR Leaderboard. <a target="_blank" rel="noopener" href="https://huggingface.co/moondream/parakeet-ultra">Parakeet Ultra</a> is a stronger checkpoint of a later Parakeet, and it runs in Moondream’s Photon engine on an NVIDIA GPU. The weights are not an MLX <code>config.json</code> plus <code>model.safetensors</code>. Loading them would have meant replacing <code>parakeet-mlx</code> and leaving Apple Silicon for the one model in the app that has to keep up with a live call. The Apple Silicon sibling, Parakeet Redux, is a compressed multilingual checkpoint. The meetings this app transcribes are English. v2 stayed.</p>
+<p><strong>Ollama as a required second app.</strong> The chat path was already “send a system string and a user string, stream the tokens back.” That does not need a server. It needs a runtime inside the process. An older <code>config.json</code> may still contain an <code>ollama</code> block. The app keeps the block when it saves, and runs the in-process model instead.</p>
+<h2 id="The-shape-of-the-Mac-app"><a href="#The-shape-of-the-Mac-app" class="headerlink" title="The shape of the Mac app"></a>The shape of the Mac app</h2><p>Launching Stenojot starts listening and opens the transcript window. Closing the window leaves listening on. Quitting stops it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Microphone → echo cancellation → &quot;you&quot;</span><br><span class="line">Call audio  →                  → &quot;others&quot;</span><br><span class="line">                ↓ tagged 30 ms frames</span><br><span class="line">           Python sidecar (one VAD per speaker + parakeet-mlx)</span><br><span class="line">                ↓ JSON lines, with speaker</span><br><span class="line">           Swift → SQLite → SwiftUI</span><br><span class="line">                              ↘ MLX language model</span><br><span class="line">                                 action items, daily summaries, questions</span><br></pre></td></tr></table></figure>
+
+<p>Swift captures both streams, aligns them, and writes 30 ms frames to the sidecar’s stdin: one speaker byte (<code>0</code> = you, <code>1</code> = the other side) followed by 960 bytes of mono int16 PCM. The sidecar keeps a separate energy detector for each speaker, calibrates a noise floor at startup, ends a segment after about 600 ms of silence, and transcribes with Parakeet. Results come back as JSON on stdout. Logs stay on stderr, and from there in the unified log under <code>com.stenojot.app</code>.</p>
+<p>The speech model stays a Python process because <code>parakeet-mlx</code> is the loader that already worked, and because the model should stay warm for the whole session. The app does not ask you to install Python. The build downloads a relocatable CPython 3.12 from <a target="_blank" rel="noopener" href="https://github.com/astral-sh/python-build-standalone">python-build-standalone</a> and copies it into the bundle. First launch creates a virtualenv in Application Support and <code>pip install</code>s <code>parakeet-mlx</code> and <code>numpy</code>. The weights land in the Hugging Face cache. Move the app after that environment exists and the next launch rebuilds it, because the virtualenv records the path of the interpreter it was built against.</p>
+<p>The language model is the other runtime, and it is not Python. It is <a target="_blank" rel="noopener" href="https://github.com/ml-explore/mlx-swift-lm">mlx-swift-lm</a> 3.31.4, pinned, running in the app process. Weights download into <code>~/Library/Application Support/Stenojot/models/</code> and stay there after you quit.</p>
+<p>The pieces that do not need a microphone or a window live in a Swift package, <code>TranscriberCore</code>: the schema, replacements, the echo canceller, the mixer, prompts, action-item parsing, and daily-summary assembly. <code>swift test</code> in that package does not open the mic and does not load a model. That split is what made the day-grouping bug and the summary chunking testable without sitting through a call.</p>
+<p>Screen Recording permission on macOS is tied to the signature. A rebuild that looks like a new app makes the system ask again, and then forget the grant. The build creates a local identity named <code>StenojotDev</code> and keeps it, so a rebuild is the same app. The downloadable zip is a different story: it is signed ad hoc, and macOS still wants you to Control-click and choose Open the first time.</p>
+<h2 id="Two-speakers-not-a-diarizer"><a href="#Two-speakers-not-a-diarizer" class="headerlink" title="Two speakers, not a diarizer"></a>Two speakers, not a diarizer</h2><p>The microphone tap is <code>AVAudioEngine</code>. That is the person at the keyboard. Playback from Zoom, Meet, or FaceTime never enters that tap. The other person shows up in the transcript only when their voice leaks out of the speakers and back into the mic, mixed into the same lines, with no label.</p>
+<p>Call apps cancel echo on the audio they send to the other person. That cleanup stays inside the call app. This app hears the raw microphone. Voice Isolation does not help: the caller is speech.</p>
+<p>The second capture is <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/screencapturekit">ScreenCaptureKit</a>. The stream is a 2×2 display, one frame a second, cursor hidden, audio on, current process excluded. The pixels are there because the API is a screen stream that happens to carry audio. The samples are what we keep. They are converted to 16 kHz mono. If system audio is declined, the microphone is still transcribed and those lines are labeled You.</p>
+<p>Headphones mostly solve bleed on their own, because the caller is not in the room. Speakers do not. The two clocks also do not match, so the mixer keeps a timeline of call audio and holds each microphone frame until the matching stretch of call audio is available, or until it has waited about a quarter of a second and has to go on without it. The call audio is delayed by about 150 ms relative to the microphone so the echo lands inside the filter.</p>
+<p>The filter is a normalized LMS canceller in C, 3200 taps, which is 200 ms at 16 kHz. Swift owns the clocks. C owns the sample loop. After cancellation, a residual check looks at what is left. If the call audio was loud, the microphone energy collapsed, and nothing voice-shaped remains, that frame is replaced with silence. Otherwise the cleaned microphone is what gets labeled You. Call audio is labeled Others and is never run through the canceller.</p>
+<p>Rows from before the speaker column existed are backfilled as the other person. We did not have a second stream then, and inventing “you” for old lines would have been a guess.</p>
+<h2 id="The-language-model-moved-inside"><a href="#The-language-model-moved-inside" class="headerlink" title="The language model moved inside"></a>The language model moved inside</h2><p>Ollama was a streaming HTTP call to <code>127.0.0.1:11434</code>. Replacing it did not change the prompt. It changed where the weights live.</p>
+<p>The catalog is short, and each entry says what it is for:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Download</th>
+<th>Memory while loaded</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gemma 3 1B</td>
+<td>0.8 GB</td>
+<td>About 2 GB</td>
+</tr>
+<tr>
+<td>Llama 3.2 3B</td>
+<td>1.8 GB</td>
+<td>About 4 GB</td>
+</tr>
+<tr>
+<td>Qwen 2.5 7B</td>
+<td>4.3 GB</td>
+<td>About 7 GB</td>
+</tr>
+<tr>
+<td>Qwen 3 8B</td>
+<td>4.6 GB</td>
+<td>About 8 GB</td>
+</tr>
+</tbody></table>
+<p>Memory above is the weights before a long transcript adds more. Gemma fits a short question on an 8 GB Mac. Qwen 2.5 7B is the one I actually use for a full day, and it is comfortable on 16 GB. Qwen 3 8B reasons a bit harder and is slower to start an answer.</p>
+<p>One model is loaded at a time. Chat, action items, and summaries share it, and generations run one after another so two features cannot both be writing tokens. Switching models unloads the previous one. Qwen-style <code>&lt;think&gt;</code> spans are stripped from the stream as it arrives, including a tag that is split across chunks. An unclosed think span is discarded rather than shown.</p>
+<p>The reply to a question is saved on the transcript as its own kind of note, anchored after the stretch you asked about. The same selection you can copy is the selection the model sees, including speaker labels and any notes inside it.</p>
+<h2 id="After-the-words-are-down"><a href="#After-the-words-are-down" class="headerlink" title="After the words are down"></a>After the words are down</h2><p>Replacements run on each new line before it is inserted. Matching is by whole word and ignores case. A rule with an empty replacement deletes the matched text. Leftover punctuation and doubled spaces are cleaned up, and a line that no longer contains a letter or a digit is dropped. Apply to All Past Transcripts rewrites what is already saved, and deletes a line, plus notes anchored to it, when the text becomes empty.</p>
+<p>Action items are a checklist beside the transcript. After about 30 seconds of silence, the latest finished stretch is sent to the model, which is asked for a JSON array of concrete tasks. A stretch is remembered by the last transcription id already scanned, so it is not extracted twice. The list still accepts items you type when no model is downloaded.</p>
+<p>A daily summary is not one prompt with the whole day pasted in. The day is split into stretches. A new stretch starts only after more than a minute with nothing said, because two meetings can follow each other with less than a minute between them, and the prompt says so. Notes are included when they add something the transcript does not. Action items for the day are appended on their own, not re-derived. A second pass then reads the finished summary, and only the summary, and removes passages that add nothing.</p>
+<p>That second pass exists because the first one kept writing sentences like “the other person responded with a simple Yeah.” A transcript of a work day is full of acknowledgements. A summary of a work day should not be. Both instructions are editable from the menu bar. An empty instruction uses the built-in one. Regenerate runs the whole thing again, which is what you want after changing the prompt.</p>
+<p>If the app stays open past local midnight, it writes summaries for the days that ended while it was running. A day it was closed for is left alone until you press Generate. Opening the app the next morning does not invent a summary for a day it missed.</p>
+<h2 id="A-few-things-that-surprised-me"><a href="#A-few-things-that-surprised-me" class="headerlink" title="A few things that surprised me"></a>A few things that surprised me</h2><p><strong>A day is a local calendar day, and SQLite does not know that.</strong> Every timestamp is stored in UTC. The first day list used <code>date(timestamp)</code>, which is the UTC date. After 5pm Pacific the UTC date has already rolled over, so Sunday evening was filed under Monday, Monday evening under Tuesday, and there was no Sunday at all. The summary for “Mon, Sep 21” then summarized Sunday night and ignored Monday. Days are grouped in Swift from the parsed timestamp. The stored strings did not change. The query did.</p>
+<p><strong>“Yeah” is often a ding.</strong> Parakeet hears notification sounds and other short noises as the word “Yeah,” and sometimes “Okay.” A line that is only that word is dropped when the previous line was the same word, or when more than 30 seconds of silence came before it. Real agreement in the middle of a sentence is a different string, and it stays.</p>
+<p><strong>Echo cancellation is a clock problem wearing a DSP costume.</strong> The LMS filter is the smaller piece. The larger piece is that the microphone and ScreenCaptureKit do not share a clock, the speaker path is late, and a frame that arrives before its reference has to wait or be transcribed dirty. Hold too long and the transcript lags. Hold too little and the other person’s voice is written down twice, once from the speakers and once from the mic.</p>
+<p><strong>The all-messages view was the web app admitting it was a file viewer.</strong> Hundreds of thousands of rows in one scrolling page is not a feature. The Mac app opens on the latest day. Search filters the day list and the lines on the selected day, including notes. That is the whole navigation model.</p>
+<p><strong>Determinism of “today” is a feature you implement.</strong> Automatic summaries key off the last local day the app observed, and they refuse to summarize today. That rule is a few lines, and it is the difference between a summary you can trust and a summary that runs because a timer fired.</p>
+<h2 id="How-to-try-it"><a href="#How-to-try-it" class="headerlink" title="How to try it"></a>How to try it</h2><p>You need an Apple Silicon Mac on macOS 14 or later.</p>
+<p><strong>Download:</strong> <a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Stenojot/releases/latest/download/Stenojot.zip">Stenojot.zip</a>. Unzip it and move Stenojot to Applications. The first time you open it, Control-click the app and choose Open, then Open again. The zip does not include the transcription packages or the model weights. Those download on first launch.</p>
+<p><strong>From source:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/CamHenlin/Stenojot.git</span><br><span class="line"><span class="built_in">cd</span> Stenojot</span><br><span class="line"><span class="comment"># Open macos/Stenojot.xcodeproj and run the Stenojot scheme.</span></span><br><span class="line"><span class="comment"># The first build downloads CPython and creates a local signing identity.</span></span><br></pre></td></tr></table></figure>
+
+<p>Core logic tests, with no microphone and no model:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> macos/TranscriberCore &amp;&amp; swift <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<p>On first launch, start empty or import an existing <code>transcriptions.db</code>. Import uses a SQLite backup, so the <code>-wal</code> file is included. The copy lives at <code>~/Library/Application Support/Stenojot/transcriptions.db</code>. Optionally import a <code>config.json</code> in the same sheet. Then allow the microphone, and allow system audio if you want the other side of a call labeled separately.</p>
+<p>The window opens on the latest day. New lines appear as they are saved, and the list stays pinned to the latest line until you scroll up. Click the gap between lines to insert a note. Click one line, then another, to select a stretch. Copy puts that stretch on the clipboard, including notes that fall inside it. The same stretch is what a question is about.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Stenojot">GitHub: CamHenlin/Stenojot</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Stenojot/releases/latest/download/Stenojot.zip">Download Stenojot.zip</a></li>
+<li><a target="_blank" rel="noopener" href="https://camhenlin.github.io/Stenojot/">Product page</a></li>
+<li><a target="_blank" rel="noopener" href="https://camhenlin.github.io/Stenojot/how-to.html">How to use it</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CamHenlin/Stenojot/blob/main/DEVELOPMENT.md">Developing Stenojot</a> — build, schema, sidecar tuning</li>
+</ul>
+
+
+			<h2>Did you enjoy my post?</h2>
+			<p>I'm really excited about the work that I'm doing here. If you enjoyed my post and my work, please <a target="_blank" rel="noopener" href="https://ko-fi.com/camhenlin">consider tipping me with a coffee</a>. I appreciate you taking the time to read my post!</p>
+
+			<div class="article-footer-copyright" style="display: none;">
+© 2020 cameron henlin's Blog
+</div>
+
+			</div>
+
+			
+			<span id="/2026/09/24/Introducing-Stenojot/" class="leancloud-visitors view" data-flag-title="Introducing Stenojot">
+				<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+			</span>
+			
+		</div>
+		<div>
+		<center>
+
+		<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2026/09/09/Introducing-Dangerous-Alone/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+		</center>
+		</div>
+
+		<!-- comment -->
+		
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//henlin-net.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2026-09-24 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/mac/">mac<span>1</span></a></li> <li><a href="/tags/swift/">swift<span>1</span></a></li> <li><a href="/tags/transcription/">transcription<span>1</span></a></li> <li><a href="/tags/mlx/">mlx<span>1</span></a></li> <li><a href="/tags/local/">local<span>1</span></a></li> <li><a href="/tags/dev/">dev<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+kofiWidgetOverlay.draw('camhenlin', {
+	'type': 'floating-chat',
+	'floating-chat.donateButton.text': 'Support Me',
+	'floating-chat.donateButton.background-color': '#000',
+	'floating-chat.donateButton.text-color': '#fff'
+});
+</script>
+<style>
+	.donateButton {
+		border: 2px #fff solid !important;
+	}
+</style>
+<!--
+<script type="text/javascript">
+var disqus_shortname = 'henlin-net';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2026 cameron henlin's Blog
+  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎top</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+</body>
+   </html>
